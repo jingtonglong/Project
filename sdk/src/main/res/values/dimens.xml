@@ -1,0 +1,33 @@
+<resources>
+    <dimen name="radio_button_size">54dp</dimen>
+    <dimen name="text_size_small">12sp</dimen>
+    <dimen name="text_size_middle">16sp</dimen>
+    <dimen name="text_size_big">20sp</dimen>
+
+    <dimen name="title_bar_size">43dp</dimen>
+    <dimen name="home_grid_item_img_width">64dp</dimen>
+
+    <dimen name="icon_size_middle">18dp</dimen>
+    <dimen name="icon_size_small">10dp</dimen>
+    <dimen name="padding_size_middle">10dp</dimen>
+
+    <dimen name="padding_size_small">4dp</dimen>
+    <dimen name="margin_top_middle">12dp</dimen>
+    <dimen name="margin_top_big">24dp</dimen>
+
+    <dimen name="margin_top_small">6dp</dimen>
+
+    <dimen name="margin_middle">12dp</dimen>
+    <dimen name="home_margin_top">24dp</dimen>
+    <dimen name="margin_big">24dp</dimen>
+    <dimen name="margin_xbig">36dp</dimen>
+    <dimen name="margin_xxbig">42dp</dimen>
+
+    <dimen name="picture_width_middle">60dp</dimen>
+    <dimen name="picture_height_middle">40dp</dimen>
+    <dimen name="picture_height_small">20dp</dimen>
+    <dimen name="picture_size_small">16dp</dimen>
+    <dimen name="home_grid_item_margin_vertical">26dp</dimen>
+
+    <dimen name="grey_background_height">14dp</dimen>
+</resources>

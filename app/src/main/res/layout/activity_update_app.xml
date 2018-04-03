@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    tools:context="com.ys.yarc.mvp.view.activity.UpdateAppActivity">
+
+    <com.base.sdk.widget.TitleBar
+        android:id="@+id/update_title"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_bar_size" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_xxbig"
+        android:src="@mipmap/ic_launcher" />
+
+    <TextView
+        android:id="@+id/update_version"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/text_black"
+        android:textSize="@dimen/text_size_middle"
+        android:layout_marginTop="@dimen/margin_big"
+        android:text="当前版本:1.0.0" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/text_grey"
+        android:textSize="@dimen/text_size_middle"
+        android:layout_marginTop="@dimen/margin_middle"
+        android:text="Copyright©2018-2019雅安智慧人才" />
+
+</LinearLayout>

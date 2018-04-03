@@ -1,0 +1,125 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey_100"
+    android:orientation="vertical"
+    tools:context="com.ys.yarc.mvp.view.fragment.PersonFragment">
+
+    <ImageView
+        android:id="@+id/person_top_image"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <RelativeLayout
+                android:id="@+id/person_1"
+                style="@style/person_relative">
+
+                <ImageView
+                    style="@style/person_image_left"
+                    android:src="@drawable/person_1" />
+
+                <TextView
+                    style="@style/person_text"
+                    android:text="个人信息" />
+
+                <ImageView style="@style/person_image_right" />
+            </RelativeLayout>
+
+            <View
+                style="@style/line"
+                android:layout_marginLeft="@dimen/margin_middle" />
+
+            <RelativeLayout
+                android:id="@+id/person_2"
+                style="@style/person_relative">
+
+                <ImageView
+                    style="@style/person_image_left"
+                    android:src="@drawable/person_2" />
+
+                <TextView
+                    style="@style/person_text"
+                    android:text="密码设置" />
+
+                <ImageView style="@style/person_image_right" />
+            </RelativeLayout>
+
+            <View
+                style="@style/line"
+                android:layout_marginLeft="@dimen/margin_middle" />
+
+            <RelativeLayout
+                android:id="@+id/person_3"
+                style="@style/person_relative">
+
+                <ImageView
+                    style="@style/person_image_left"
+                    android:src="@drawable/person_3" />
+
+                <TextView
+                    style="@style/person_text"
+                    android:text="人才登记" />
+
+                <ImageView style="@style/person_image_right" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/person_4"
+                style="@style/person_relative"
+                android:layout_marginTop="@dimen/margin_middle">
+
+                <ImageView
+                    style="@style/person_image_left"
+                    android:src="@drawable/person_4" />
+
+                <TextView
+                    style="@style/person_text"
+                    android:text="检查更新" />
+
+                <ImageView style="@style/person_image_right" />
+            </RelativeLayout>
+
+            <View
+                style="@style/line"
+                android:layout_marginLeft="@dimen/margin_middle" />
+
+            <RelativeLayout
+                android:id="@+id/person_5"
+                style="@style/person_relative">
+
+                <ImageView
+                    style="@style/person_image_left"
+                    android:src="@drawable/person_5" />
+
+                <TextView
+                    style="@style/person_text"
+                    android:text="通知设置" />
+
+                <ImageView style="@style/person_image_right" />
+            </RelativeLayout>
+
+            <Button
+                android:id="@+id/logout"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/margin_top_big"
+                android:background="@color/white"
+                android:gravity="center"
+                android:text="退出登录"
+                android:textColor="@color/red_500" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

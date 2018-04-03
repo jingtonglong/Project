@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:paddingBottom="18dp"
+    android:paddingTop="20dp"
+    android:paddingLeft="12dp"
+    android:paddingRight="12dp"
+    android:background="@color/white"
+    >
+
+    <LinearLayout style="@style/home_middle_linear">
+
+        <ImageView
+            style="@style/home_middle_image"
+            android:src="@drawable/home_middle_1" />
+
+        <TextView
+            style="@style/home_middle_text"
+            android:text="热门推荐" />
+    </LinearLayout>
+    <LinearLayout style="@style/home_middle_linear">
+
+        <ImageView
+            style="@style/home_middle_image"
+            android:src="@drawable/home_middle_2" />
+
+        <TextView
+            style="@style/home_middle_text"
+            android:text="人才动态" />
+    </LinearLayout>
+    <LinearLayout style="@style/home_middle_linear">
+
+        <ImageView
+            style="@style/home_middle_image"
+            android:src="@drawable/home_middle_3" />
+
+        <TextView
+            style="@style/home_middle_text"
+            android:text="人才政策" />
+    </LinearLayout>
+    <LinearLayout style="@style/home_middle_linear">
+
+        <ImageView
+            style="@style/home_middle_image"
+            android:src="@drawable/home_middle_4" />
+
+        <TextView
+            style="@style/home_middle_text"
+            android:text="人才活动" />
+    </LinearLayout>
+</LinearLayout>

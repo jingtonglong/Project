@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.ys.yarc.mvp.view.activity.PersonInfoActivity">
+
+    <com.base.sdk.widget.TitleBar
+        android:id="@+id/person_info_title"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_bar_size" />
+
+    <LinearLayout style="@style/person_info_linear">
+
+        <ImageView
+            style="@style/person_info_icon"
+            android:src="@drawable/login_user_icon" />
+
+        <TextView
+            style="@style/person_info_label"
+            android:text="姓名:" />
+
+        <EditText
+            android:id="@+id/person_info_name"
+            style="@style/person_info_input" />
+    </LinearLayout>
+
+    <View style="@style/line_left" />
+
+    <LinearLayout style="@style/person_info_linear">
+
+        <ImageView
+            style="@style/person_info_icon"
+            android:src="@drawable/login_user_icon" />
+
+        <TextView
+
+            style="@style/person_info_label"
+            android:text="手机:" />
+
+        <EditText android:id="@+id/person_info_phone"
+            style="@style/person_info_input" />
+    </LinearLayout>
+
+    <View style="@style/line_left" />
+
+    <LinearLayout style="@style/person_info_linear">
+
+        <ImageView
+            style="@style/person_info_icon"
+            android:src="@drawable/login_user_icon" />
+
+        <TextView
+            style="@style/person_info_label"
+            android:text="邮箱:" />
+
+        <EditText
+            android:id="@+id/person_info_email"
+            style="@style/person_info_input" />
+    </LinearLayout>
+
+    <View style="@style/line_left" />
+
+    <Button
+        android:id="@+id/person_info_submit"
+        style="@style/submit_button"
+        android:text="确认" />
+</LinearLayout>
