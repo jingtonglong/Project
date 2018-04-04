@@ -36,9 +36,9 @@ public class SplashActivity extends BaseActivity {
         params.systemUiVisibility = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION;
         window.setAttributes(params);
         if (UserHelper.getInstance(context).getUserInfo().getUsername() != null) {
-            delayToActivity(DELAY, MainActivity.class); // 进入登录界面
+            delayToActivity(DELAY, com.hyphenate.chatuidemo.ui.LoginActivity.class); // 进入登录界面
         } else {
-            delayToActivity(DELAY, LoginActivity.class); // 进入登录界面
+            delayToActivity(DELAY, com.hyphenate.chatuidemo.ui.LoginActivity.class); // 进入登录界面
         }
     }
 
