@@ -70,10 +70,12 @@ public abstract class BaseActivity extends AbstractActivity implements IBaseActi
     }
     protected Activity context;
     private ProgressDialog pd;
+    private Activity activity;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         context = this;
+        activity = this;
         //setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);//竖屏
         init();
         setContentLayout();//由具体的activity实现，设置内容布局ID
@@ -195,5 +197,9 @@ public abstract class BaseActivity extends AbstractActivity implements IBaseActi
         if (context != null && pd != null && pd.isShowing()) {
             pd.dismiss();
         }
+    }
+
+    public Activity getActivity() {
+        return activity;
     }
 }

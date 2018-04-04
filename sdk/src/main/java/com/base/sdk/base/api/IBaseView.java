@@ -1,6 +1,7 @@
 package com.base.sdk.base.api;
 
 
+import android.app.Activity;
 import android.content.Context;
 
 import com.base.sdk.base.net.LifeCycleEvent;
@@ -26,4 +27,6 @@ public interface IBaseView {
     void showToast(String msg);
 
     Context getContext();
+
+    Activity getActivity();
 }

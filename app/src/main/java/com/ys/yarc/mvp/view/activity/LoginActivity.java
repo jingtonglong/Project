@@ -44,7 +44,7 @@ public class LoginActivity extends BaseActivity implements ILoginView {
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                loginPresent.login(usernameT.getText() + "", password.getText() + "");
+                loginPresent.login((usernameT.getText() + "").trim(), (password.getText() + "").trim());
             }
         });
     }
