@@ -4,8 +4,28 @@
         "source": "F:\\AndroidProject\\Project\\huanxin\\build\\intermediates\\bundles\\debug\\res\\menu\\em_context_tab_contact.xml"
     },
     {
+        "merged": "E:\\AndroidProject\\Project\\huanxin\\build\\intermediates\\res\\merged\\androidTest\\debug\\menu\\em_context_tab_contact.xml",
+        "source": "E:\\AndroidProject\\Project\\huanxin\\build\\intermediates\\bundles\\debug\\res\\menu\\em_context_tab_contact.xml"
+    },
+    {
+        "merged": "E:\\AndroidProject\\Project\\huanxin\\build\\intermediates\\res\\merged\\androidTest\\debug\\menu\\em_context_contact_list.xml",
+        "source": "E:\\AndroidProject\\Project\\huanxin\\build\\intermediates\\bundles\\debug\\res\\menu\\em_context_contact_list.xml"
+    },
+    {
+        "merged": "E:\\AndroidProject\\Project\\huanxin\\build\\intermediates\\res\\merged\\androidTest\\debug\\menu\\em_remove_from_blacklist.xml",
+        "source": "E:\\AndroidProject\\Project\\huanxin\\build\\intermediates\\bundles\\debug\\res\\menu\\em_remove_from_blacklist.xml"
+    },
+    {
+        "merged": "E:\\AndroidProject\\Project\\huanxin\\build\\intermediates\\res\\merged\\androidTest\\debug\\menu\\em_multi_device_menu_item.xml",
+        "source": "E:\\AndroidProject\\Project\\huanxin\\build\\intermediates\\bundles\\debug\\res\\menu\\em_multi_device_menu_item.xml"
+    },
+    {
         "merged": "F:\\AndroidProject\\Project\\huanxin\\build\\intermediates\\res\\merged\\androidTest\\debug\\menu\\em_delete_contact.xml",
         "source": "F:\\AndroidProject\\Project\\huanxin\\build\\intermediates\\bundles\\debug\\res\\menu\\em_delete_contact.xml"
+    },
+    {
+        "merged": "E:\\AndroidProject\\Project\\huanxin\\build\\intermediates\\res\\merged\\androidTest\\debug\\menu\\em_delete_contact.xml",
+        "source": "E:\\AndroidProject\\Project\\huanxin\\build\\intermediates\\bundles\\debug\\res\\menu\\em_delete_contact.xml"
     },
     {
         "merged": "F:\\AndroidProject\\Project\\huanxin\\build\\intermediates\\res\\merged\\androidTest\\debug\\menu\\em_context_contact_list.xml",
@@ -14,6 +34,10 @@
     {
         "merged": "F:\\AndroidProject\\Project\\huanxin\\build\\intermediates\\res\\merged\\androidTest\\debug\\menu\\em_delete_message.xml",
         "source": "F:\\AndroidProject\\Project\\huanxin\\build\\intermediates\\bundles\\debug\\res\\menu\\em_delete_message.xml"
+    },
+    {
+        "merged": "E:\\AndroidProject\\Project\\huanxin\\build\\intermediates\\res\\merged\\androidTest\\debug\\menu\\em_delete_message.xml",
+        "source": "E:\\AndroidProject\\Project\\huanxin\\build\\intermediates\\bundles\\debug\\res\\menu\\em_delete_message.xml"
     },
     {
         "merged": "F:\\AndroidProject\\Project\\huanxin\\build\\intermediates\\res\\merged\\androidTest\\debug\\menu\\em_remove_from_blacklist.xml",
