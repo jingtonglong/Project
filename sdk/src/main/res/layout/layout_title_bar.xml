@@ -3,7 +3,7 @@
     android:id="@+id/title_bar_relativelayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/blue_400" >
+    android:background="@color/app_color" >
 
     <ImageButton
         android:id="@+id/title_left_button"
@@ -111,6 +111,7 @@
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:gravity="center"
+        android:textSize="@dimen/text_size"
         />
 
     <TextView

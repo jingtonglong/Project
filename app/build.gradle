@@ -1,17 +1,35 @@
-
 apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 27
-    buildToolsVersion '27.0.2'
     defaultConfig {
         applicationId "com.ys.yarc"
         minSdkVersion 14
-        targetSdkVersion 22
+        targetSdkVersion 27
         versionCode 1
         versionName "1.0"
         multiDexEnabled true
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        // 开启eventbusindex加速
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [ eventBusIndex : "com.dev.base.MyEventBusIndex" ]
+            }
+        }
+        ndk {
+            //选择要添加的对应cpu类型的.so库。
+            abiFilters 'armeabi', 'armeabi-v7a', 'arm64-v8a' , 'x86', 'x86_64', 'mips', 'mips64'
+        }
+
+        manifestPlaceholders = [
+                JPUSH_PKGNAME : "com.ys.yarc",
+                JPUSH_APPKEY : "你的appkey", //JPush上注册的包名对应的appkey.
+                JPUSH_CHANNEL : "developer-default", //暂时填写默认值即可.
+        ]
+    }
+    lintOptions {
+        abortOnError false
     }
     signingConfigs {
         config {
@@ -36,6 +54,10 @@ android {
 //            signingConfig signingConfigs.config//ddebug模式下也使用上面配置的签名进行打包
         }
     }
+    // 保证其他的lib没有被preDex
+    dexOptions {
+        preDexLibraries = false
+    }
 }
 
 
@@ -48,6 +70,12 @@ dependencies {
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
     implementation project(':huanxin')
     implementation project(':sdk')
+    //EventBus
+    implementation 'org.greenrobot:eventbus:3.0.0'
+    annotationProcessor 'org.greenrobot:eventbus-annotation-processor:3.0.1'
+    // 极光推送
+    compile 'cn.jiguang.sdk:jpush:3.1.1'
+    compile 'cn.jiguang.sdk:jcore:1.1.9'
 }
 
 

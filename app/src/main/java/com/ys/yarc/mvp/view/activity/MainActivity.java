@@ -17,6 +17,8 @@ import android.support.v4.content.LocalBroadcastManager;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
+import com.base.sdk.base.api.PositiveOrCancelInterface;
+import com.base.sdk.util.NotificationsUtils;
 import com.hyphenate.EMCallBack;
 import com.hyphenate.EMClientListener;
 import com.hyphenate.EMContactListener;
@@ -42,6 +44,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
+import cn.jpush.android.api.JPushInterface;
 
 public class MainActivity extends BaseActivity implements IMainView, RadioGroup.OnCheckedChangeListener {
 
@@ -132,6 +135,36 @@ public class MainActivity extends BaseActivity implements IMainView, RadioGroup.
     @Override
     protected void initEvent() {
         radioGroup.setOnCheckedChangeListener(this);
+        checkPermission();
+        checkJpush();
+    }
+
+
+    /**
+     * 检查推送状态
+     */
+    private void checkJpush() {
+        if (JPushInterface.isPushStopped(getApplicationContext())) {
+            JPushInterface.resumePush(getApplicationContext());
+        }
+    }
+
+
+    /**
+     * 查看权限检测
+     */
+    private void checkPermission() {
+        if (!NotificationsUtils.isNotificationEnabled(getApplicationContext())) {
+            // 如果不能使用
+            showCustomDialog("通知权限被关闭，将会影响部分功能使用，马上去打开", new PositiveOrCancelInterface() {
+                @Override
+                public void result(boolean result) {
+                    if (result) {
+                        NotificationsUtils.requestPermission(2007, context);
+                    }
+                }
+            });
+        }
     }
 
     @Override

@@ -9,10 +9,10 @@ import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 
 
-
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.Random;
 
 
@@ -60,9 +60,6 @@ public class CommonUtil {
     }
 
 
-
-
-
     /**
      * 获取随机字符串
      *
@@ -96,8 +93,9 @@ public class CommonUtil {
 
     /**
      * 判断当前日期是否在给定的两个日期之间
+     *
      * @param beginDate 开始日期
-     * @param endDate 结束日期
+     * @param endDate   结束日期
      */
     public static boolean compareDateState(String beginDate, String endDate) {
         DateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
@@ -158,7 +156,6 @@ public class CommonUtil {
      * description 增加view的触摸范围
      */
     public static void expandViewTouchDelegate(final View view, final int top, final int bottom, final int left, final int right) {
-
         ((View) view.getParent()).post(new Runnable() {
             @Override
             public void run() {
@@ -179,5 +176,7 @@ public class CommonUtil {
             }
         });
     }
+
+
 
 }

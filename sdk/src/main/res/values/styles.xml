@@ -7,7 +7,8 @@
         <item name="android:background">@color/transparent</item>
         <item name="android:button">@null</item>
         <item name="android:checked">false</item>
-        <item name="android:drawablePadding">2dp</item>
+        <item name="android:textSize">@dimen/text_size_small</item>
+        <item name="android:drawablePadding">4dp</item>
         <item name="android:gravity">center</item>
     </style>
 
@@ -25,5 +26,18 @@
         <item name="android:textSize">20sp</item>
         <item name="android:background">@color/transparent</item>
         <!--<item name="android:textStyle">bold</item>-->
+    </style>
+
+    <style name="myDialogAnim" parent="android:Animation">
+
+        <!-- 进入时的动画 -->
+        <item name="@android:windowEnterAnimation">@anim/dialog_enter</item>
+        <!-- 退出时的动画 -->
+        <item name="@android:windowExitAnimation">@anim/dialog_exit</item>
+    </style>
+
+    <style name="MyEditText" parent="Theme.AppCompat.Light">
+        <item name="colorControlNormal">@color/app_color</item>
+        <item name="colorControlActivated">@color/white</item>
     </style>
 </resources>

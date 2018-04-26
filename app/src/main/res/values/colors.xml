@@ -4,6 +4,7 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
 
+    <color name="app_color">#FF3285FF</color>
 
     <!--MD_dialog相关-->
     <color name="card_background">#ffffff</color>

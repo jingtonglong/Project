@@ -13,11 +13,14 @@ import android.text.TextUtils;
 import android.view.View;
 
 import com.base.sdk.R;
+import com.base.sdk.base.api.PositiveOrCancelInterface;
 import com.base.sdk.base.net.LifeCycleEvent;
 import com.base.sdk.util.ActivityStackManager;
 import com.base.sdk.util.CommonUtil;
 import com.base.sdk.util.ToastUtil;
 import com.base.sdk.util.log.LogUtil;
+import com.flyco.dialog.listener.OnBtnClickL;
+import com.flyco.dialog.widget.NormalDialog;
 
 import org.zackratos.ultimatebar.UltimateBar;
 
@@ -94,7 +97,7 @@ public abstract class BaseActivity extends AbstractActivity implements IBaseActi
 
     private void initBarColor() {
         int color = getResourceColor(R.color.colorPrimary);
-        setBarColor(color, 0, color, 0);
+        setBarColor(color, 0);
     }
 
 
@@ -106,8 +109,8 @@ public abstract class BaseActivity extends AbstractActivity implements IBaseActi
     }
 
     //设置状态栏、导航栏颜色，第二个参数控制透明度，布局内容不占据状态栏空间
-    public void setBarColor(int statusColor, int statusAlpha, int navColor, int navAlpha) {
-        getUltimateBar().setColorBar(statusColor, statusAlpha, navColor, navAlpha);
+    public void setBarColor(int statusColor, int statusAlpha) {
+        getUltimateBar().setColorBar(statusColor, statusAlpha);
     }
 
 
@@ -202,4 +205,40 @@ public abstract class BaseActivity extends AbstractActivity implements IBaseActi
     public Activity getActivity() {
         return activity;
     }
+    /**
+     * 显示确认
+     *
+     * @param msg
+     * @param result
+     */
+    NormalDialog dialog;
+    protected void showCustomDialog(String msg, final PositiveOrCancelInterface result) {
+        if (context != null) {
+            dialog = new NormalDialog(context);
+            dialog.content(msg).show();
+            dialog.setCanceledOnTouchOutside(false);
+            dialog.setOnBtnClickL(
+                    new OnBtnClickL() {
+                        @Override
+                        public void onBtnClick() {
+                            dialog.dismiss();
+                            result.result(false);
+                        }
+                    },
+                    new OnBtnClickL() {
+                        @Override
+                        public void onBtnClick() {
+                            dialog.dismiss();
+                            result.result(true);
+                        }
+                    });
+        }
+    }
+
+    protected void dissMissDialog() {
+        if (dialog != null && dialog.isShowing()) {
+            dialog.dismiss();
+        }
+    }
+
 }
