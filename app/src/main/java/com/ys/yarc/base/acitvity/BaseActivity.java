@@ -132,6 +132,8 @@ public abstract class BaseActivity extends AbstractActivity implements IBaseActi
         mStackManager.popOneActivity(this);
         super.onDestroy();
         lifecycleSubject.onNext(LifeCycleEvent.DESTROY);
+        dissMissDialog();
+        dismissLoadingDialog();
     }
 
     /**
@@ -201,6 +203,8 @@ public abstract class BaseActivity extends AbstractActivity implements IBaseActi
             pd.dismiss();
         }
     }
+
+
 
     public Activity getActivity() {
         return activity;
