@@ -40,9 +40,6 @@ import io.reactivex.subjects.PublishSubject;
 
 public abstract class BaseActivity extends AbstractActivity implements IBaseActivity {
 
-
-    //页面的堆栈管理
-    private ActivityStackManager mStackManager;
     //状态栏导航栏颜色工具类
     private UltimateBar ultimateBar;
 
@@ -90,8 +87,6 @@ public abstract class BaseActivity extends AbstractActivity implements IBaseActi
     }
 
     private void init() {
-        mStackManager = ActivityStackManager.getInstance();
-        mStackManager.pushOneActivity(this);
 
     }
 
@@ -129,19 +124,10 @@ public abstract class BaseActivity extends AbstractActivity implements IBaseActi
 
     @Override
     protected void onDestroy() {
-        mStackManager.popOneActivity(this);
         super.onDestroy();
         lifecycleSubject.onNext(LifeCycleEvent.DESTROY);
         dissMissDialog();
         dismissLoadingDialog();
-    }
-
-    /**
-     * 隐藏输入法
-     */
-    public void hideInput() {
-        View view = getWindow().peekDecorView();
-        CommonUtil.hideSoftInput(getContext(), view);
     }
 
     @Override

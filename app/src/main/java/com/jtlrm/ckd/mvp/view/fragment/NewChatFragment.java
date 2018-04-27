@@ -1,12 +1,16 @@
 package com.jtlrm.ckd.mvp.view.fragment;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
+import android.view.View;
 
 import com.base.sdk.base.adapter.TabFragmentPagerAdapter;
 import com.base.sdk.base.entity.TabItemEntity;
+import com.base.sdk.widget.TitleBar;
+import com.hyphenate.chatuidemo.ui.NewGroupActivity;
 import com.jtlrm.ckd.R;
 import com.jtlrm.ckd.base.fragment.BaseFragment;
 import com.jtlrm.ckd.huanxin.MyContactListFragment;
@@ -29,6 +33,8 @@ public class NewChatFragment extends BaseFragment {
     List<TabItemEntity> tabItemEntities = new ArrayList<>();
     MyConversationFragment conversationFragment;
     MyContactListFragment contactListFragment;
+    @BindView(R.id.new_chat_title)
+    TitleBar titleBar;
     public NewChatFragment() {
         // Required empty public constructor
     }
@@ -36,7 +42,7 @@ public class NewChatFragment extends BaseFragment {
     public static NewChatFragment newInstance() {
         NewChatFragment fragment = new NewChatFragment();
         return fragment;
-    };
+    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -54,6 +60,15 @@ public class NewChatFragment extends BaseFragment {
         viewPager.setAdapter(adapter);
         viewPager.setOffscreenPageLimit(2);
         tabLayout.setupWithViewPager(viewPager);
+        titleBar.tvMiddle.setText("在线随访");
+        titleBar.tvRight.setVisibility(View.VISIBLE);
+        titleBar.tvRight.setText("发起群聊");
+        titleBar.tvRight.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(context, NewGroupActivity.class));
+            }
+        });
     }
 
     @Override
