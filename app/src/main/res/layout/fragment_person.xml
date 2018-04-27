@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:background="@color/grey_100"
     android:orientation="vertical"
-    tools:context="com.ys.yarc.mvp.view.fragment.PersonFragment">
+    tools:context="com.jtlrm.ckd.mvp.view.fragment.PersonFragment">
 
     <ImageView
         android:id="@+id/person_top_image"

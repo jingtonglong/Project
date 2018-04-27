@@ -23,10 +23,15 @@
             android:id="@+id/main_group_button_2"
             style="@style/home_radio_button"
             android:drawableTop="@drawable/home_2"
-            android:text="人才服务" />
+            android:text="患者管理" />
 
         <RadioButton
             android:id="@+id/main_group_button_3"
+            style="@style/home_radio_button"
+            android:drawableTop="@drawable/home_3"
+            android:text="在线随访" />
+        <RadioButton
+            android:id="@+id/main_group_button_4"
             style="@style/home_radio_button"
             android:drawableTop="@drawable/home_3"
             android:text="个人中心" />

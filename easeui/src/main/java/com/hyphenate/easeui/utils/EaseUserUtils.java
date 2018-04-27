@@ -4,12 +4,11 @@ import android.content.Context;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.bumptech.glide.Glide;
-import com.bumptech.glide.load.engine.DiskCacheStrategy;
-import com.hyphenate.easeui.R;
 import com.hyphenate.easeui.EaseUI;
 import com.hyphenate.easeui.EaseUI.EaseUserProfileProvider;
+import com.hyphenate.easeui.R;
 import com.hyphenate.easeui.domain.EaseUser;
+import com.squareup.picasso.Picasso;
 
 public class EaseUserUtils {
     
@@ -40,13 +39,13 @@ public class EaseUserUtils {
         if(user != null && user.getAvatar() != null){
             try {
                 int avatarResId = Integer.parseInt(user.getAvatar());
-                Glide.with(context).load(avatarResId).into(imageView);
+             Picasso.with(context).load(avatarResId).into(imageView);
             } catch (Exception e) {
                 //use default avatar
-                Glide.with(context).load(user.getAvatar()).diskCacheStrategy(DiskCacheStrategy.ALL).placeholder(R.drawable.ease_default_avatar).into(imageView);
+             Picasso.with(context).load(user.getAvatar()).placeholder(R.drawable.ease_default_avatar).into(imageView);
             }
         }else{
-            Glide.with(context).load(R.drawable.ease_default_avatar).into(imageView);
+            Picasso.with(context).load(R.drawable.ease_default_avatar).into(imageView);
         }
     }
     

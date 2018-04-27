@@ -4,6 +4,7 @@ import android.text.TextUtils;
 import android.util.Base64;
 import android.widget.ImageView;
 
+
 import com.base.sdk.R;
 import com.base.sdk.app.GlideApp;
 
@@ -23,7 +24,7 @@ public class ImageUtil {
     }
 
     public static void loadImageSizeNews(ImageView imageView, String url) {
-        GlideApp.with(imageView.getContext()).load(url).placeholder(R.drawable.no_banner).error(R.drawable.no_banner).override(230,164).centerCrop().into(imageView);
+       GlideApp.with(imageView.getContext()).load(url).placeholder(R.drawable.no_banner).error(R.drawable.no_banner).override(230,164).centerCrop().into(imageView);
     }
 
     public static void loadImage(ImageView imageView, int id) {

@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     >
 
-    <com.ys.yarc.widget.loadlayout.LoadLayout
+    <com.jtlrm.ckd.widget.loadlayout.LoadLayout
         android:id="@+id/base_content_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

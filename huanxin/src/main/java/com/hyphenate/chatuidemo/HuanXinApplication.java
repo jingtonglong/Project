@@ -16,7 +16,6 @@ package com.hyphenate.chatuidemo;
 import android.app.Application;
 import android.content.Context;
 
-import com.tencent.bugly.crashreport.CrashReport;
 
 public class HuanXinApplication extends Application {
 
@@ -35,11 +34,6 @@ public class HuanXinApplication extends Application {
 		super.onCreate();
         applicationContext = this;
         instance = this;
-
-		// bugly start
-		CrashReport.initCrashReport(getApplicationContext(), "52acc4be41", true);
-		// bugly end
-
         //init demo helper
         DemoHelper.getInstance().init(applicationContext);
 	}

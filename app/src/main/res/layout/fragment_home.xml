@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:background="@color/grey_100"
     android:orientation="vertical"
-    tools:context="com.ys.yarc.mvp.view.fragment.HomeFragment">
+    tools:context="com.jtlrm.ckd.mvp.view.fragment.HomeFragment">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"

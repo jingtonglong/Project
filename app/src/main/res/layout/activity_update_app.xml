@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:gravity="center_horizontal"
     android:orientation="vertical"
-    tools:context="com.ys.yarc.mvp.view.activity.UpdateAppActivity">
+    tools:context="com.jtlrm.ckd.mvp.view.activity.UpdateAppActivity">
 
     <com.base.sdk.widget.TitleBar
         android:id="@+id/update_title"

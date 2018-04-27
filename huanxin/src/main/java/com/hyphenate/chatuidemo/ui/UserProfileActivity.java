@@ -2,13 +2,13 @@ package com.hyphenate.chatuidemo.ui;
 
 import java.io.ByteArrayOutputStream;
 
-import com.bumptech.glide.Glide;
 import com.hyphenate.EMValueCallBack;
 import com.hyphenate.chat.EMClient;
 import com.hyphenate.chatuidemo.DemoHelper;
 import com.hyphenate.chatuidemo.R;
 import com.hyphenate.easeui.domain.EaseUser;
 import com.hyphenate.easeui.utils.EaseUserUtils;
+import com.squareup.picasso.Picasso;
 
 import android.app.AlertDialog;
 import android.app.AlertDialog.Builder;
@@ -123,9 +123,9 @@ public class UserProfileActivity extends BaseActivity implements OnClickListener
 				    }
 					tvNickName.setText(user.getNick());
 					if(!TextUtils.isEmpty(user.getAvatar())){
-						 Glide.with(UserProfileActivity.this).load(user.getAvatar()).placeholder(R.drawable.em_default_avatar).into(headAvatar);
+						 Picasso.with(UserProfileActivity.this).load(user.getAvatar()).placeholder(R.drawable.em_default_avatar).into(headAvatar);
 					}else{
-					    Glide.with(UserProfileActivity.this).load(R.drawable.em_default_avatar).into(headAvatar);
+						Picasso.with(UserProfileActivity.this).load(R.drawable.em_default_avatar).into(headAvatar);
 					}
 				}
 			}

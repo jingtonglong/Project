@@ -34,9 +34,9 @@ dependencies {
 
     compile 'com.youth.banner:banner:1.4.10'
 
-    compile 'com.scwang.smartrefresh:SmartRefreshLayout:1.0.3'
+    compile 'com.scwang.smartrefresh:SmartRefreshLayout:1.0.4'
     compile 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.31'
-    compile 'com.scwang.smartrefresh:SmartRefreshHeader:1.0.3'
+    compile 'com.scwang.smartrefresh:SmartRefreshHeader:1.0.4'
 
     compile 'com.github.bumptech.glide:glide:4.6.1'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.6.1'
@@ -63,7 +63,5 @@ dependencies {
     compile 'com.yanzhenjie:permission:1.1.2'
 
     // 视频框架不用的时候注销掉
-    compile 'com.shuyu:GSYVideoPlayer:4.1.1'
-
-    compile 'com.android.support:multidex:1.0.1'
+   // compile 'com.shuyu:GSYVideoPlayer:4.1.1'
 }

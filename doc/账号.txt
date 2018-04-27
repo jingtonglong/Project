@@ -1,0 +1,10 @@
+原型图地址：https://pro.modao.cc/app/a925ccca3c8b5b4bab09e662f935f938eed73527#screen=saee3e3e8379db1f4bc0507
+
+svn地址：https://119.6.97.227/svn/CKD2.0/CKDAndroid/Nutrition
+账号：jinTL 密码：jinTL101$
+账号：fanXM 密码：fanXM789#
+
+禅道：http://dzcd.rmmit.com:83
+账号：jingtonglong 密码：jinglong123456
+
+腾讯bugly：AppId:be9cedcad1 , App Key:3e605e71-a32b-4c24-9e77-17b2358f1b46
