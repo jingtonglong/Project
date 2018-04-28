@@ -8,13 +8,10 @@ import com.base.sdk.util.log.LogUtil;
 import com.hyphenate.chatuidemo.HuanXinApplication;
 import com.squareup.leakcanary.LeakCanary;
 import com.squareup.leakcanary.RefWatcher;
-import com.jtlrm.ckd.R;
 import com.jtlrm.ckd.net.RetrofitUtil;
 import com.jtlrm.ckd.util.EventBusUtil;
 import com.tencent.bugly.crashreport.CrashReport;
 
-import cn.jpush.android.api.CustomPushNotificationBuilder;
-import cn.jpush.android.api.JPushInterface;
 
 /**
  * date:    2017/9/13
@@ -31,7 +28,7 @@ public class MyApplication extends HuanXinApplication {
         EventBusUtil.openIndex();
         if (LeakCanary.isInAnalyzerProcess(this)) return;
         refWatcher =  LeakCanary.install(this);
-        initJpush();
+       // initJpush();
         // bugly start// 发布时候设置成false
         CrashReport.initCrashReport(getApplicationContext(), "be9cedcad1", true);
         // bugly end
@@ -41,20 +38,20 @@ public class MyApplication extends HuanXinApplication {
      * 初始化极光推送
      */
     private void initJpush() {
-        JPushInterface.setDebugMode(true);    // 设置开启日志,发布时请关闭日志
-        JPushInterface.init(this);            // 初始化 JPush
-        // 指定定制的 Notification Layout
-        CustomPushNotificationBuilder builder = new
-                CustomPushNotificationBuilder(this,
-                R.layout.notification_layout,
-                R.id.icon,
-                R.id.title,
-                R.id.text);
-        // 指定最顶层状态栏小图标
-        builder.statusBarDrawable = R.mipmap.logo_small;
-        // 指定下拉状态栏时显示的通知图标
-        builder.layoutIconDrawable = R.mipmap.ic_launcher;
-        JPushInterface.setDefaultPushNotificationBuilder(builder);
+//        JPushInterface.setDebugMode(true);    // 设置开启日志,发布时请关闭日志
+//        JPushInterface.init(this);            // 初始化 JPush
+//        // 指定定制的 Notification Layout
+//        CustomPushNotificationBuilder builder = new
+//                CustomPushNotificationBuilder(this,
+//                R.layout.notification_layout,
+//                R.id.icon,
+//                R.id.title,
+//                R.id.text);
+//        // 指定最顶层状态栏小图标
+//        builder.statusBarDrawable = R.mipmap.logo_small;
+//        // 指定下拉状态栏时显示的通知图标
+//        builder.layoutIconDrawable = R.mipmap.ic_launcher;
+//        JPushInterface.setDefaultPushNotificationBuilder(builder);
     }
 
     @Override

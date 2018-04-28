@@ -50,7 +50,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
-import cn.jpush.android.api.JPushInterface;
 
 public class MainActivity extends BaseActivity implements IMainView, RadioGroup.OnCheckedChangeListener {
 
@@ -147,7 +146,7 @@ public class MainActivity extends BaseActivity implements IMainView, RadioGroup.
     protected void initEvent() {
         radioGroup.setOnCheckedChangeListener(this);
         checkPermission();
-        checkJpush();
+       // checkJpush();
     }
 
 
@@ -155,9 +154,9 @@ public class MainActivity extends BaseActivity implements IMainView, RadioGroup.
      * 检查推送状态
      */
     private void checkJpush() {
-        if (JPushInterface.isPushStopped(getApplicationContext())) {
-            JPushInterface.resumePush(getApplicationContext());
-        }
+//        if (JPushInterface.isPushStopped(getApplicationContext())) {
+//            JPushInterface.resumePush(getApplicationContext());
+//        }
     }
 
 
