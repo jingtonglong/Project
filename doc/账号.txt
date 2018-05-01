@@ -8,3 +8,5 @@ svn地址：https://119.6.97.227/svn/CKD2.0/CKDAndroid/Nutrition
 账号：jingtonglong 密码：jinglong123456
 
 腾讯bugly：AppId:be9cedcad1 , App Key:3e605e71-a32b-4c24-9e77-17b2358f1b46
+
+标注网站：http://www.biaonimeia.com/file/227893/free

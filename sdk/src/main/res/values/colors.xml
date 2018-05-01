@@ -7,10 +7,14 @@
     <color name="app_color">#FF3285FF</color>
 
     <color name="login_color">#4C6EB4</color>
-    <color name="text_grey">#9e9e9e</color>
-    <color name="text_black">#424242</color>
+    <color name="text_grey">#9A9A9A</color>
+    <color name="text_black">#656565</color>
     <color name="text_black_deep">#BF000000</color>
+    <color name="text_green">#45D5A0</color>
+    <color name="margin_background">#F7F7F7</color>
+    <color name="line_color">#E3E3E3</color>
 
+    <color name="home_title_background"> #557CE3 </color>
 
     <!--MD_dialog相关-->
     <color name="card_background">#ffffff</color>

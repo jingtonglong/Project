@@ -14,7 +14,6 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.content.LocalBroadcastManager;
-import android.view.View;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
@@ -32,19 +31,14 @@ import com.hyphenate.chatuidemo.runtimepermissions.PermissionsManager;
 import com.hyphenate.chatuidemo.runtimepermissions.PermissionsResultAction;
 import com.hyphenate.chatuidemo.ui.*;
 import com.hyphenate.chatuidemo.ui.LoginActivity;
-import com.hyphenate.easeui.utils.EaseCommonUtils;
-import com.hyphenate.util.EMLog;
 import com.jtlrm.ckd.R;
 import com.jtlrm.ckd.base.acitvity.BaseActivity;
 import com.jtlrm.ckd.mvp.model.MainPresent;
-import com.jtlrm.ckd.mvp.model.NewsModel;
 import com.jtlrm.ckd.mvp.view.api.IMainView;
 import com.jtlrm.ckd.mvp.view.fragment.HomeFragment;
-import com.jtlrm.ckd.mvp.view.fragment.HotNewsFragment;
 import com.jtlrm.ckd.mvp.view.fragment.NewChatFragment;
-import com.jtlrm.ckd.mvp.view.fragment.NewsFragment;
 import com.jtlrm.ckd.mvp.view.fragment.PersonFragment;
-import com.jtlrm.ckd.mvp.view.fragment.RenCaiServiceFragment;
+import com.jtlrm.ckd.mvp.view.fragment.HuanZheGuanLiFragment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -56,8 +50,8 @@ public class MainActivity extends BaseActivity implements IMainView, RadioGroup.
     @BindView(R.id.main_group)
     RadioGroup radioGroup;
     FragmentManager manager;
-    NewsFragment homeFragment;
-    RenCaiServiceFragment renCaiFragment;
+    HomeFragment homeFragment;
+    HuanZheGuanLiFragment renCaiFragment;
     NewChatFragment chatFragment;
     PersonFragment personFragment;
     private List<Fragment> fragments = new ArrayList<>();
@@ -70,6 +64,7 @@ public class MainActivity extends BaseActivity implements IMainView, RadioGroup.
     private LocalBroadcastManager broadcastManager;
     public boolean isConflict = false;
     private InviteMessgeDao inviteMessgeDao;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
@@ -130,8 +125,8 @@ public class MainActivity extends BaseActivity implements IMainView, RadioGroup.
     @Override
     protected void obtainData() {
         FragmentTransaction ft = manager.beginTransaction();
-        if (homeFragment == null) homeFragment = HotNewsFragment.newInstance(new NewsModel());
-        if (renCaiFragment == null) renCaiFragment = new RenCaiServiceFragment();
+        if (homeFragment == null) homeFragment = new HomeFragment();
+        if (renCaiFragment == null) renCaiFragment = new HuanZheGuanLiFragment();
         if (chatFragment == null) chatFragment = NewChatFragment.newInstance();
         if (personFragment == null) personFragment = new PersonFragment();
         fragments.add(homeFragment);
@@ -146,7 +141,7 @@ public class MainActivity extends BaseActivity implements IMainView, RadioGroup.
     protected void initEvent() {
         radioGroup.setOnCheckedChangeListener(this);
         checkPermission();
-       // checkJpush();
+        // checkJpush();
     }
 
 
@@ -288,7 +283,6 @@ public class MainActivity extends BaseActivity implements IMainView, RadioGroup.
     }
 
 
-
     private void registerBroadcastReceiver() {
         broadcastManager = LocalBroadcastManager.getInstance(this);
         IntentFilter intentFilter = new IntentFilter();
@@ -343,6 +337,7 @@ public class MainActivity extends BaseActivity implements IMainView, RadioGroup.
         });
 
     }
+
     /**
      * get unread event notification count, including application, accepted, etc
      *

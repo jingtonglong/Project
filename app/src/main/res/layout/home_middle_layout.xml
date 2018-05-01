@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="220dp"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <LinearLayout style="@style/home_middle_left">
+
+            <LinearLayout style="@style/home_middle_left_linear">
+
+                <ImageView
+                    style="@style/home_middle_left_icon"
+                    android:src="@drawable/sui_fang_paiban_icon" />
+
+                <TextView
+                    style="@style/home_middle_left_label"
+                    android:text="随访排班" />
+            </LinearLayout>
+
+            <TextView
+                style="@style/home_middle_left_content"
+                android:text="今日计划 21人" />
+        </LinearLayout>
+
+        <View style="@style/line_horizontal" />
+
+        <LinearLayout style="@style/home_middle_left">
+
+            <LinearLayout style="@style/home_middle_left_linear">
+
+                <ImageView
+                    style="@style/home_middle_left_icon"
+                    android:src="@drawable/shu_ju_shen_he_icon" />
+
+                <TextView
+                    style="@style/home_middle_left_label"
+                    android:text="数据审核" />
+            </LinearLayout>
+
+            <TextView
+                style="@style/home_middle_left_content"
+                android:text="待审核数据 21条" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <View style="@style/line_vertical" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <LinearLayout style="@style/home_middle_right">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/home_middle_right_label"
+                    android:text="新增营养评估" />
+
+                <ImageView
+                    style="@style/home_middle_right_icon"
+                    android:src="@drawable/home_arrow" />
+            </RelativeLayout>
+
+            <TextView
+                style="@style/home_middle_right_content"
+                android:text="快速记录营养检查数据" />
+        </LinearLayout>
+
+        <View style="@style/line_horizontal" />
+
+        <LinearLayout style="@style/home_middle_right">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/home_middle_right_label"
+                    android:text="量表评估" />
+
+                <ImageView
+                    style="@style/home_middle_right_icon"
+                    android:src="@drawable/home_arrow" />
+            </RelativeLayout>
+
+            <TextView
+                style="@style/home_middle_right_content"
+                android:text="科学评估营养状态" />
+        </LinearLayout>
+
+        <View style="@style/line_horizontal" />
+
+        <LinearLayout style="@style/home_middle_right">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/home_middle_right_label"
+                    android:text="录入生化数据" />
+
+                <ImageView
+                    style="@style/home_middle_right_icon"
+                    android:src="@drawable/home_arrow" />
+            </RelativeLayout>
+
+            <TextView
+                style="@style/home_middle_right_content"
+                android:text="帮助患者录入生化数据" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

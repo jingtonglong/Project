@@ -40,4 +40,22 @@
         <item name="colorControlNormal">@color/app_color</item>
         <item name="colorControlActivated">@color/white</item>
     </style>
+
+    <style name="line_horizontal">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:background">@color/line_color</item>
+    </style>
+
+    <style name="line_vertical">
+        <item name="android:layout_width">1dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:background">@color/line_color</item>
+    </style>
+
+    <style name="line_margin">
+        <item name="android:layout_width">match_parent</item>
+        <item name="layout_height">20dp</item>
+        <item name="android:background">@color/margin_background</item>
+    </style>
 </resources>

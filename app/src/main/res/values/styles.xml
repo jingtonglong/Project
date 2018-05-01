@@ -207,4 +207,71 @@
         <item name="android:textSize">20sp</item>
         <item name="android:layout_marginTop">54dp</item>
     </style>
+
+    <style name="home_middle_left_linear">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:padding">@dimen/padding_size_middle</item>
+    </style>
+
+    <style name="home_middle_left_icon">
+        <item name="android:layout_width">@dimen/big_icon</item>
+        <item name="android:layout_height">@dimen/big_icon</item>
+    </style>
+
+    <style name="home_middle_left_label">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/middle_text_size</item>
+        <item name="android:textColor">@color/text_black</item>
+        <item name="android:layout_marginTop">@dimen/margin_middle</item>
+    </style>
+
+    <style name="home_middle_left_content">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:textColor">@color/text_grey</item>
+    </style>
+
+    <style name="home_middle_left">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+
+    <style name="home_middle_right">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:padding">@dimen/padding_size_middle</item>
+    </style>
+
+    <style name="home_middle_right_label">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/text_black</item>
+    </style>
+
+    <style name="home_middle_right_icon">
+        <item name="android:layout_width">@dimen/icon_size_middle</item>
+        <item name="android:layout_height">@dimen/icon_size_middle</item>
+        <item name="android:layout_alignParentRight">true</item>
+    </style>
+
+    <style name="home_middle_right_content">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_alignParentBottom">true</item>
+        <item name="android:layout_marginTop">@dimen/margin_middle</item>
+        <item name="android:textColor">"#A6D0DD"</item>
+    </style>
+
 </resources>

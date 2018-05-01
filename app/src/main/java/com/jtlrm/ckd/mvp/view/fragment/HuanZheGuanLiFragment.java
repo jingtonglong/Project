@@ -5,13 +5,13 @@ import com.jtlrm.ckd.R;
 import com.jtlrm.ckd.base.fragment.BaseFragment;
 
 /**
- * 人才服务
+ * 患者管理
  */
-public class RenCaiServiceFragment extends BaseFragment {
+public class HuanZheGuanLiFragment extends BaseFragment {
 
     @Override
     protected int setContentLayout() {
-        return R.layout.fragment_ren_cai;
+        return R.layout.fragment_huan_zhe_guan_li;
     }
 
     @Override
