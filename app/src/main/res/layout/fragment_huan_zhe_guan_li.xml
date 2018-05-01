@@ -1,14 +1,82 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="com.jtlrm.ckd.mvp.view.fragment.HuanZheGuanLiFragment">
+
     <com.base.sdk.widget.TitleBar
         android:id="@+id/huanzhe_guanli_title"
         android:layout_width="match_parent"
         android:layout_height="@dimen/title_bar_size" />
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/margin_background"
+        android:padding="@dimen/padding_size_middle"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/white_search_background"
+            android:gravity="center_vertical"
+            android:layout_weight="3"
+            android:layout_marginLeft="@dimen/margin_middle"
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_width="@dimen/icon_size_middle"
+                android:layout_height="@dimen/icon_size_middle"
+                android:src="@drawable/search_icon"
+                />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="患者姓名/手机号查询"
+                android:textColor="@color/text_grey"
+                android:background="@null"
+                android:maxLines="1"
+                android:layout_marginLeft="@dimen/margin_middle"
+                android:textSize="@dimen/text_size_middle"
+                />
+        </LinearLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/text_size_middle"
+            android:textColor="@color/text_black"
+            android:text="共15人"
+            android:gravity="center"
+            android:layout_weight="7"
+            />
+    </LinearLayout>
+
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        android:id="@+id/news_refreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white"
+        app:srlAccentColor="@android:color/white"
+        app:srlEnableHeaderTranslationContent="false"
+        app:srlEnableNestedScrolling="true"
+        app:srlEnablePreviewInEditMode="false"
+        app:srlPrimaryColor="@color/colorPrimary">
+
+        <com.scwang.smartrefresh.header.MaterialHeader
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/news_recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/white"
+            android:clipToPadding="false"
+            android:overScrollMode="never"
+            tools:listitem="@layout/huanzhe_manager_item" />
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
 
 </LinearLayout>
