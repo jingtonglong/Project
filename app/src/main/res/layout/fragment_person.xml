@@ -6,119 +6,153 @@
     android:orientation="vertical"
     tools:context="com.jtlrm.ckd.mvp.view.fragment.PersonFragment">
 
-    <ImageView
-        android:id="@+id/person_top_image"
+
+    <TextView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="120dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/person_top_background"
+        android:gravity="center_horizontal"
+        android:padding="@dimen/padding_size_middle"
+        android:text="个人中心"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_size_middle" />
+
+    <ImageView
+        android:layout_width="@dimen/picture_height_middle"
+        android:layout_height="@dimen/picture_height_middle"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="-20dp"
+        android:src="@drawable/person_change" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/margin_middle"
+        android:text="张娟"
+        android:textColor="@color/text_black"
+        android:textSize="@dimen/text_size" />
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/white_person_background"
+                android:orientation="vertical">
 
-            <RelativeLayout
-                android:id="@+id/person_1"
-                style="@style/person_relative">
+                <RelativeLayout
+                    android:id="@+id/person_1"
+                    style="@style/person_relative">
 
-                <ImageView
-                    style="@style/person_image_left"
-                    android:src="@drawable/person_1" />
+                    <ImageView
+                        style="@style/person_image_left"
+                        android:src="@drawable/wodeerweima" />
 
-                <TextView
-                    style="@style/person_text"
-                    android:text="个人信息" />
+                    <TextView
+                        style="@style/person_text"
+                        android:text="我的二维码" />
 
-                <ImageView style="@style/person_image_right" />
-            </RelativeLayout>
+                    <ImageView style="@style/person_image_right" />
+                </RelativeLayout>
 
-            <View
-                style="@style/line"
-                android:layout_marginLeft="@dimen/margin_middle" />
+                <View
+                    style="@style/line"
+                    android:layout_marginLeft="@dimen/margin_middle" />
 
-            <RelativeLayout
-                android:id="@+id/person_2"
-                style="@style/person_relative">
+                <RelativeLayout
+                    android:id="@+id/person_2"
+                    style="@style/person_relative">
 
-                <ImageView
-                    style="@style/person_image_left"
-                    android:src="@drawable/person_2" />
+                    <ImageView
+                        style="@style/person_image_left"
+                        android:src="@drawable/wodeziliao" />
 
-                <TextView
-                    style="@style/person_text"
-                    android:text="密码设置" />
+                    <TextView
+                        style="@style/person_text"
+                        android:text="我的资料" />
 
-                <ImageView style="@style/person_image_right" />
-            </RelativeLayout>
+                    <ImageView style="@style/person_image_right" />
+                </RelativeLayout>
+            </LinearLayout>
 
-            <View
-                style="@style/line"
-                android:layout_marginLeft="@dimen/margin_middle" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/white_person_background"
+                android:orientation="vertical">
 
-            <RelativeLayout
-                android:id="@+id/person_3"
-                style="@style/person_relative">
+                <RelativeLayout
+                    android:id="@+id/person_3"
+                    style="@style/person_relative"
+                    android:layout_marginTop="@dimen/margin_middle">
 
-                <ImageView
-                    style="@style/person_image_left"
-                    android:src="@drawable/person_3" />
+                    <ImageView
+                        style="@style/person_image_left"
+                        android:src="@drawable/zhanghaoanquan" />
 
-                <TextView
-                    style="@style/person_text"
-                    android:text="人才登记" />
+                    <TextView
+                        style="@style/person_text"
+                        android:text="账号安全" />
 
-                <ImageView style="@style/person_image_right" />
-            </RelativeLayout>
+                    <ImageView style="@style/person_image_right" />
+                </RelativeLayout>
 
-            <RelativeLayout
-                android:id="@+id/person_4"
-                style="@style/person_relative"
-                android:layout_marginTop="@dimen/margin_middle">
+                <View
+                    style="@style/line"
+                    android:layout_marginLeft="@dimen/margin_middle" />
 
-                <ImageView
-                    style="@style/person_image_left"
-                    android:src="@drawable/person_4" />
+                <RelativeLayout
+                    android:id="@+id/person_4"
+                    style="@style/person_relative">
 
-                <TextView
-                    style="@style/person_text"
-                    android:text="检查更新" />
+                    <ImageView
+                        style="@style/person_image_left"
+                        android:src="@drawable/guanyuwomen" />
 
-                <ImageView style="@style/person_image_right" />
-            </RelativeLayout>
+                    <TextView
+                        style="@style/person_text"
+                        android:text="关于我们与帮助" />
 
-            <View
-                style="@style/line"
-                android:layout_marginLeft="@dimen/margin_middle" />
+                    <ImageView style="@style/person_image_right" />
+                </RelativeLayout>
+            </LinearLayout>
+
 
             <RelativeLayout
                 android:id="@+id/person_5"
-                style="@style/person_relative">
+                style="@style/person_relative"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/white_person_background">
 
                 <ImageView
                     style="@style/person_image_left"
-                    android:src="@drawable/person_5" />
+                    android:src="@drawable/tuichuyingyong" />
 
                 <TextView
                     style="@style/person_text"
-                    android:text="通知设置" />
+                    android:text="退出应用" />
 
                 <ImageView style="@style/person_image_right" />
             </RelativeLayout>
-
-            <Button
-                android:id="@+id/logout"
-                android:layout_width="match_parent"
-                android:layout_height="35dp"
-                android:layout_gravity="center"
-                android:layout_marginTop="@dimen/margin_top_big"
-                android:background="@color/white"
-                android:gravity="center"
-                android:text="退出登录"
-                android:textColor="@color/red_500" />
         </LinearLayout>
     </ScrollView>
 

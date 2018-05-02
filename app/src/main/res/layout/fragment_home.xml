@@ -22,7 +22,7 @@
             android:orientation="vertical">
 
             <com.youth.banner.Banner
-                android:id="@+id/convenientBanner"
+                android:id="@+id/home_banner"
                 android:layout_width="match_parent"
                 android:layout_height="160dp"
                 app:is_auto_play="true" />

@@ -100,7 +100,6 @@
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:padding">@dimen/padding_size_middle</item>
-        <item name="android:background">@color/white</item>
     </style>
 
     <style name="person_image_left">
@@ -170,6 +169,10 @@
         <item name="android:orientation">horizontal</item>
         <item name="android:gravity">center_vertical</item>
         <item name="android:padding">@dimen/padding_size_middle</item>
+        <item name="android:background">@drawable/person_input_background</item>
+        <item name="android:layout_marginLeft">@dimen/margin_middle</item>
+        <item name="android:layout_marginRight">@dimen/margin_middle</item>
+        <item name="android:layout_marginTop">@dimen/margin_middle</item>
     </style>
 
     <style name="person_info_icon">
@@ -197,15 +200,13 @@
     </style>
 
     <style name="submit_button">
-        <item name="android:layout_width">280dp</item>
+        <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">38dp</item>
         <item name="android:layout_gravity">center_horizontal</item>
-        <item name="android:layout_marginLeft">58dp</item>
-        <item name="android:layout_marginRight">58dp</item>
-        <item name="android:background">@drawable/login_submit</item>
+        <item name="android:layout_margin">@dimen/margin_middle</item>
+        <item name="android:background">@drawable/green_submit_background</item>
         <item name="android:textColor">@color/white</item>
         <item name="android:textSize">20sp</item>
-        <item name="android:layout_marginTop">54dp</item>
     </style>
 
     <style name="home_middle_left_linear">
@@ -271,7 +272,16 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_alignParentBottom">true</item>
         <item name="android:layout_marginTop">@dimen/margin_middle</item>
-        <item name="android:textColor">"#A6D0DD"</item>
+        <item name="android:textColor">@color/home_blue</item>
     </style>
 
+    <style name="text_orange">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/text_orange</item>
+        <item name="android:textSize">@dimen/text_size_small</item>
+        <item name="android:paddingLeft">@dimen/padding_size_middle</item>
+        <item name="android:paddingRight">@dimen/padding_size_middle</item>
+        <item name="android:background">@drawable/orange_text_background</item>
+    </style>
 </resources>

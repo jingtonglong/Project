@@ -14,10 +14,12 @@ import com.jtlrm.ckd.R;
 import com.jtlrm.ckd.base.fragment.BaseFragment;
 import com.jtlrm.ckd.mvp.view.activity.ChangePasswordActivity;
 import com.jtlrm.ckd.mvp.view.activity.LoginActivity;
+import com.jtlrm.ckd.mvp.view.activity.MyQRCodeActivity;
 import com.jtlrm.ckd.mvp.view.activity.NoticeSettingActivity;
 import com.jtlrm.ckd.mvp.view.activity.PersonInfoActivity;
 import com.jtlrm.ckd.mvp.view.activity.RenCaiDengJiActivity;
 import com.jtlrm.ckd.mvp.view.activity.UpdateAppActivity;
+import com.jtlrm.ckd.mvp.view.activity.ZhangHaoActivity;
 
 import java.util.List;
 
@@ -29,12 +31,10 @@ import butterknife.BindViews;
  */
 public class PersonFragment extends BaseFragment implements View.OnClickListener {
 
-    @BindView(R.id.person_top_image)
-    ImageView personTopImage;
+
     @BindViews({R.id.person_1, R.id.person_2, R.id.person_3, R.id.person_4, R.id.person_5})
     List<RelativeLayout> listRelative;
-    @BindView(R.id.logout)
-    Button loginOut;
+
     @Override
     protected int setContentLayout() {
         return R.layout.fragment_person;
@@ -42,7 +42,7 @@ public class PersonFragment extends BaseFragment implements View.OnClickListener
 
     @Override
     protected void initView() {
-        ImageUtil.loadImageGif(personTopImage, R.drawable.person_top);
+
     }
 
     @Override
@@ -55,28 +55,24 @@ public class PersonFragment extends BaseFragment implements View.OnClickListener
         for (RelativeLayout re : listRelative) {
             re.setOnClickListener(this);
         }
-        loginOut.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.person_1:
-                startActivity(new Intent(context, PersonInfoActivity.class));
+                startActivity(new Intent(context, MyQRCodeActivity.class));
                 break;
             case R.id.person_2:
-                startActivity(new Intent(context, ChangePasswordActivity.class));
+                startActivity(new Intent(context, PersonInfoActivity.class));
                 break;
             case R.id.person_3:
-                startActivity(new Intent(context, RenCaiDengJiActivity.class));
+                startActivity(new Intent(context, ZhangHaoActivity.class));
                 break;
             case R.id.person_4:
                 startActivity(new Intent(context, UpdateAppActivity.class));
                 break;
             case R.id.person_5:
-                startActivity(new Intent(context, NoticeSettingActivity.class));
-                break;
-            case R.id.logout:
                 loginout();
                 break;
         }

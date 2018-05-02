@@ -27,6 +27,11 @@ public class SplashActivity extends BaseActivity {
     }
 
     @Override
+    protected void initBarColor() {
+
+    }
+
+    @Override
     protected void setContentLayout() {
 
     }

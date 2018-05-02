@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".mvp.view.activity.ZhangHaoActivity">
+
+    <com.base.sdk.widget.TitleBar
+        android:id="@+id/zhanghao_title"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_bar_size" />
+
+    <RelativeLayout style="@style/person_relative"
+        android:onClick="changePassword"
+        >
+
+        <ImageView
+            style="@style/person_image_left"
+            android:src="@drawable/person_1" />
+
+        <TextView
+            style="@style/person_text"
+            android:text="修改密码" />
+
+        <ImageView style="@style/person_image_right" />
+    </RelativeLayout>
+
+    <View
+        style="@style/line"
+        android:layout_marginLeft="@dimen/margin_middle" />
+
+    <RelativeLayout style="@style/person_relative"
+        android:onClick="changePhone"
+        >
+
+        <ImageView
+            style="@style/person_image_left"
+            android:src="@drawable/wodeziliao" />
+
+        <TextView
+            style="@style/person_text"
+            android:text="修改手机号" />
+
+        <ImageView style="@style/person_image_right" />
+    </RelativeLayout>
+</LinearLayout>

@@ -10,19 +10,15 @@ import android.support.annotation.DrawableRes;
 import android.support.annotation.StringRes;
 import android.support.v4.content.res.ResourcesCompat;
 import android.text.TextUtils;
-import android.view.View;
 
-import com.base.sdk.R;
 import com.base.sdk.base.api.PositiveOrCancelInterface;
 import com.base.sdk.base.net.LifeCycleEvent;
-import com.base.sdk.util.ActivityStackManager;
-import com.base.sdk.util.CommonUtil;
 import com.base.sdk.util.ToastUtil;
 import com.base.sdk.util.log.LogUtil;
 import com.flyco.dialog.listener.OnBtnClickL;
 import com.flyco.dialog.widget.NormalDialog;
-
-import org.zackratos.ultimatebar.UltimateBar;
+import com.gyf.barlibrary.ImmersionBar;
+import com.jtlrm.ckd.R;
 
 import butterknife.ButterKnife;
 import io.reactivex.Observable;
@@ -39,9 +35,6 @@ import io.reactivex.subjects.PublishSubject;
  */
 
 public abstract class BaseActivity extends AbstractActivity implements IBaseActivity {
-
-    //状态栏导航栏颜色工具类
-    private UltimateBar ultimateBar;
 
     //用于控制retrofit的生命周期，以便在destroy或其他状态时终止网络请求
     public PublishSubject<LifeCycleEvent> lifecycleSubject = PublishSubject.create();
@@ -68,9 +61,11 @@ public abstract class BaseActivity extends AbstractActivity implements IBaseActi
             }
         };
     }
+
     protected Activity context;
     private ProgressDialog pd;
     private Activity activity;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -90,24 +85,23 @@ public abstract class BaseActivity extends AbstractActivity implements IBaseActi
 
     }
 
-    private void initBarColor() {
-        int color = getResourceColor(R.color.colorPrimary);
-        setBarColor(color, 0);
+    protected void initBarColor() {
+        int color = R.color.statusColor_background;
+        int text = R.color.statusColor_text;
+        setBarColor(color, 0, text);
     }
 
-
-    public UltimateBar getUltimateBar() {
-        if (ultimateBar == null) {
-            ultimateBar = new UltimateBar(this);
-        }
-        return ultimateBar;
-    }
 
     //设置状态栏、导航栏颜色，第二个参数控制透明度，布局内容不占据状态栏空间
-    public void setBarColor(int statusColor, int statusAlpha) {
-        getUltimateBar().setColorBar(statusColor, statusAlpha);
-    }
+    public void setBarColor(int statusColor, float statusAlpha, int textColor) {
+        ImmersionBar.with(this).statusBarColor(statusColor)
+                .statusBarAlpha(statusAlpha)
+                .statusBarDarkFont(true, 0.2f) // 判断当前设备支不支持状态栏字体设置为黑色
+                .flymeOSStatusBarFontColor(textColor)
+                .fitsSystemWindows(true) // 不用沉浸式
+                .init();
 
+    }
 
 
     @Override
@@ -128,6 +122,7 @@ public abstract class BaseActivity extends AbstractActivity implements IBaseActi
         lifecycleSubject.onNext(LifeCycleEvent.DESTROY);
         dissMissDialog();
         dismissLoadingDialog();
+        ImmersionBar.with(this).destroy();  //必须调用该方法，防止内存泄漏，不调用该方法，如果界面bar发生改变，在不关闭app的情况下，退出此界面再进入将记忆最后一次bar改变的状态
     }
 
     @Override
@@ -163,7 +158,7 @@ public abstract class BaseActivity extends AbstractActivity implements IBaseActi
 
     public void showToast(String msg) {
         if (!TextUtils.isEmpty(msg)) {
-            ToastUtil.TextToast(getContext(),msg);
+            ToastUtil.TextToast(getContext(), msg);
         }
     }
 
@@ -191,10 +186,10 @@ public abstract class BaseActivity extends AbstractActivity implements IBaseActi
     }
 
 
-
     public Activity getActivity() {
         return activity;
     }
+
     /**
      * 显示确认
      *
@@ -202,6 +197,7 @@ public abstract class BaseActivity extends AbstractActivity implements IBaseActi
      * @param result
      */
     NormalDialog dialog;
+
     protected void showCustomDialog(String msg, final PositiveOrCancelInterface result) {
         if (context != null) {
             dialog = new NormalDialog(context);

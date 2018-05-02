@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".mvp.view.activity.ChangePhoneActivity">
+
+    <com.base.sdk.widget.TitleBar
+        android:id="@+id/change_phone_title"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_bar_size" />
+
+    <LinearLayout style="@style/person_info_linear">
+
+        <ImageView
+            style="@style/person_info_icon"
+            android:src="@drawable/change_phone" />
+
+        <EditText
+            style="@style/person_info_input"
+            android:hint="请输入手机号" />
+    </LinearLayout>
+
+
+    <LinearLayout style="@style/person_info_linear">
+
+        <ImageView
+            style="@style/person_info_icon"
+            android:src="@drawable/yanzhengma" />
+
+
+        <EditText
+            style="@style/person_info_input"
+            android:layout_width="200dp"
+            android:hint="请输入接收到的验证码" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/margin_middle"
+            android:gravity="end"
+            android:textColor="@color/text_orange"
+            android:text="获取验证码" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/submit"
+        style="@style/submit_button"
+        android:text="确定" />
+</LinearLayout>

@@ -40,13 +40,12 @@
             android:orientation="horizontal">
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+               style="@style/text_orange"
                 android:text="快速" />
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                style="@style/text_orange"
+                android:layout_marginLeft="@dimen/margin_middle"
                 android:text="高效" />
         </LinearLayout>
     </LinearLayout>
