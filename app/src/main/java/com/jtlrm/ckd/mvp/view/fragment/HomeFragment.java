@@ -6,6 +6,7 @@ import android.widget.ImageView;
 
 import com.base.sdk.util.ImageUtil;
 import com.base.sdk.widget.TitleBar;
+import com.gyf.barlibrary.ImmersionBar;
 import com.jtlrm.ckd.R;
 import com.jtlrm.ckd.base.fragment.BaseFragment;
 import com.youth.banner.Banner;
@@ -45,6 +46,11 @@ public class HomeFragment extends BaseFragment {
         banner.setImageLoader(new GlideImageLoader());
         banner.setImages(BANNER_ITEMS);
         banner.start();
+    }
+
+    @Override
+    protected boolean isImmersionBarEnabled() {
+        return true;
     }
 
     @Override

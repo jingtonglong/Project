@@ -58,4 +58,10 @@
         <item name="android:layout_height">20dp</item>
         <item name="android:background">@color/margin_background</item>
     </style>
+
+    <style name="title_linear">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">63dp</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
 </resources>

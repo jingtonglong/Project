@@ -105,6 +105,11 @@ public class MainActivity extends BaseActivity implements IMainView, RadioGroup.
     }
 
     @Override
+    protected void initBarColor() {
+        //super.initBarColor();
+    }
+
+    @Override
     protected void initView() {
         requestPermissions();
         manager = getSupportFragmentManager();

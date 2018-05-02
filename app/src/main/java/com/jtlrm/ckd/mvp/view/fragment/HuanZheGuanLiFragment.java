@@ -4,6 +4,7 @@ package com.jtlrm.ckd.mvp.view.fragment;
 import android.view.View;
 
 import com.base.sdk.widget.TitleBar;
+import com.gyf.barlibrary.ImmersionBar;
 import com.jtlrm.ckd.R;
 import com.jtlrm.ckd.base.fragment.BaseFragment;
 
@@ -27,6 +28,12 @@ public class HuanZheGuanLiFragment extends BaseFragment {
         titleBar.tvRight.setText("新患者建档");
         titleBar.tvRight.setVisibility(View.VISIBLE);
     }
+
+    @Override
+    protected boolean isImmersionBarEnabled() {
+        return true;
+    }
+
 
     @Override
     protected void obtainData() {

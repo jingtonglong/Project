@@ -7,6 +7,7 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
 import com.base.sdk.util.ImageUtil;
+import com.gyf.barlibrary.ImmersionBar;
 import com.hyphenate.EMCallBack;
 import com.hyphenate.chatuidemo.DemoHelper;
 import com.hyphenate.chatuidemo.ui.MainActivity;
@@ -114,4 +115,11 @@ public class PersonFragment extends BaseFragment implements View.OnClickListener
             }
         });
     }
+
+    @Override
+    protected boolean isImmersionBarEnabled() {
+        return true;
+    }
+
+
 }

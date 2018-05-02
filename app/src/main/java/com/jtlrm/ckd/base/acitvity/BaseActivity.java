@@ -100,7 +100,6 @@ public abstract class BaseActivity extends AbstractActivity implements IBaseActi
                 .flymeOSStatusBarFontColor(textColor)
                 .fitsSystemWindows(true) // 不用沉浸式
                 .init();
-
     }
 
 

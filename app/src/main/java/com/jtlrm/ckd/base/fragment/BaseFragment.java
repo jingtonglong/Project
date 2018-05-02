@@ -6,6 +6,8 @@ import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.annotation.CheckResult;
 import android.support.annotation.IdRes;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.text.TextUtils;
 import android.util.Log;
@@ -18,6 +20,7 @@ import com.base.sdk.base.net.LifeCycleEvent;
 import com.base.sdk.util.CommonUtil;
 import com.base.sdk.util.ToastUtil;
 import com.base.sdk.widget.loadlayout.LoadLayout;
+import com.gyf.barlibrary.ImmersionBar;
 
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
@@ -39,7 +42,7 @@ import io.reactivex.subjects.PublishSubject;
  */
 public abstract class BaseFragment extends Fragment implements IBaseFragment {
 
-
+    protected ImmersionBar mImmersionBar;
     //根布局视图
     private View mContentView;
     //用于butterknife解绑
@@ -97,6 +100,12 @@ public abstract class BaseFragment extends Fragment implements IBaseFragment {
         onFragmentVisiable();
     }
 
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        if (isImmersionBarEnabled())
+            initImmersionBar();
+    }
 
     //设置并返回布局ID
     protected abstract int setContentLayout();
@@ -147,6 +156,32 @@ public abstract class BaseFragment extends Fragment implements IBaseFragment {
     public void onDestroy() {
         super.onDestroy();
         lifecycleSubject.onNext(LifeCycleEvent.DESTROY);
+        if (mImmersionBar != null)
+            mImmersionBar.destroy();
+    }
+
+    @Override
+    public void onHiddenChanged(boolean hidden) {
+        super.onHiddenChanged(hidden);
+        if (!hidden && mImmersionBar != null)
+            mImmersionBar.init();
+    }
+
+    /**
+     * 是否在Fragment使用沉浸式
+     *
+     * @return the boolean
+     */
+    protected boolean isImmersionBarEnabled() {
+        return false;
+    }
+
+    /**
+     * 初始化沉浸式
+     */
+    protected void initImmersionBar() {
+        mImmersionBar = ImmersionBar.with(getActivity());
+        mImmersionBar.keyboardEnable(true).statusBarDarkFont(true, 0.2f).navigationBarWithKitkatEnable(false).init();
     }
 
     /**
