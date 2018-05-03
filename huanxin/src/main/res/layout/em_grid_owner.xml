@@ -15,7 +15,7 @@
             android:id="@+id/iv_avatar"
             android:layout_width="55dp"
             android:layout_height="55dp"
-            android:src="@drawable/em_smiley_add_btn"
+            android:src="@drawable/add_member"
             android:scaleType="fitXY"
             />
         <LinearLayout
@@ -23,6 +23,7 @@
             android:layout_width="50dp"
             android:layout_height="2dp"
             android:orientation="horizontal"
+            android:visibility="gone"
             android:background="@color/holo_red_light"/>
         <TextView 
             android:id="@+id/tv_name"
@@ -39,8 +40,8 @@
         android:id="@+id/badge_delete"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/em_appitem_del_btn"
-        android:visibility="invisible" />
+        android:src="@drawable/delete_member"
+        android:visibility="visible" />
     
 
 

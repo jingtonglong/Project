@@ -795,12 +795,12 @@ public class DemoHelper {
         
         @Override
         public void onMemberJoined(String groupId, String member) {
-            showToast("onMemberJoined: " + member);
+            showToast("成员加入: " + member);
         }
         
         @Override
         public void onMemberExited(String groupId, String member) {
-            showToast("onMemberExited: " + member);
+            showToast("成员退出: " + member);
         }
 
         @Override

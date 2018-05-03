@@ -9,6 +9,7 @@
         android:id="@+id/application_item"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:visibility="gone"
         app:contactItemImage="@drawable/em_new_friends_icon"
         app:contactItemName="@string/Application_and_notify" />
 
@@ -17,12 +18,20 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:contactItemImage="@drawable/em_groups_icon"
-        app:contactItemName="@string/group_chat" />
+        app:contactItemName="我的群组" />
+
+    <com.hyphenate.chatuidemo.widget.ContactItemView
+        android:id="@+id/my_worker_item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:contactItemImage="@drawable/my_worker"
+        app:contactItemName="我的同事" />
 
     <com.hyphenate.chatuidemo.widget.ContactItemView
         android:id="@+id/chat_room_item"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:visibility="gone"
         app:contactItemImage="@drawable/em_groups_icon"
         app:contactItemName="@string/chat_room" />
 
@@ -30,6 +39,7 @@
         android:id="@+id/robot_item"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:visibility="gone"
         app:contactItemImage="@drawable/em_groups_icon"
         app:contactItemName="@string/robot_chat" />
 
@@ -37,6 +47,7 @@
         android:id="@+id/conference_item"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:visibility="gone"
         app:contactItemImage="@drawable/em_chat_video_call_normal"
         app:contactItemName="@string/voice_and_video_conference" />
 

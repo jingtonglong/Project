@@ -123,8 +123,6 @@ public class GroupDetailsActivity extends BaseActivity implements OnClickListene
         RelativeLayout changeGroupNameLayout = (RelativeLayout) findViewById(R.id.rl_change_group_name);
         RelativeLayout changeGroupDescriptionLayout = (RelativeLayout) findViewById(R.id.rl_change_group_description);
         RelativeLayout changeGroupExtension = (RelativeLayout) findViewById(R.id.rl_change_group_extension);
-        RelativeLayout idLayout = (RelativeLayout) findViewById(R.id.rl_group_id);
-        idLayout.setVisibility(View.VISIBLE);
         TextView idText = (TextView) findViewById(R.id.tv_group_id_value);
 
         RelativeLayout rl_switch_block_groupmsg = (RelativeLayout) findViewById(R.id.rl_switch_block_groupmsg);
@@ -160,8 +158,8 @@ public class GroupDetailsActivity extends BaseActivity implements OnClickListene
         groupChangeListener = new GroupChangeListener();
         EMClient.getInstance().groupManager().addGroupChangeListener(groupChangeListener);
 
-        ((TextView) findViewById(R.id.group_name)).setText(group.getGroupName() + "(" + group.getMemberCount() + st);
-
+        ((TextView) findViewById(R.id.group_name)).setText("群成员(" + group.getMemberCount() + st);
+        ((TextView) findViewById(R.id.group_name_content)).setText(group.getGroupName() + "");
         membersAdapter = new GridAdapter(this, R.layout.em_grid_owner, new ArrayList<String>());
         EaseExpandGridView userGridview = (EaseExpandGridView) findViewById(R.id.gridview);
         userGridview.setAdapter(membersAdapter);
@@ -305,7 +303,8 @@ public class GroupDetailsActivity extends BaseActivity implements OnClickListene
                                     EMClient.getInstance().groupManager().changeGroupName(groupId, returnData);
                                     runOnUiThread(new Runnable() {
                                         public void run() {
-                                            ((TextView) findViewById(R.id.group_name)).setText(group.getGroupName() + "(" + group.getMemberCount() + ")");
+                                            ((TextView) findViewById(R.id.group_name)).setText("群成员 (" + group.getMemberCount() + ")");
+                                            ((TextView) findViewById(R.id.group_name_content)).setText(group.getGroupName() + "");
                                             progressDialog.dismiss();
                                             Toast.makeText(getApplicationContext(), st6, Toast.LENGTH_SHORT).show();
                                         }
@@ -472,7 +471,6 @@ public class GroupDetailsActivity extends BaseActivity implements OnClickListene
 
     /**
      * 退出群组
-     *
      */
     private void exitGrop() {
         String st1 = getResources().getString(R.string.Exit_the_group_chat_failure);
@@ -503,7 +501,6 @@ public class GroupDetailsActivity extends BaseActivity implements OnClickListene
 
     /**
      * 解散群组
-     *
      */
     private void deleteGrop() {
         final String st5 = getResources().getString(R.string.Dissolve_group_chat_tofail);
@@ -554,7 +551,7 @@ public class GroupDetailsActivity extends BaseActivity implements OnClickListene
                     refreshMembersAdapter();
                     runOnUiThread(new Runnable() {
                         public void run() {
-                            ((TextView) findViewById(R.id.group_name)).setText(group.getGroupName() + "(" + group.getMemberCount()
+                            ((TextView) findViewById(R.id.group_name)).setText("群成员 (" + group.getMemberCount()
                                     + st);
                             progressDialog.dismiss();
                         }
@@ -646,6 +643,7 @@ public class GroupDetailsActivity extends BaseActivity implements OnClickListene
 
     /**
      * update with the passed announcement
+     *
      * @param announcement
      */
     private void updateAnnouncement(final String announcement) {
@@ -808,7 +806,7 @@ public class GroupDetailsActivity extends BaseActivity implements OnClickListene
 
         void init() {
             final MemberMenuDialog dialog = this;
-            dialog.setTitle("group");
+            dialog.setTitle("群成员操作");
             dialog.setContentView(R.layout.em_chatroom_member_menu);
 
             int ids[] = {R.id.menu_item_add_admin,
@@ -914,7 +912,6 @@ public class GroupDetailsActivity extends BaseActivity implements OnClickListene
      * 群组Owner和管理员gridadapter
      *
      * @author admin_new
-     *
      */
     private class OwnerAdminAdapter extends ArrayAdapter<String> {
 
@@ -996,7 +993,6 @@ public class GroupDetailsActivity extends BaseActivity implements OnClickListene
      * 群组成员gridadapter
      *
      * @author admin_new
-     *
      */
     private class GridAdapter extends ArrayAdapter<String> {
 
@@ -1015,6 +1011,7 @@ public class GroupDetailsActivity extends BaseActivity implements OnClickListene
                 convertView = LayoutInflater.from(getContext()).inflate(res, null);
                 holder.imageView = (ImageView) convertView.findViewById(R.id.iv_avatar);
                 holder.textView = (TextView) convertView.findViewById(R.id.tv_name);
+                holder.badgeDeleteView = (ImageView) convertView.findViewById(R.id.badge_delete);
                 convertView.setTag(holder);
             } else {
                 holder = (ViewHolder) convertView.getTag();
@@ -1024,7 +1021,8 @@ public class GroupDetailsActivity extends BaseActivity implements OnClickListene
             // add button
             if (position == getCount() - 1) {
                 holder.textView.setText("");
-                holder.imageView.setImageResource(R.drawable.em_smiley_add_btn);
+                holder.imageView.setImageResource(R.drawable.add_member);
+                holder.badgeDeleteView.setVisibility(View.INVISIBLE);
                 if (isCanAddMember(group)) {
                     convertView.setVisibility(View.VISIBLE);
                     button.setOnClickListener(new OnClickListener() {
@@ -1045,6 +1043,11 @@ public class GroupDetailsActivity extends BaseActivity implements OnClickListene
             } else {
                 // members
                 final String username = getItem(position);
+                if (group != null && (group.getOwner() + "").equals(username)) {
+                    holder.badgeDeleteView.setVisibility(View.INVISIBLE);
+                } else {
+                    holder.badgeDeleteView.setVisibility(View.VISIBLE);
+                }
                 EaseUserUtils.setUserNick(username, holder.textView);
                 EaseUserUtils.setUserAvatar(getContext(), username, holder.imageView);
 
@@ -1057,7 +1060,7 @@ public class GroupDetailsActivity extends BaseActivity implements OnClickListene
                     id_background.setBackgroundColor(convertView.getResources().getColor(R.color.holo_blue_bright));
                 }
 
-                button.setOnClickListener(new OnClickListener() {
+                holder.badgeDeleteView.setOnClickListener(new OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         if (!isCurrentOwner(group) && !isCurrentAdmin(group)) {
@@ -1069,7 +1072,7 @@ public class GroupDetailsActivity extends BaseActivity implements OnClickListene
 
                         boolean[] normalVisibilities = {
                                 false,      //R.id.menu_item_transfer_owner,
-                                isCurrentOwner(group) ? true : false,       //R.id.menu_item_add_admin,
+                                false,  isCurrentOwner(group) ? true : false,       //R.id.menu_item_add_admin,
                                 false,      //R.id.menu_item_rm_admin,
                                 true,       //R.id.menu_item_remove_member,
                                 true,       //R.id.menu_item_add_to_blacklist,
@@ -1091,7 +1094,7 @@ public class GroupDetailsActivity extends BaseActivity implements OnClickListene
 
                         boolean[] muteListVisibilities = {
                                 false,      //R.id.menu_item_transfer_owner,
-                                isCurrentOwner(group) ? true : false,       //R.id.menu_item_add_admin,
+                                false, // isCurrentOwner(group) ? true : false,       //R.id.menu_item_add_admin,
                                 false,      //R.id.menu_item_rm_admin,
                                 true,       //R.id.menu_item_remove_member,
                                 true,       //R.id.menu_item_add_to_blacklist,
@@ -1140,15 +1143,17 @@ public class GroupDetailsActivity extends BaseActivity implements OnClickListene
                         adminList.clear();
                         adminList.addAll(group.getAdminList());
                         memberList.clear();
-                        EMCursorResult<String> result = null;
-                        do {
-                            // page size set to 20 is convenient for testing, should be applied to big value
-                            result = EMClient.getInstance().groupManager().fetchGroupMembers(groupId,
-                                    result != null ? result.getCursor() : "",
-                                    20);
-                            EMLog.d(TAG, "fetchGroupMembers result.size:" + result.getData().size());
-                            memberList.addAll(result.getData());
-                        } while (result.getCursor() != null && !result.getCursor().isEmpty());
+                        memberList.add(group.getOwner());
+                        memberList.addAll(group.getMembers());
+                        //    EMCursorResult<String> result = null;
+//                        do {
+//                            // page size set to 20 is convenient for testing, should be applied to big value
+//                            result = EMClient.getInstance().groupManager().fetchGroupMembers(groupId,
+//                                    result != null ? result.getCursor() : "",
+//                                    20);
+//                            EMLog.d(TAG, "fetchGroupMembers result.size:" + result.getData().size());
+//                            memberList.addAll(result.getData());
+//                        } while (result.getCursor() != null && !result.getCursor().isEmpty());
 
                         muteList.clear();
                         muteList.addAll(EMClient.getInstance().groupManager().fetchGroupMuteList(groupId, 0, 200).keySet());
@@ -1158,8 +1163,8 @@ public class GroupDetailsActivity extends BaseActivity implements OnClickListene
                     } catch (Exception e) {
                         //e.printStackTrace();  // User may have no permission for fetch mute, fetch black list operation
                     } finally {
-                        memberList.remove(group.getOwner());
-                        memberList.removeAll(adminList);
+//                        memberList.remove(group.getOwner());
+//                        memberList.removeAll(adminList);
                     }
 
                     try {
@@ -1174,8 +1179,9 @@ public class GroupDetailsActivity extends BaseActivity implements OnClickListene
                             refreshMembersAdapter();
 
 //							refreshUIVisibility();
-                            ((TextView) findViewById(R.id.group_name)).setText(group.getGroupName() + "(" + group.getMemberCount()
+                            ((TextView) findViewById(R.id.group_name)).setText("群成员  (" + group.getMemberCount()
                                     + ")");
+                            ((TextView) findViewById(R.id.group_name_content)).setText(group.getGroupName() + "");
                             loadingPB.setVisibility(View.INVISIBLE);
 
                             if (EMClient.getInstance().getCurrentUser().equals(group.getOwner())) {
@@ -1258,9 +1264,10 @@ public class GroupDetailsActivity extends BaseActivity implements OnClickListene
                 @Override
                 public void run() {
                     memberList = group.getMembers();
-                    memberList.remove(group.getOwner());
-                    memberList.removeAll(adminList);
-                    memberList.removeAll(muteList);
+                    memberList.add(0, group.getOwner() + "");
+//                    memberList.remove(group.getOwner());
+//                    memberList.removeAll(adminList);
+//                    memberList.removeAll(muteList);
                     refreshMembersAdapter();
                 }
             });
@@ -1302,7 +1309,7 @@ public class GroupDetailsActivity extends BaseActivity implements OnClickListene
 
                 @Override
                 public void run() {
-                    Toast.makeText(GroupDetailsActivity.this, "onOwnerChanged", Toast.LENGTH_LONG).show();
+                    Toast.makeText(GroupDetailsActivity.this, "群成员改变", Toast.LENGTH_LONG).show();
                 }
             });
             updateGroup();

@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:orientation="vertical"
               android:layout_width="match_parent"
@@ -12,6 +11,7 @@
         >
         <TextView
             android:text="add to administrator"
+            android:visibility="gone"
             style="@style/chat_room_menu_item_text_style"/>
         <TextView style="@style/chat_room_menu_item_splitter"/>
     </LinearLayout>
@@ -21,6 +21,7 @@
         android:id="@+id/menu_item_rm_admin"
         >
         <TextView
+            android:visibility="gone"
             android:text="remove admin privilege"
             style="@style/chat_room_menu_item_text_style"/>
         <TextView style="@style/chat_room_menu_item_splitter"/>
@@ -29,6 +30,7 @@
     <LinearLayout
         style="@style/chat_room_menu_item_wrapper"
         android:id="@+id/menu_item_transfer_owner"
+        android:visibility="gone"
         >
         <TextView
             android:text="transfer owner ship"
@@ -41,7 +43,7 @@
         android:id="@+id/menu_item_remove_member"
         >
         <TextView
-            android:text="remove member"
+            android:text="点击移除群成员"
             style="@style/chat_room_menu_item_text_style"/>
         <TextView style="@style/chat_room_menu_item_splitter"/>
     </LinearLayout>
@@ -49,6 +51,7 @@
     <LinearLayout
         style="@style/chat_room_menu_item_wrapper"
         android:id="@+id/menu_item_add_to_blacklist"
+        android:visibility="gone"
         >
         <TextView
             android:text="add to black list"
@@ -59,6 +62,7 @@
     <LinearLayout
         style="@style/chat_room_menu_item_wrapper"
         android:id="@+id/menu_item_remove_from_blacklist"
+        android:visibility="gone"
         >
         <TextView
             android:text="remove from black list"
@@ -69,6 +73,7 @@
     <LinearLayout
         style="@style/chat_room_menu_item_wrapper"
         android:id="@+id/menu_item_mute"
+        android:visibility="gone"
         >
         <TextView
             android:text="mute"
@@ -80,6 +85,7 @@
     <LinearLayout
         style="@style/chat_room_menu_item_wrapper"
         android:id="@+id/menu_item_unmute"
+        android:visibility="gone"
         >
         <TextView
             android:text="unmute"

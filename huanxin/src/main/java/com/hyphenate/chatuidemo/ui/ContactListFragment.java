@@ -70,11 +70,11 @@ public class ContactListFragment extends EaseContactListFragment {
         headerView.findViewById(R.id.chat_room_item).setOnClickListener(clickListener);
         headerView.findViewById(R.id.robot_item).setOnClickListener(clickListener);
         headerView.findViewById(R.id.conference_item).setOnClickListener(clickListener);
+        headerView.findViewById(R.id.my_worker_item).setOnClickListener(clickListener);
         listView.addHeaderView(headerView);
         //add loading view
         loadingView = LayoutInflater.from(getActivity()).inflate(R.layout.em_layout_loading_data, null);
         contentContainer.addView(loadingView);
-
         registerForContextMenu(listView);
     }
     
@@ -194,6 +194,8 @@ public class ContactListFragment extends EaseContactListFragment {
                 startActivity(new Intent(getActivity(), RobotsActivity.class));
             } else if (id ==  R.id.conference_item) {
                 startActivity(new Intent(getActivity(), ConferenceActivity.class).putExtra(Constant.EXTRA_CONFERENCE_IS_CREATOR, true));
+            } else if (id == R.id.my_worker_item) {
+                // 我的同事
             }
         }
 	    

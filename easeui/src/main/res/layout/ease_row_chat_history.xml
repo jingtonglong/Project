@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/list_itease_layout"
     android:layout_width="match_parent"
     android:layout_height="59dp"
-     android:id="@+id/list_itease_layout"
-     android:background="#fff"
-    android:gravity="center_vertical" >
+    android:background="#fff"
+    android:gravity="center_vertical">
 
     <RelativeLayout
         android:id="@+id/avatar_container"
         android:layout_width="59dp"
         android:layout_height="match_parent"
-        android:layout_alignParentLeft="true" >
+        android:layout_alignParentLeft="true">
 
-      <com.hyphenate.easeui.widget.EaseImageView
+        <com.hyphenate.easeui.widget.EaseImageView
             android:id="@+id/avatar"
             android:layout_width="45dp"
             android:layout_height="45dp"
@@ -65,32 +65,44 @@
         android:src="@drawable/ease_msg_state_fail_resend"
         android:visibility="gone" />
 
-    <TextView 
+    <TextView
+        android:id="@+id/mentioned"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="14sp"
-        android:text="@string/were_mentioned"
-        android:textColor="#e84e40"
-        android:id="@+id/mentioned"
         android:layout_alignParentBottom="true"
         android:layout_toRightOf="@id/msg_state"
-        android:paddingTop="7dp"
         android:paddingBottom="7dp"
         android:paddingLeft="7dp"
-        android:visibility="gone"
-        />
-    
+        android:paddingTop="7dp"
+        android:text="@string/were_mentioned"
+        android:textColor="#e84e40"
+        android:textSize="14sp"
+        android:visibility="gone" />
+
     <TextView
         android:id="@+id/message"
-        android:layout_toLeftOf="@id/time"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
+        android:layout_marginRight="24dp"
+        android:layout_toLeftOf="@id/time"
         android:layout_toRightOf="@id/mentioned"
-        android:singleLine="true"
         android:ellipsize="end"
         android:padding="7dp"
+        android:singleLine="true"
         android:textColor="@color/list_itease_secondary_color"
         android:textSize="14sp" />
+
+    <ImageView
+        android:id="@+id/close_notice"
+        android:layout_width="12dp"
+        android:layout_height="12dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="6dp"
+        android:layout_marginRight="7dp"
+        android:src="@drawable/close_notice"
+        android:visibility="gone" />
+
 
 </RelativeLayout>

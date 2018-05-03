@@ -22,8 +22,10 @@ import com.base.sdk.util.NotificationsUtils;
 import com.hyphenate.EMCallBack;
 import com.hyphenate.EMClientListener;
 import com.hyphenate.EMContactListener;
+import com.hyphenate.EMMessageListener;
 import com.hyphenate.EMMultiDeviceListener;
 import com.hyphenate.chat.EMClient;
+import com.hyphenate.chat.EMMessage;
 import com.hyphenate.chatuidemo.Constant;
 import com.hyphenate.chatuidemo.DemoHelper;
 import com.hyphenate.chatuidemo.db.InviteMessgeDao;
@@ -44,11 +46,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
+import cn.bingoogolapple.badgeview.BGABadgeRadioButton;
+import me.leolin.shortcutbadger.ShortcutBadger;
 
 public class MainActivity extends BaseActivity implements IMainView, RadioGroup.OnCheckedChangeListener {
 
     @BindView(R.id.main_group)
     RadioGroup radioGroup;
+    @BindView(R.id.main_group_button_3)
+    BGABadgeRadioButton messgaeRadio;
     FragmentManager manager;
     HomeFragment homeFragment;
     HuanZheGuanLiFragment renCaiFragment;
@@ -64,6 +70,7 @@ public class MainActivity extends BaseActivity implements IMainView, RadioGroup.
     private LocalBroadcastManager broadcastManager;
     public boolean isConflict = false;
     private InviteMessgeDao inviteMessgeDao;
+    private boolean isCurrentAccountRemoved = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -89,11 +96,11 @@ public class MainActivity extends BaseActivity implements IMainView, RadioGroup.
                         getIntent().getBooleanExtra(Constant.ACCOUNT_KICKED_BY_OTHER_DEVICE, false))) {
             DemoHelper.getInstance().logout(false, null);
             finish();
-            startActivity(new Intent(this, com.hyphenate.chatuidemo.ui.LoginActivity.class));
+            startActivity(new Intent(this, LoginActivity.class));
             return;
         } else if (getIntent() != null && getIntent().getBooleanExtra("isConflict", false)) {
             finish();
-            startActivity(new Intent(this, com.hyphenate.chatuidemo.ui.LoginActivity.class));
+            startActivity(new Intent(this, LoginActivity.class));
             return;
         }
         super.onCreate(savedInstanceState);
@@ -116,15 +123,6 @@ public class MainActivity extends BaseActivity implements IMainView, RadioGroup.
         present = new MainPresent(this);
         inviteMessgeDao = new InviteMessgeDao(this);
         showExceptionDialogFromIntent(getIntent());
-        //register broadcast receiver to receive the change of group from DemoHelper
-        registerBroadcastReceiver();
-
-
-        EMClient.getInstance().contactManager().setContactListener(new MyContactListener());
-        EMClient.getInstance().addClientListener(clientListener);
-        EMClient.getInstance().addMultiDeviceListener(new MyMultiDeviceListener());
-        //debug purpose only
-        registerInternalDebugReceiver();
     }
 
     @Override
@@ -146,9 +144,30 @@ public class MainActivity extends BaseActivity implements IMainView, RadioGroup.
     protected void initEvent() {
         radioGroup.setOnCheckedChangeListener(this);
         checkPermission();
+        //register broadcast receiver to receive the change of group from DemoHelper
+        registerBroadcastReceiver();
+
+        EMClient.getInstance().contactManager().setContactListener(new MyContactListener());
+        EMClient.getInstance().addClientListener(clientListener);
+        EMClient.getInstance().addMultiDeviceListener(new MyMultiDeviceListener());
+        //debug purpose only
+        registerInternalDebugReceiver();
         // checkJpush();
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if (!isConflict && !isCurrentAccountRemoved) {
+            updateUnreadLabel();
+            updateUnreadAddressLable();
+        }
+        // unregister this event listener when this activity enters the
+        // background
+        DemoHelper sdkHelper = DemoHelper.getInstance();
+        sdkHelper.pushActivity(this);
+        EMClient.getInstance().chatManager().addMessageListener(messageListener);
+    }
 
     /**
      * 检查推送状态
@@ -159,6 +178,12 @@ public class MainActivity extends BaseActivity implements IMainView, RadioGroup.
 //        }
     }
 
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        outState.putBoolean("isConflict", isConflict);
+        outState.putBoolean(Constant.ACCOUNT_REMOVED, isCurrentAccountRemoved);
+        super.onSaveInstanceState(outState);
+    }
 
     /**
      * 查看权限检测
@@ -332,15 +357,24 @@ public class MainActivity extends BaseActivity implements IMainView, RadioGroup.
     public void updateUnreadAddressLable() {
         runOnUiThread(new Runnable() {
             public void run() {
-                int count = getUnreadAddressCountTotal();
-//                if (count > 0) {
-//                    unreadAddressLable.setVisibility(View.VISIBLE);
-//                } else {
-//                    unreadAddressLable.setVisibility(View.INVISIBLE);
-//                }
+                updateMessageUi();
             }
         });
 
+    }
+
+    int count = 0;
+
+    private void updateMessageUi() {
+        count = getUnreadMsgCountTotal();
+        if (messgaeRadio != null) {
+            if (count > 0) {
+                messgaeRadio.showCirclePointBadge();
+                messgaeRadio.showTextBadge(count + "");
+            } else {
+                messgaeRadio.hiddenBadge();
+            }
+        }
     }
 
     /**
@@ -451,8 +485,7 @@ public class MainActivity extends BaseActivity implements IMainView, RadioGroup.
      * update unread message count
      */
     public void updateUnreadLabel() {
-        int count = getUnreadMsgCountTotal();
-        // 更新消息
+        updateMessageUi();
     }
 
     public class MyMultiDeviceListener implements EMMultiDeviceListener {
@@ -473,4 +506,68 @@ public class MainActivity extends BaseActivity implements IMainView, RadioGroup.
             }
         }
     }
+
+    EMMessageListener messageListener = new EMMessageListener() {
+
+        @Override
+        public void onMessageReceived(List<EMMessage> messages) {
+            // notify new message
+            for (EMMessage message : messages) {
+                DemoHelper.getInstance().getNotifier().onNewMsg(message);
+            }
+            refreshUIWithMessage();
+        }
+
+        @Override
+        public void onCmdMessageReceived(List<EMMessage> messages) {
+            refreshUIWithMessage();
+        }
+
+        @Override
+        public void onMessageRead(List<EMMessage> messages) {
+        }
+
+        @Override
+        public void onMessageDelivered(List<EMMessage> message) {
+        }
+
+        @Override
+        public void onMessageRecalled(List<EMMessage> messages) {
+            refreshUIWithMessage();
+        }
+
+        @Override
+        public void onMessageChanged(EMMessage message, Object change) {
+        }
+    };
+
+    @Override
+    protected void onStop() {
+        try {
+            EMClient.getInstance().chatManager().removeMessageListener(messageListener);
+            EMClient.getInstance().removeClientListener(clientListener);
+            DemoHelper sdkHelper = DemoHelper.getInstance();
+            sdkHelper.popActivity(this);
+            ShortcutBadger.applyCount(context, count);
+        } catch (Exception e) {
+        }
+        super.onStop();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        try {
+            if (exceptionBuilder != null) {
+                exceptionBuilder.create().dismiss();
+                exceptionBuilder = null;
+                isExceptionDialogShow = false;
+            }
+            broadcastManager.unregisterReceiver(broadcastReceiver);
+            unregisterReceiver(internalDebugReceiver);
+        } catch (Exception e) {
+        }
+    }
+
+
 }

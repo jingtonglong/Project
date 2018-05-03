@@ -47,4 +47,11 @@
     <color name="recall_black">#61212121</color>
     <color name="recall_black_38">#89ffffff</color>
     <color name="recall_white_54">#89ffffff</color>
+
+    <color name="line_color">#E3E3E3</color>
+    <color name="margin_background">#F7F7F7</color>
+    <color name="white">#ffffff</color>
+
+    <color name="text_black">#656565</color>
+    <color name="submit_red">#FE5B00</color>
 </resources>
