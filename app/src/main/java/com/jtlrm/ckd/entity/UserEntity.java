@@ -1,5 +1,8 @@
 package com.jtlrm.ckd.entity;
 
+import com.hyphenate.easeui.utils.EaseCommonUtils;
+import com.jtlrm.ckd.util.ContactList.InitialLetterUitl;
+
 /**
  * Created by Administrator on 2017/12/12/012.
  * 用户类
@@ -56,6 +59,19 @@ public class UserEntity extends BaseEntity{
     private String roles;
 
     private boolean admin;
+
+    private String initialLetter;
+
+    public String getInitialLetter() {
+        if(initialLetter == null){
+            InitialLetterUitl.setUserInitialLetter(this);
+        }
+        return initialLetter;
+    }
+
+    public void setInitialLetter(String initialLetter) {
+        this.initialLetter = initialLetter;
+    }
 
     public String getUsername() {
         return username;

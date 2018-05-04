@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="ContactListView">
+        <attr name="jtlListPrimaryTextColor" format="color" />
+        <attr name="jtlListPrimaryTextSize" format="dimension" />
+        <attr name="jtlListShowSiderBar" format="boolean" />
+        <attr name="jtlListInitialLetterBg" format="reference|color" />
+        <attr name="jtlListInitialLetterColor" format="color" />
+    </declare-styleable>
+</resources>

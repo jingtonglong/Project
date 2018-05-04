@@ -100,7 +100,7 @@ public class NewChatFragment extends BaseFragment {
     public void refresh() {
         if (conversationFragment != null) {
             conversationFragment.refresh();
-            contactListFragment.refresh();
+          //  contactListFragment.refresh();
         }
     }
 

@@ -6,23 +6,41 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".mvp.view.fragment.NewChatFragment">
+
     <com.base.sdk.widget.TitleBar
         android:id="@+id/new_chat_title"
         android:layout_width="match_parent"
-        android:layout_height="63dp" />
+        android:layout_height="63dp"
+        android:visibility="gone" />
 
-    <!-- TODO: Update blank fragment layout -->
-    <android.support.design.widget.TabLayout
-        android:id="@+id/tablayout"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="34dp"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:paddingTop="30dp"
         android:background="@color/white"
-        app:tabIndicatorColor="@color/text_green"
-        app:tabIndicatorHeight="2dp"
-        app:tabPaddingStart="@dimen/padding_size_middle"
-        app:tabPaddingEnd="@dimen/padding_size_middle"
-        app:tabSelectedTextColor="@color/text_black"
-        app:tabTextColor="@color/text_black" />
+        android:orientation="horizontal">
+        <!-- TODO: Update blank fragment layout -->
+        <android.support.design.widget.TabLayout
+            android:id="@+id/tablayout"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:layout_weight="2"
+            android:background="@color/white"
+
+            app:tabIndicatorColor="@color/text_green"
+            app:tabIndicatorHeight="2dp"
+            app:tabPaddingEnd="@dimen/padding_size_middle"
+            app:tabPaddingStart="@dimen/padding_size_middle"
+            app:tabSelectedTextColor="@color/text_black"
+            app:tabTextColor="@color/text_black" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/picture_height_small"
+            android:layout_weight="8"
+            android:src="@drawable/create_group" />
+    </LinearLayout>
 
 
     <android.support.v4.view.ViewPager

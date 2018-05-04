@@ -58,6 +58,7 @@ android {
     dexOptions {
         preDexLibraries = false
     }
+
 }
 
 
