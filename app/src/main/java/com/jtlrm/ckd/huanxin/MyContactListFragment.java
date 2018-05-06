@@ -1,11 +1,26 @@
 package com.jtlrm.ckd.huanxin;
 
+import android.annotation.SuppressLint;
+import android.content.Intent;
+import android.view.LayoutInflater;
+import android.view.View;
 import android.widget.ListView;
 
+import com.hyphenate.chatuidemo.Constant;
+import com.hyphenate.chatuidemo.conference.ConferenceActivity;
+import com.hyphenate.chatuidemo.ui.ContactListFragment;
+import com.hyphenate.chatuidemo.ui.GroupsActivity;
+import com.hyphenate.chatuidemo.ui.NewFriendsMsgActivity;
+import com.hyphenate.chatuidemo.ui.NewGroupActivity;
+import com.hyphenate.chatuidemo.ui.PublicChatRoomsActivity;
+import com.hyphenate.chatuidemo.ui.RobotsActivity;
+import com.hyphenate.chatuidemo.widget.ContactItemView;
 import com.jtlrm.ckd.R;
 import com.jtlrm.ckd.base.fragment.BaseFragment;
 import com.jtlrm.ckd.entity.UserEntity;
+import com.jtlrm.ckd.mvp.view.activity.MyWorkerActivity;
 import com.jtlrm.ckd.util.ContactList.ContactListView;
+import com.jtlrm.ckd.util.ContactList.InitialLetterUitl;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,6 +48,12 @@ public class MyContactListFragment extends BaseFragment {
     @Override
     protected void initView() {
         listView = contactListView.getListView();
+        @SuppressLint("InflateParams") View headerView = LayoutInflater.from(getActivity()).inflate(R.layout.contacts_header, null);
+        HeaderItemClickListener clickListener = new HeaderItemClickListener();
+        headerView.findViewById(R.id.my_group_item).setOnClickListener(clickListener);
+        headerView.findViewById(R.id.my_create_group_item).setOnClickListener(clickListener);
+        headerView.findViewById(R.id.my_worker_item).setOnClickListener(clickListener);
+        listView.addHeaderView(headerView);
     }
 
     @Override
@@ -54,6 +75,25 @@ public class MyContactListFragment extends BaseFragment {
 
     @Override
     protected void initEvent() {
+
+    }
+
+    protected class HeaderItemClickListener implements View.OnClickListener {
+
+        @Override
+        public void onClick(View v) {
+            int id = v.getId();
+            if (id == R.id.my_group_item) {
+                // 进入群聊列表页面
+                startActivity(new Intent(getActivity(), GroupsActivity.class));
+            } else if (id ==  R.id.my_worker_item) {
+                // 我的同事
+                startActivity(new Intent(getActivity(), MyWorkerActivity.class));
+            } else if (id == R.id.my_create_group_item) {
+                //进入创建群聊
+                startActivity(new Intent(getActivity(), NewGroupActivity.class));
+            }
+        }
 
     }
 }

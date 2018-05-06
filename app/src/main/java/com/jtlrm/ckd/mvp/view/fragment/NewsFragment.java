@@ -1,12 +1,9 @@
 package com.jtlrm.ckd.mvp.view.fragment;
 
 import android.content.Context;
-import android.inputmethodservice.Keyboard;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.EventLog;
-import android.view.KeyEvent;
 
 import com.base.sdk.base.net.CommonObserver;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;

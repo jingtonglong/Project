@@ -83,7 +83,7 @@ public abstract class BaseFragment extends Fragment implements IBaseFragment {
         if (mContentView == null) {
             try {
                 mContentView = inflater.inflate(setContentLayout(), container, false);
-            } catch (Resources.NotFoundException e) {
+            } catch (Exception e) {
 
             }
             if (mContentView == null) {

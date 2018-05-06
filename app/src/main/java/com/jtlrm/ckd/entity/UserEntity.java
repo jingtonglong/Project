@@ -1,6 +1,8 @@
 package com.jtlrm.ckd.entity;
 
+import com.github.promeg.pinyinhelper.Pinyin;
 import com.hyphenate.easeui.utils.EaseCommonUtils;
+import com.hyphenate.util.HanziToPinyin;
 import com.jtlrm.ckd.util.ContactList.InitialLetterUitl;
 
 /**
@@ -61,6 +63,19 @@ public class UserEntity extends BaseEntity{
     private boolean admin;
 
     private String initialLetter;
+
+    private String pinyin;
+
+    public String getPinyin() {
+        if (pinyin == null) {
+            pinyin = Pinyin.toPinyin(username, "");
+        }
+        return pinyin;
+    }
+
+    public void setPinyin(String pinyin) {
+        this.pinyin = pinyin;
+    }
 
     public String getInitialLetter() {
         if(initialLetter == null){

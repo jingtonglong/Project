@@ -6,5 +6,6 @@
         <attr name="jtlListShowSiderBar" format="boolean" />
         <attr name="jtlListInitialLetterBg" format="reference|color" />
         <attr name="jtlListInitialLetterColor" format="color" />
+        <attr name="jtlSlideBarTopMargin" format="dimension" />
     </declare-styleable>
 </resources>

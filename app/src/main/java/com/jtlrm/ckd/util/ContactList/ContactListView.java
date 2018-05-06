@@ -8,9 +8,12 @@ import android.os.Message;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 
+import com.base.sdk.util.DensityUtil;
 import com.hyphenate.easeui.widget.EaseContactList;
 import com.hyphenate.easeui.widget.EaseSidebar;
 import com.jtlrm.ckd.R;
@@ -45,6 +48,7 @@ public class ContactListView extends RelativeLayout {
 
     protected int primaryColor;
     protected int primarySize;
+    protected float marginTop;
     protected boolean showSiderBar;
     protected Drawable initialLetterBg;
 
@@ -57,7 +61,7 @@ public class ContactListView extends RelativeLayout {
         public void handleMessage(Message msg) {
             switch (msg.what) {
                 case MSG_UPDATE_LIST:
-                    if(adapter != null){
+                    if (adapter != null) {
                         adapter.clear();
                         adapter.addAll(new ArrayList<UserEntity>(contactList));
                         adapter.notifyDataSetChanged();
@@ -71,7 +75,6 @@ public class ContactListView extends RelativeLayout {
     };
 
 
-
     private void init(Context context, AttributeSet attrs) {
         this.context = context;
         TypedArray ta = context.obtainStyledAttributes(attrs, R.styleable.ContactListView);
@@ -80,33 +83,37 @@ public class ContactListView extends RelativeLayout {
         showSiderBar = ta.getBoolean(R.styleable.ContactListView_jtlListShowSiderBar, true);
         initialLetterBg = ta.getDrawable(R.styleable.ContactListView_jtlListInitialLetterBg);
         initialLetterColor = ta.getColor(R.styleable.ContactListView_jtlListInitialLetterColor, 0);
+        marginTop = ta.getDimension(R.styleable.ContactListView_jtlSlideBarTopMargin, 0);
         ta.recycle();
 
-
         LayoutInflater.from(context).inflate(com.hyphenate.easeui.R.layout.ease_widget_contact_list, this);
-        listView = (ListView)findViewById(com.hyphenate.easeui.R.id.list);
+        listView = (ListView) findViewById(com.hyphenate.easeui.R.id.list);
         sidebar = (EaseSidebar) findViewById(com.hyphenate.easeui.R.id.sidebar);
-        if(!showSiderBar)
+        RelativeLayout.LayoutParams layoutParams = (LayoutParams) sidebar.getLayoutParams();
+        layoutParams.setMargins(0, DensityUtil.dp2px(context, marginTop), 0, 0);
+        sidebar.setLayoutParams(layoutParams);
+        if (!showSiderBar)
             sidebar.setVisibility(View.GONE);
     }
 
     /*
      * init view
      */
-    public void init(List<UserEntity> contactList){
+    public void init(List<UserEntity> contactList) {
+        InitialLetterUitl.sortList(contactList);
         this.contactList = contactList;
         adapter = new ContactAdapter(context, 0, new ArrayList<UserEntity>(contactList));
         adapter.setPrimaryColor(primaryColor).setPrimarySize(primarySize).setInitialLetterBg(initialLetterBg)
                 .setInitialLetterColor(initialLetterColor);
         listView.setAdapter(adapter);
 
-        if(showSiderBar){
+        if (showSiderBar) {
             sidebar.setListView(listView);
         }
     }
 
 
-    public void refresh(){
+    public void refresh() {
         Message msg = handler.obtainMessage(MSG_UPDATE_LIST);
         handler.sendMessage(msg);
     }
@@ -115,14 +122,14 @@ public class ContactListView extends RelativeLayout {
         adapter.getFilter().filter(str);
     }
 
-    public ListView getListView(){
+    public ListView getListView() {
         return listView;
     }
 
-    public void setShowSiderBar(boolean showSiderBar){
-        if(showSiderBar){
+    public void setShowSiderBar(boolean showSiderBar) {
+        if (showSiderBar) {
             sidebar.setVisibility(View.VISIBLE);
-        }else{
+        } else {
             sidebar.setVisibility(View.GONE);
         }
     }

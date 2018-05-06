@@ -39,7 +39,7 @@
             android:layout_width="match_parent"
             android:layout_height="@dimen/picture_height_small"
             android:layout_weight="8"
-            android:src="@drawable/create_group" />
+            android:src="@drawable/create_group_item" />
     </LinearLayout>
 
 

@@ -4,7 +4,6 @@ package com.jtlrm.ckd.mvp.view.fragment;
 import android.view.View;
 
 import com.base.sdk.widget.TitleBar;
-import com.gyf.barlibrary.ImmersionBar;
 import com.jtlrm.ckd.R;
 import com.jtlrm.ckd.base.fragment.BaseFragment;
 

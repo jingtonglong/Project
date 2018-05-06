@@ -2,29 +2,19 @@ package com.jtlrm.ckd.mvp.view.fragment;
 
 import android.content.Intent;
 import android.view.View;
-import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
-import com.base.sdk.util.ImageUtil;
-import com.gyf.barlibrary.ImmersionBar;
 import com.hyphenate.EMCallBack;
 import com.hyphenate.chatuidemo.DemoHelper;
-import com.hyphenate.chatuidemo.ui.MainActivity;
 import com.jtlrm.ckd.R;
 import com.jtlrm.ckd.base.fragment.BaseFragment;
-import com.jtlrm.ckd.mvp.view.activity.ChangePasswordActivity;
 import com.jtlrm.ckd.mvp.view.activity.LoginActivity;
 import com.jtlrm.ckd.mvp.view.activity.MyQRCodeActivity;
-import com.jtlrm.ckd.mvp.view.activity.NoticeSettingActivity;
 import com.jtlrm.ckd.mvp.view.activity.PersonInfoActivity;
-import com.jtlrm.ckd.mvp.view.activity.RenCaiDengJiActivity;
 import com.jtlrm.ckd.mvp.view.activity.UpdateAppActivity;
 import com.jtlrm.ckd.mvp.view.activity.ZhangHaoActivity;
 
 import java.util.List;
-
-import butterknife.BindView;
 import butterknife.BindViews;
 
 /**

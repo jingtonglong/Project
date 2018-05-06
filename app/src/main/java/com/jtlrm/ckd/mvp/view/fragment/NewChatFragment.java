@@ -10,7 +10,6 @@ import android.view.View;
 import com.base.sdk.base.adapter.TabFragmentPagerAdapter;
 import com.base.sdk.base.entity.TabItemEntity;
 import com.base.sdk.widget.TitleBar;
-import com.gyf.barlibrary.ImmersionBar;
 import com.hyphenate.chatuidemo.ui.NewGroupActivity;
 import com.jtlrm.ckd.R;
 import com.jtlrm.ckd.base.fragment.BaseFragment;

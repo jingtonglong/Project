@@ -20,11 +20,12 @@ import java.util.Map;
 
 public class Test {
     public static void main(String[] args) {
-        HashMap<String, String> map = new HashMap<>();
-        map.put("phone", "12345679810");
-        map.put("password", "123456");
-        map.put("name", "112");
-        sendPost("http://192.168.1.74:8080/user/app/register", map, "utf-8");
+//        HashMap<String, String> map = new HashMap<>();
+//        map.put("phone", "12345679810");
+//        map.put("password", "123456");
+//        map.put("name", "112");
+//        sendPost("http://192.168.1.74:8080/user/app/register", map, "utf-8");
+        System.out.println('A' > 'C');
     }
 
     public static String sendPost(String urlParam, Map<String, String> params, String charset) {

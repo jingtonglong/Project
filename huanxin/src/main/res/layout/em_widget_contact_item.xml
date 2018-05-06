@@ -81,6 +81,14 @@
             android:gravity="center"
             android:visibility="invisible"
             android:textSize="12sp" />
+        <ImageView
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:src="@drawable/em_ic_right_arrow"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="20dp"
+            android:layout_centerVertical="true"
+            />
     </RelativeLayout>
 
 </LinearLayout>
