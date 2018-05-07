@@ -8,8 +8,6 @@ import android.os.Message;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 
@@ -102,14 +100,17 @@ public class ContactListView extends RelativeLayout {
     public void init(List<UserEntity> contactList) {
         InitialLetterUitl.sortList(contactList);
         this.contactList = contactList;
-        adapter = new ContactAdapter(context, 0, new ArrayList<UserEntity>(contactList));
+        adapter = getAdapter();
         adapter.setPrimaryColor(primaryColor).setPrimarySize(primarySize).setInitialLetterBg(initialLetterBg)
                 .setInitialLetterColor(initialLetterColor);
         listView.setAdapter(adapter);
-
         if (showSiderBar) {
             sidebar.setListView(listView);
         }
+    }
+
+    protected ContactAdapter getAdapter() {
+        return  new ContactAdapter(context, 0, new ArrayList<UserEntity>(contactList));
     }
 
 

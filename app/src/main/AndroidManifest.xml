@@ -119,7 +119,9 @@
         <activity android:name=".mvp.view.activity.ChangePhoneActivity" />
         <activity android:name=".mvp.view.activity.MyWorkerActivity" />
         <activity android:name=".mvp.view.activity.CreateGroupActivity" />
-        <activity android:name=".mvp.view.activity.PickContactsActivity"></activity>
+        <activity android:name=".mvp.view.activity.PickContactsActivity" />
+        <activity android:name=".mvp.view.activity.PicWorkerActivity" />
+        <activity android:name=".mvp.view.activity.ChatPersonInfoActivity"></activity>
     </application>
 
 </manifest>

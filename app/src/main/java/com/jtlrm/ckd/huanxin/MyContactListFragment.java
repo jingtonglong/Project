@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ListView;
 
+import com.alibaba.android.arouter.launcher.ARouter;
 import com.hyphenate.chatuidemo.Constant;
 import com.hyphenate.chatuidemo.conference.ConferenceActivity;
 import com.hyphenate.chatuidemo.ui.ContactListFragment;
@@ -18,6 +19,7 @@ import com.hyphenate.chatuidemo.widget.ContactItemView;
 import com.jtlrm.ckd.R;
 import com.jtlrm.ckd.base.fragment.BaseFragment;
 import com.jtlrm.ckd.entity.UserEntity;
+import com.jtlrm.ckd.mvp.view.activity.CreateGroupActivity;
 import com.jtlrm.ckd.mvp.view.activity.MyWorkerActivity;
 import com.jtlrm.ckd.util.ContactList.ContactListView;
 import com.jtlrm.ckd.util.ContactList.InitialLetterUitl;
@@ -91,7 +93,7 @@ public class MyContactListFragment extends BaseFragment {
                 startActivity(new Intent(getActivity(), MyWorkerActivity.class));
             } else if (id == R.id.my_create_group_item) {
                 //进入创建群聊
-                startActivity(new Intent(getActivity(), NewGroupActivity.class));
+                startActivity(new Intent(getActivity(), CreateGroupActivity.class));
             }
         }
 

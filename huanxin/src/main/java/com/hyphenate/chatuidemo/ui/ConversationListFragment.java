@@ -69,6 +69,7 @@ public class ConversationListFragment extends EaseConversationListFragment{
         super.setUpView();
     }
 
+
     @Override
     protected void onConnectionDisconnected() {
         super.onConnectionDisconnected();

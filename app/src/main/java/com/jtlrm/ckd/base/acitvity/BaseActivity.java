@@ -99,6 +99,7 @@ public abstract class BaseActivity extends AbstractActivity implements IBaseActi
                 .statusBarDarkFont(true, 0.2f) // 判断当前设备支不支持状态栏字体设置为黑色
                 .flymeOSStatusBarFontColor(textColor)
                 .fitsSystemWindows(true) // 不用沉浸式
+                .keyboardEnable(true) //解决软键盘与底部输入框冲突问题，默认为false，还有一个重载方法，可以指定软键盘mode
                 .init();
     }
 

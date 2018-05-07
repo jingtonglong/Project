@@ -13,7 +13,7 @@ import com.hyphenate.util.EasyUtils;
  */
 public class ChatActivity extends BaseActivity{
     public static ChatActivity activityInstance;
-    private EaseChatFragment chatFragment;
+    protected EaseChatFragment chatFragment;
     public String toChatUsername;
 
     @Override

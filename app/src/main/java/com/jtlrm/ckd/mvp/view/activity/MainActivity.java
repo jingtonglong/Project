@@ -31,7 +31,7 @@ import com.hyphenate.chatuidemo.DemoHelper;
 import com.hyphenate.chatuidemo.db.InviteMessgeDao;
 import com.hyphenate.chatuidemo.runtimepermissions.PermissionsManager;
 import com.hyphenate.chatuidemo.runtimepermissions.PermissionsResultAction;
-import com.hyphenate.chatuidemo.ui.*;
+import com.hyphenate.chatuidemo.ui.ChatActivity;
 import com.hyphenate.chatuidemo.ui.LoginActivity;
 import com.jtlrm.ckd.R;
 import com.jtlrm.ckd.base.acitvity.BaseActivity;

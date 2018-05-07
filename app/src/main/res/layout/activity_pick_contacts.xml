@@ -1,9 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".mvp.view.activity.PickContactsActivity">
 
-</android.support.constraint.ConstraintLayout>
+    <View
+        android:id="@+id/top"
+        style="@style/line_margin" />
+
+    <LinearLayout
+        android:id="@+id/bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="@dimen/padding_size_middle">
+
+        <CheckBox
+            android:id="@+id/check_all"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/margin_middle"
+            android:button="@drawable/checkbox_bg_selector"
+            android:focusable="false" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_middle"
+            android:text="全选"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/text_size" />
+    </LinearLayout>
+
+    <include
+        android:id="@+id/search_contacts"
+        layout="@layout/search_contacts_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/top" />
+
+    <com.jtlrm.ckd.util.ContactList.PicContactsView
+        android:id="@+id/pic_contacts_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/bottom"
+        android:layout_below="@id/search_contacts" />
+
+    <View
+        style="@style/line_horizontal"
+        android:layout_above="@id/bottom" />
+
+</RelativeLayout>

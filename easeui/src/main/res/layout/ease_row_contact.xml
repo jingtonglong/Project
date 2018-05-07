@@ -9,7 +9,7 @@
         android:id="@+id/header"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#E0E0E0"
+        android:background="@color/line_color"
         android:paddingBottom="2dp"
         android:paddingLeft="10dp"
         android:paddingTop="2dp"

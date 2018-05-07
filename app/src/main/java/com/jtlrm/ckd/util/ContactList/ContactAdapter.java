@@ -23,17 +23,17 @@ import com.jtlrm.ckd.entity.UserEntity;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ContactAdapter  extends ArrayAdapter<UserEntity> implements SectionIndexer {
+public class ContactAdapter extends ArrayAdapter<UserEntity> implements SectionIndexer {
     private static final String TAG = "ContactAdapter";
     List<String> list;
     List<UserEntity> userList;
     List<UserEntity> copyUserList;
-    private LayoutInflater layoutInflater;
-    private SparseIntArray positionOfSection;
-    private SparseIntArray sectionOfPosition;
-    private int res;
-    private MyFilter myFilter;
-    private boolean notiyfyByFilter;
+    LayoutInflater layoutInflater;
+    SparseIntArray positionOfSection;
+    SparseIntArray sectionOfPosition;
+    int res;
+    MyFilter myFilter;
+    boolean notiyfyByFilter;
 
     public ContactAdapter(Context context, int resource, List<UserEntity> objects) {
         super(context, resource, objects);
@@ -49,12 +49,13 @@ public class ContactAdapter  extends ArrayAdapter<UserEntity> implements Section
         TextView nameView;
         TextView headerView;
     }
+
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         ViewHolder holder;
-        if(convertView == null){
+        if (convertView == null) {
             holder = new ViewHolder();
-            if(res == 0)
+            if (res == 0)
                 convertView = layoutInflater.inflate(com.hyphenate.easeui.R.layout.ease_row_contact, parent, false);
             else
                 convertView = layoutInflater.inflate(res, null);
@@ -62,12 +63,12 @@ public class ContactAdapter  extends ArrayAdapter<UserEntity> implements Section
             holder.nameView = (TextView) convertView.findViewById(com.hyphenate.easeui.R.id.name);
             holder.headerView = (TextView) convertView.findViewById(com.hyphenate.easeui.R.id.header);
             convertView.setTag(holder);
-        }else{
+        } else {
             holder = (ViewHolder) convertView.getTag();
         }
 
         UserEntity user = getItem(position);
-        if(user == null)
+        if (user == null)
             Log.d("ContactAdapter", position + "");
         String username = user.getUsername();
         String header = user.getInitialLetter();
@@ -85,8 +86,6 @@ public class ContactAdapter  extends ArrayAdapter<UserEntity> implements Section
 
         EaseUserUtils.setUserNick(username, holder.nameView);
         EaseUserUtils.setUserAvatar(getContext(), username, holder.avatar);
-
-
         return convertView;
     }
 
@@ -134,13 +133,13 @@ public class ContactAdapter  extends ArrayAdapter<UserEntity> implements Section
 
     @Override
     public Filter getFilter() {
-        if(myFilter==null){
+        if (myFilter == null) {
             myFilter = new ContactAdapter.MyFilter(userList);
         }
         return myFilter;
     }
 
-    protected class  MyFilter extends Filter{
+    protected class MyFilter extends Filter {
         List<UserEntity> mOriginalList = null;
 
         public MyFilter(List<UserEntity> myList) {
@@ -150,16 +149,16 @@ public class ContactAdapter  extends ArrayAdapter<UserEntity> implements Section
         @Override
         protected synchronized FilterResults performFiltering(CharSequence prefix) {
             FilterResults results = new FilterResults();
-            if(mOriginalList==null){
+            if (mOriginalList == null) {
                 mOriginalList = new ArrayList<>();
             }
             EMLog.d(TAG, "contacts original size: " + mOriginalList.size());
             EMLog.d(TAG, "contacts copy size: " + copyUserList.size());
 
-            if(prefix==null || prefix.length()==0){
+            if (prefix == null || prefix.length() == 0) {
                 results.values = copyUserList;
                 results.count = copyUserList.size();
-            }else{
+            } else {
 
                 if (copyUserList.size() > mOriginalList.size()) {
                     mOriginalList = copyUserList;
@@ -167,14 +166,13 @@ public class ContactAdapter  extends ArrayAdapter<UserEntity> implements Section
                 String prefixString = prefix.toString();
                 final int count = mOriginalList.size();
                 final ArrayList<UserEntity> newValues = new ArrayList<>();
-                for(int i=0;i<count;i++){
+                for (int i = 0; i < count; i++) {
                     final UserEntity user = mOriginalList.get(i);
                     String username = user.getUsername();
 
-                    if(username.startsWith(prefixString)){
+                    if (username.startsWith(prefixString)) {
                         newValues.add(user);
-                    }
-                    else{
+                    } else {
                         final String[] words = username.split(" ");
                         final int wordCount = words.length;
 
@@ -187,8 +185,8 @@ public class ContactAdapter  extends ArrayAdapter<UserEntity> implements Section
                         }
                     }
                 }
-                results.values=newValues;
-                results.count=newValues.size();
+                results.values = newValues;
+                results.count = newValues.size();
             }
             EMLog.d(TAG, "contacts filter results size: " + results.count);
             return results;
@@ -198,7 +196,7 @@ public class ContactAdapter  extends ArrayAdapter<UserEntity> implements Section
         protected synchronized void publishResults(CharSequence constraint,
                                                    FilterResults results) {
             userList.clear();
-            userList.addAll((List<UserEntity>)results.values);
+            userList.addAll((List<UserEntity>) results.values);
             EMLog.d(TAG, "publish contacts filter results size: " + results.count);
             if (results.count > 0) {
                 notiyfyByFilter = true;
@@ -214,7 +212,7 @@ public class ContactAdapter  extends ArrayAdapter<UserEntity> implements Section
     @Override
     public void notifyDataSetChanged() {
         super.notifyDataSetChanged();
-        if(!notiyfyByFilter){
+        if (!notiyfyByFilter) {
             copyUserList.clear();
             copyUserList.addAll(userList);
         }
