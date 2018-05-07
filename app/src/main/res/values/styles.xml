@@ -307,4 +307,16 @@
         <item name="android:layout_alignParentRight">true</item>
         <item name="android:layout_centerVertical">true</item>
     </style>
+
+    <style name="huan_zhe_info_text">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/text_size</item>
+        <item name="android:padding">@dimen/padding_size_middle</item>
+        <item name="android:layout_margin">@dimen/margin_middle</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/green_submit_background</item>
+    </style>
 </resources>

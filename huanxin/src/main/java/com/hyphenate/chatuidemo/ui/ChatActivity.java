@@ -3,6 +3,8 @@ package com.hyphenate.chatuidemo.ui;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+
+import com.alibaba.android.arouter.launcher.ARouter;
 import com.hyphenate.chatuidemo.R;
 import com.hyphenate.chatuidemo.runtimepermissions.PermissionsManager;
 import com.hyphenate.easeui.ui.EaseChatFragment;
@@ -54,8 +56,7 @@ public class ChatActivity extends BaseActivity{
     public void onBackPressed() {
         chatFragment.onBackPressed();
         if (EasyUtils.isSingleActivity(this)) {
-            Intent intent = new Intent(this, MainActivity.class);
-            startActivity(intent);
+            ARouter.getInstance().build("/app/main").navigation();
         }
     }
     

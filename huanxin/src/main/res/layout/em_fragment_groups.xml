@@ -8,7 +8,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="@dimen/height_top_bar"
-        android:background="@color/top_bar_normal_bg"
+        android:background="@color/white"
         android:gravity="center_vertical" >
 
         <include layout="@layout/ease_commom_back_btn" />
@@ -17,10 +17,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:text="@string/group_chat"
-            android:textColor="@color/bottom_text_color_normal"
+            android:text="我的群组"
+            android:textColor="@color/text_black"
             android:textSize="18sp" />
     </RelativeLayout>
+
+	<View
+		android:layout_width="match_parent"
+		android:layout_height="1dp"
+		android:background="@color/line_color"
+		/>
 
     <FrameLayout
         android:layout_width="match_parent"

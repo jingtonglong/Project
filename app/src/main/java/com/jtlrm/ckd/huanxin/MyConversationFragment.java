@@ -1,6 +1,7 @@
 package com.jtlrm.ckd.huanxin;
 
 import com.hyphenate.chatuidemo.ui.ConversationListFragment;
+import com.jtlrm.ckd.mvp.view.activity.MainActivity;
 
 /**
  * 最近会话
@@ -12,4 +13,8 @@ public class MyConversationFragment extends ConversationListFragment {
         return fragment;
     }
 
+    @Override
+    public void updateUnread() {
+        ((MainActivity) getActivity()).updateUnreadLabel();
+    }
 }

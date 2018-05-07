@@ -114,10 +114,12 @@ public class ConversationListFragment extends EaseConversationListFragment{
             e.printStackTrace();
         }
         refresh();
-
         // update unread count
-        ((MainActivity) getActivity()).updateUnreadLabel();
+        updateUnread();
         return true;
+    }
+
+    public void updateUnread() {
     }
 
 }

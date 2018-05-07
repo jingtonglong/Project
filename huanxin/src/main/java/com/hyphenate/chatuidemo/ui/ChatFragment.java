@@ -18,6 +18,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Toast;
 
+import com.alibaba.android.arouter.launcher.ARouter;
 import com.hyphenate.chat.EMClient;
 import com.hyphenate.chat.EMGroup;
 import com.hyphenate.chat.EMMessage;
@@ -95,8 +96,7 @@ public class ChatFragment extends EaseChatFragment implements EaseChatFragmentHe
             @Override
             public void onClick(View v) {
                 if (EasyUtils.isSingleActivity(getActivity())) {
-                    Intent intent = new Intent(getActivity(), MainActivity.class);
-                    startActivity(intent);
+                    ARouter.getInstance().build("/app/main").navigation();
                 }
                 onBackPressed();
             }

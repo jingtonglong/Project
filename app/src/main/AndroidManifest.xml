@@ -121,7 +121,13 @@
         <activity android:name=".mvp.view.activity.CreateGroupActivity" />
         <activity android:name=".mvp.view.activity.PickContactsActivity" />
         <activity android:name=".mvp.view.activity.PicWorkerActivity" />
-        <activity android:name=".mvp.view.activity.ChatPersonInfoActivity"></activity>
+        <activity android:name=".mvp.view.activity.ChatPersonInfoActivity" />
+        <activity android:name=".mvp.view.activity.RemarkActivity" />
+        <activity android:name=".mvp.view.activity.ForgetPasswordActivity" />
+        <activity android:name=".mvp.view.activity.RebuilPasswordActivity" />
+        <activity android:name=".mvp.view.activity.ServiceRuleActivity" />
+        <activity android:name=".mvp.view.activity.SettingPasswordActivity" />
+        <activity android:name=".mvp.view.activity.CompleteInfoActivity"></activity>
     </application>
 
 </manifest>

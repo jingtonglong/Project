@@ -24,7 +24,7 @@ public class PersonInfoActivity extends BaseActivity {
     EditText emailE;
     @BindView(R.id.person_info_submit)
     Button submit;
-    UserHelper userHelper = UserHelper.getInstance(context);
+    UserHelper userHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +41,7 @@ public class PersonInfoActivity extends BaseActivity {
     protected void initView() {
         initTitle();
         setEdit(false);
+        userHelper = UserHelper.getInstance(context);
     }
 
     @Override

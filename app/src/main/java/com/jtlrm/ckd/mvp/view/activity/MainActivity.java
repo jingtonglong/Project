@@ -17,6 +17,7 @@ import android.support.v4.content.LocalBroadcastManager;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
+import com.alibaba.android.arouter.facade.annotation.Route;
 import com.base.sdk.base.api.PositiveOrCancelInterface;
 import com.base.sdk.util.NotificationsUtils;
 import com.hyphenate.EMCallBack;
@@ -48,7 +49,7 @@ import java.util.List;
 import butterknife.BindView;
 import cn.bingoogolapple.badgeview.BGABadgeRadioButton;
 import me.leolin.shortcutbadger.ShortcutBadger;
-
+@Route(path = "/app/main")
 public class MainActivity extends BaseActivity implements IMainView, RadioGroup.OnCheckedChangeListener {
 
     @BindView(R.id.main_group)

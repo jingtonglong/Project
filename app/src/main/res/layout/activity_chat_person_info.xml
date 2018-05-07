@@ -187,7 +187,9 @@
 
             <View style="@style/line_horizontal" />
 
-            <RelativeLayout style="@style/chat_person_info_relative">
+            <RelativeLayout
+                style="@style/chat_person_info_relative"
+                android:onClick="clickRemark">
 
                 <TextView
                     style="@style/chat_person_info_label"
@@ -195,8 +197,26 @@
 
                 <TextView
                     style="@style/chat_person_info_content"
-                    android:text="5113211111111111" />
+                    android:text="请输入备注信息" />
             </RelativeLayout>
+
+            <View style="@style/line_horizontal" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_middle"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/huan_zhe_info_text"
+                    android:text="查看数据" />
+
+                <TextView
+                    style="@style/huan_zhe_info_text"
+                    android:text="发消息" />
+            </LinearLayout>
+
         </LinearLayout>
     </ScrollView>
 
