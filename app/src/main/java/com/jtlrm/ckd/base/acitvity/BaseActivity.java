@@ -38,7 +38,7 @@ public abstract class BaseActivity extends AbstractActivity implements IBaseActi
 
     //用于控制retrofit的生命周期，以便在destroy或其他状态时终止网络请求
     public PublishSubject<LifeCycleEvent> lifecycleSubject = PublishSubject.create();
-
+    ImmersionBar mImmersionBar;
     //该方法用于提供lifecycleSubject（相当于实现了IBaseView中的getLifeSubject抽象方法）。
     //方便Presenter中直接通过IBaseView获取lifecycleSubject，而不用每次都作为参数传递过去
     public PublishSubject<LifeCycleEvent> getLifeSubject() {
@@ -86,9 +86,8 @@ public abstract class BaseActivity extends AbstractActivity implements IBaseActi
     }
 
     protected void initBarColor() {
-        int color = R.color.statusColor_background;
-        int text = R.color.statusColor_text;
-        setBarColor(color, 0, text);
+        mImmersionBar = ImmersionBar.with(getActivity());
+        mImmersionBar.keyboardEnable(true).statusBarDarkFont(true, 0.2f).navigationBarWithKitkatEnable(false).init();
     }
 
 
