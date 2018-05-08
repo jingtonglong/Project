@@ -32,4 +32,6 @@
 
     <color name="statusColor_background">#ffffff</color>
     <color name="statusColor_text">#8c000000</color>
+
+    <color name="overlay">#AA1C1C1C</color>
 </resources>

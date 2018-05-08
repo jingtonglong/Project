@@ -100,8 +100,7 @@
 
                 <RelativeLayout
                     android:id="@+id/person_3"
-                    style="@style/person_relative"
-                    android:layout_marginTop="@dimen/margin_middle">
+                    style="@style/person_relative">
 
                     <ImageView
                         style="@style/person_image_left"

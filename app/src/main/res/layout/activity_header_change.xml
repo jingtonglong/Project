@@ -13,6 +13,7 @@
         android:layout_height="@dimen/title_bar_size" />
 
     <ImageView
+        android:id="@+id/header"
         android:layout_width="200dp"
         android:layout_height="200dp"
         android:layout_gravity="center"

@@ -130,7 +130,8 @@
         <activity android:name=".mvp.view.activity.CompleteInfoActivity" />
         <activity android:name=".mvp.view.activity.RegisterSuccessfulActivity" />
         <activity android:name=".mvp.view.activity.HeaderChangeActivity" />
-        <activity android:name=".mvp.view.activity.AboutUsActivity"></activity>
+        <activity android:name=".mvp.view.activity.AboutUsActivity" />
+        <activity android:name=".mvp.view.activity.CropImageActivity"></activity>
     </application>
 
 </manifest>

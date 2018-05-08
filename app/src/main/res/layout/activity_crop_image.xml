@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".mvp.view.activity.CropImageActivity">
+
+    <com.isseiaoki.simplecropview.CropImageView
+        android:id="@+id/cropImageView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:paddingBottom="16dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:paddingTop="16dp"
+        custom:scv_background_color="@color/black"
+        custom:scv_crop_mode="fit_image"
+        custom:scv_frame_color="@color/text_green"
+        custom:scv_frame_stroke_weight="1dp"
+        custom:scv_guide_color="@color/text_green"
+        custom:scv_guide_show_mode="show_always"
+        custom:scv_guide_stroke_weight="1dp"
+        custom:scv_handle_color="@color/text_green"
+        custom:scv_handle_show_mode="show_always"
+        custom:scv_handle_size="14dp"
+        custom:scv_min_frame_size="50dp"
+        custom:scv_overlay_color="@color/overlay"
+        custom:scv_touch_padding="8dp" />
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp"
+        android:background="@color/black">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:text="取消"
+            android:textColor="@color/white"
+            android:onClick="cancelView"
+            android:padding="16dp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:text="剪切"
+            android:textColor="@color/white"
+            android:onClick="cropView"
+            android:padding="16dp" />
+    </RelativeLayout>
+</LinearLayout>

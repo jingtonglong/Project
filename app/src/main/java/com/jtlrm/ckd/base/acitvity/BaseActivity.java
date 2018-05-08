@@ -227,4 +227,12 @@ public abstract class BaseActivity extends AbstractActivity implements IBaseActi
         }
     }
 
+    public boolean notEmpty(String str) {
+        if (TextUtils.isEmpty(str)) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
 }

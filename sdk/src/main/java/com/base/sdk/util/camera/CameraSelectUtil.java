@@ -19,6 +19,9 @@ import android.widget.ListView;
 
 import com.base.sdk.R;
 import com.base.sdk.util.ToastUtil;
+import com.flyco.animation.BaseAnimatorSet;
+import com.flyco.dialog.listener.OnOperItemClickL;
+import com.flyco.dialog.widget.ActionSheetDialog;
 
 import java.io.File;
 import java.text.SimpleDateFormat;
@@ -32,6 +35,7 @@ import java.util.Date;
 public class CameraSelectUtil {
     public static final int REQUEST_CODE_CAMERA = 1;
     public static final int REQUEST_CODE_FOR_IMAGE = 2;
+    public static final int REQUEST_CODE_FOR_CROP = 3;
 
     public static final int MEDIA_TYPE_IMAGE = 1;
     public static final int MEDIA_TYPE_VIDEO = 2;
@@ -58,44 +62,83 @@ public class CameraSelectUtil {
         }
     }
 
-    /**
-     * 使用相机和相册
-     */
     public void selectPicBoth() {
-        final Dialog dialog = new Dialog(context);
-        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-        View contentView = LayoutInflater.from(context).inflate(R.layout.layout_select_head_pic, null);
-        ListView listView = (ListView) contentView.findViewById(R.id.list);
-        SelectPicAdapter adapter = new SelectPicAdapter(context);
-        listView.setAdapter(adapter);
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        String[] data = new String[]{"拍照", "从手机相册中选择"};
+        final ActionSheetDialog dialog = new ActionSheetDialog(context, data //
+                , null);
+        dialog.titleHeight(0).titleTextSize_SP(14.5f)//
+                .layoutAnimation(null)//
+                .cancelText("取消")
+                .show();
+        dialog.setCanceledOnTouchOutside(false);
+        dialog.setOnOperItemClickL(new OnOperItemClickL() {
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intent;
-                switch (position) {
-                    case 0:
-                        intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-                        fileUri = getOutputMediaFileUri(MEDIA_TYPE_IMAGE);
-                        intent.putExtra(MediaStore.EXTRA_OUTPUT, fileUri);
-                        ((Activity) context).startActivityForResult(intent, REQUEST_CODE_CAMERA);
-                        dialog.dismiss();
-                        break;
-                    case 1:
-                        intent = new Intent();
-                        intent.setType("image/*");
-                        intent.setAction(Intent.ACTION_PICK);
-                        ((Activity) context).startActivityForResult(intent, REQUEST_CODE_FOR_IMAGE);
-                        dialog.dismiss();
-                        break;
-                    default:
-                        break;
+            public void onOperItemClick(AdapterView<?> parent, View view, int position, long id) {
+                try {
+                    Intent intent;
+                    switch (position) {
+                        case 0:
+                            intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                            fileUri = getOutputMediaFileUri(MEDIA_TYPE_IMAGE);
+                            intent.putExtra(MediaStore.EXTRA_OUTPUT, fileUri);
+                            ((Activity) context).startActivityForResult(intent, REQUEST_CODE_CAMERA);
+                            dialog.dismiss();
+                            break;
+                        case 1:
+                            intent = new Intent();
+                            intent.setType("image/*");
+                            intent.setAction(Intent.ACTION_PICK);
+                            ((Activity) context).startActivityForResult(intent, REQUEST_CODE_FOR_IMAGE);
+                            dialog.dismiss();
+                            break;
+                        default:
+                            break;
+                    }
+                    dialog.dismiss();
+                } catch (Exception e) {
+                    e.printStackTrace();
                 }
             }
         });
-        dialog.setContentView(contentView);
-        dialog.show();
     }
 
+    /**
+     * 使用相机和相册
+     */
+//    public void selectPicBoth() {
+//        final Dialog dialog = new Dialog(context);
+//        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+//        View contentView = LayoutInflater.from(context).inflate(R.layout.layout_select_head_pic, null);
+//        ListView listView = (ListView) contentView.findViewById(R.id.list);
+//        SelectPicAdapter adapter = new SelectPicAdapter(context);
+//        listView.setAdapter(adapter);
+//        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//            @Override
+//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+//                Intent intent;
+//                switch (position) {
+//                    case 0:
+//                        intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+//                        fileUri = getOutputMediaFileUri(MEDIA_TYPE_IMAGE);
+//                        intent.putExtra(MediaStore.EXTRA_OUTPUT, fileUri);
+//                        ((Activity) context).startActivityForResult(intent, REQUEST_CODE_CAMERA);
+//                        dialog.dismiss();
+//                        break;
+//                    case 1:
+//                        intent = new Intent();
+//                        intent.setType("image/*");
+//                        intent.setAction(Intent.ACTION_PICK);
+//                        ((Activity) context).startActivityForResult(intent, REQUEST_CODE_FOR_IMAGE);
+//                        dialog.dismiss();
+//                        break;
+//                    default:
+//                        break;
+//                }
+//            }
+//        });
+//        dialog.setContentView(contentView);
+//        dialog.show();
+//    }
     public String getPicturePath(Uri uri) {
         String path = "";
         try {
@@ -152,6 +195,5 @@ public class CameraSelectUtil {
 
         return mediaFile;
     }
-
 
 }
