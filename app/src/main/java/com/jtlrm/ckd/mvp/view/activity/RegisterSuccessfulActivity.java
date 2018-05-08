@@ -7,7 +7,7 @@ import android.view.View;
 import com.jtlrm.ckd.R;
 import com.jtlrm.ckd.base.acitvity.TitleBarActivity;
 
-public class CompleteInfoActivity extends TitleBarActivity {
+public class RegisterSuccessfulActivity extends TitleBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -16,12 +16,12 @@ public class CompleteInfoActivity extends TitleBarActivity {
 
     @Override
     protected String getTitleText() {
-        return "完善资料";
+        return "注册成功";
     }
 
     @Override
     protected void setContentLayout() {
-        setContentView(R.layout.activity_complete_info);
+        setContentView(R.layout.activity_register_successful);
     }
 
     @Override
@@ -39,7 +39,7 @@ public class CompleteInfoActivity extends TitleBarActivity {
 
     }
 
-    public void submit(View v) {
-        startActivity(new Intent(context, RegisterSuccessfulActivity.class));
+    public void goMain(View v) {
+        startActivity(new Intent(context, MainActivity.class));
     }
 }

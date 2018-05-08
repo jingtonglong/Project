@@ -127,7 +127,10 @@
         <activity android:name=".mvp.view.activity.RebuilPasswordActivity" />
         <activity android:name=".mvp.view.activity.ServiceRuleActivity" />
         <activity android:name=".mvp.view.activity.SettingPasswordActivity" />
-        <activity android:name=".mvp.view.activity.CompleteInfoActivity"></activity>
+        <activity android:name=".mvp.view.activity.CompleteInfoActivity" />
+        <activity android:name=".mvp.view.activity.RegisterSuccessfulActivity" />
+        <activity android:name=".mvp.view.activity.HeaderChangeActivity" />
+        <activity android:name=".mvp.view.activity.AboutUsActivity"></activity>
     </application>
 
 </manifest>

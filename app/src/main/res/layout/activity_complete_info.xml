@@ -12,5 +12,108 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/title_bar_size" />
 
+    <RelativeLayout style="@style/complete_info_relative">
 
+        <TextView
+            style="@style/necessarily_icon"
+            android:layout_marginLeft="@dimen/margin_middle" />
+
+        <TextView
+            style="@style/complete_info_label"
+            android:text="姓名" />
+
+        <EditText
+            style="@style/complete_info_content"
+            android:hint="请输入姓名" />
+    </RelativeLayout>
+
+    <View style="@style/line_horizontal" />
+
+    <RelativeLayout style="@style/complete_info_relative">
+
+        <TextView
+            style="@style/necessarily_icon"
+            android:layout_marginLeft="@dimen/margin_middle" />
+
+        <TextView
+            style="@style/complete_info_label"
+            android:text="性别" />
+
+        <RadioGroup
+            style="@style/complete_info_content"
+            android:layout_width="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioButton
+                style="@style/complete_info_content_radio"
+                android:checked="true"
+                android:text="男" />
+
+            <RadioButton
+                style="@style/complete_info_content_radio"
+                android:layout_marginLeft="46dp"
+                android:text="女" />
+        </RadioGroup>
+    </RelativeLayout>
+
+    <View style="@style/line_horizontal" />
+
+    <RelativeLayout style="@style/complete_info_relative">
+
+        <TextView
+            style="@style/complete_info_label"
+            android:text="出生日期" />
+
+        <TextView
+            style="@style/complete_info_content"
+            android:hint="年/月/日 >" />
+    </RelativeLayout>
+
+    <View style="@style/line_horizontal" />
+
+    <RelativeLayout style="@style/complete_info_relative">
+
+        <TextView
+            style="@style/complete_info_label"
+            android:text="所属医院" />
+
+        <EditText
+            style="@style/complete_info_content"
+            android:hint="输入所属医院" />
+    </RelativeLayout>
+
+    <View style="@style/line_horizontal" />
+
+    <RelativeLayout style="@style/complete_info_relative">
+
+        <TextView
+            style="@style/complete_info_label"
+            android:text="职务" />
+
+        <RadioGroup
+            style="@style/complete_info_content"
+            android:layout_width="wrap_content"
+            android:layout_marginRight="10dp"
+            android:orientation="horizontal">
+
+            <RadioButton
+                style="@style/complete_info_content_radio"
+                android:checked="true"
+                android:text="医生" />
+
+            <RadioButton
+                style="@style/complete_info_content_radio"
+                android:layout_marginLeft="30dp"
+
+                android:text="护士" />
+        </RadioGroup>
+    </RelativeLayout>
+
+    <View style="@style/line_horizontal" />
+
+    <Button
+        android:id="@+id/submit"
+        style="@style/submit_button"
+        android:onClick="submit"
+        android:text="确  定" />
 </LinearLayout>

@@ -20,11 +20,11 @@ public class ZhangHaoActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_zhang_hao);
     }
 
     @Override
     protected void setContentLayout() {
+        setContentView(R.layout.activity_zhang_hao);
 
     }
 

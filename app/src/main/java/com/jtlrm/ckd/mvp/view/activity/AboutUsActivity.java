@@ -1,13 +1,11 @@
 package com.jtlrm.ckd.mvp.view.activity;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 
 import com.jtlrm.ckd.R;
 import com.jtlrm.ckd.base.acitvity.TitleBarActivity;
 
-public class CompleteInfoActivity extends TitleBarActivity {
+public class AboutUsActivity extends TitleBarActivity{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -16,12 +14,12 @@ public class CompleteInfoActivity extends TitleBarActivity {
 
     @Override
     protected String getTitleText() {
-        return "完善资料";
+        return "关于我们与帮助";
     }
 
     @Override
     protected void setContentLayout() {
-        setContentView(R.layout.activity_complete_info);
+        setContentView(R.layout.activity_about_us);
     }
 
     @Override
@@ -37,9 +35,5 @@ public class CompleteInfoActivity extends TitleBarActivity {
     @Override
     protected void initEvent() {
 
-    }
-
-    public void submit(View v) {
-        startActivity(new Intent(context, RegisterSuccessfulActivity.class));
     }
 }

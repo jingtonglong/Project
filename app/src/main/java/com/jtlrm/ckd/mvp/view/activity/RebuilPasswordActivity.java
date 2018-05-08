@@ -1,5 +1,6 @@
 package com.jtlrm.ckd.mvp.view.activity;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -40,6 +41,6 @@ public class RebuilPasswordActivity extends TitleBarActivity {
     }
 
     public void submit(View view){
-
+//        startActivity(new Intent(context, ));
     }
 }

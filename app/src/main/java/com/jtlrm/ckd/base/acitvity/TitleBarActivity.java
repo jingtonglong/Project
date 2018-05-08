@@ -11,7 +11,7 @@ import butterknife.BindView;
 public abstract class TitleBarActivity extends BaseActivity{
     
     @BindView(R.id.title_bar)
-    TitleBar titleBar;
+    public TitleBar titleBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
