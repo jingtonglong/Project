@@ -234,10 +234,23 @@
     </style>
 
     <style name="home_middle_left_content">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/text_grey</item>
+    </style>
+
+    <style name="orange_text">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:background">@drawable/orange_background</item>
+    </style>
+
+    <style name="home_middle_left_linear1">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_weight">1</item>
-        <item name="android:textColor">@color/text_grey</item>
+        <item name="android:orientation">vertical</item>
     </style>
 
     <style name="home_middle_left">
@@ -296,7 +309,7 @@
     <style name="chat_person_info_label">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:textSize">@dimen/text_size</item>
+        <item name="android:textSize">@dimen/text_size_middle</item>
         <item name="android:textColor">@color/text_black</item>
         <item name="android:layout_alignParentLeft">true</item>
         <item name="android:layout_centerVertical">true</item>
@@ -305,7 +318,7 @@
     <style name="chat_person_info_content">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:textSize">@dimen/text_size</item>
+        <item name="android:textSize">@dimen/text_size_middle</item>
         <item name="android:textColor">@color/text_black</item>
         <item name="android:layout_alignParentRight">true</item>
         <item name="android:layout_centerVertical">true</item>

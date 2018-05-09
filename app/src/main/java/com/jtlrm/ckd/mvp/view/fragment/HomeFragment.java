@@ -1,8 +1,10 @@
 package com.jtlrm.ckd.mvp.view.fragment;
 
 import android.content.Context;
+import android.text.Html;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.base.sdk.util.ImageUtil;
 import com.base.sdk.widget.TitleBar;
@@ -26,6 +28,7 @@ public class HomeFragment extends BaseFragment {
     TitleBar titleBar;
     @BindView(R.id.home_banner)
     Banner banner;
+
     @Override
     protected int setContentLayout() {
         return R.layout.fragment_home;

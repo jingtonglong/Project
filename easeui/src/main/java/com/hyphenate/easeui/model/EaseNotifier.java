@@ -182,6 +182,11 @@ public class EaseNotifier {
      * @param message
      */
     protected void sendNotification(EMMessage message, boolean isForeground, boolean numIncrease) {
+       if (message.getChatType() == EMMessage.ChatType.GroupChat) {
+           if (EasePreferenceManager.getInstance().groupIsClose(message.getTo() + "")) {
+                return;
+           }
+       }
         String username = message.getFrom();
         try {
             String notifyText = username + " ";
@@ -290,7 +295,12 @@ public class EaseNotifier {
                 return;
             } 
         }
-        
+        if (message.getChatType() == EMMessage.ChatType.GroupChat) {
+            if (EasePreferenceManager.getInstance().groupIsClose(message.getTo() + "")) {
+                return;
+            }
+        }
+
         if (System.currentTimeMillis() - lastNotifiyTime < 1000) {
             // received new messages within 2 seconds, skip play ringtone
             return;

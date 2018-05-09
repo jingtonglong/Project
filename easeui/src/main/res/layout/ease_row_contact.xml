@@ -9,12 +9,12 @@
         android:id="@+id/header"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/line_color"
+        android:background="@color/margin_background"
         android:paddingBottom="2dp"
         android:paddingLeft="10dp"
         android:paddingTop="2dp"
         android:textColor="#8a99ac"
-        android:textSize="15sp"
+        android:textSize="12sp"
         android:visibility="gone" />
 
     <RelativeLayout
