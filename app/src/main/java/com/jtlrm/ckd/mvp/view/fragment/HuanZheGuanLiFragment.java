@@ -1,11 +1,14 @@
 package com.jtlrm.ckd.mvp.view.fragment;
 
 
+import android.content.Intent;
 import android.view.View;
+import android.widget.TextView;
 
 import com.base.sdk.widget.TitleBar;
 import com.jtlrm.ckd.R;
 import com.jtlrm.ckd.base.fragment.BaseFragment;
+import com.jtlrm.ckd.mvp.view.activity.HuanZheManagerActivity;
 
 import butterknife.BindView;
 
@@ -15,6 +18,8 @@ import butterknife.BindView;
 public class HuanZheGuanLiFragment extends BaseFragment {
     @BindView(R.id.huanzhe_guanli_title)
     TitleBar titleBar;
+    @BindView(R.id.huanzhe_list_result)
+    TextView huanzheRenShu;
 
     @Override
     protected int setContentLayout() {
@@ -41,6 +46,11 @@ public class HuanZheGuanLiFragment extends BaseFragment {
 
     @Override
     protected void initEvent() {
-
+        huanzheRenShu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(context, HuanZheManagerActivity.class));
+            }
+        });
     }
 }

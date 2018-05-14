@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="@dimen/padding_size_middle"
+        android:weightSum="11">
+
+        <TextView
+            style="@style/text_black"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:text="某某某" />
+
+        <TextView
+            style="@style/text_black"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:text="男" />
+
+        <TextView
+            style="@style/text_black"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:text="61岁"
+
+            />
+
+        <TextView
+            style="@style/text_black"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:gravity="end"
+            android:text="13402012222" />
+    </LinearLayout>
+
+    <View style="@style/line_horizontal" />
+
+    <LinearLayout
+        android:id="@+id/basic_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <RelativeLayout style="@style/chat_person_info_relative">
+
+            <TextView
+                style="@style/chat_person_info_label"
+                android:text="身份证号码"
+                android:textColor="@color/text_grey" />
+
+            <TextView
+                style="@style/chat_person_info_content"
+                android:text="12321231232132132" />
+        </RelativeLayout>
+
+        <View style="@style/line_horizontal" />
+
+        <RelativeLayout style="@style/chat_person_info_relative">
+
+            <TextView
+                style="@style/chat_person_info_label"
+
+                android:text="家庭住址"
+                android:textColor="@color/text_grey" />
+
+            <TextView
+                style="@style/chat_person_info_content"
+                android:text="成都市武侯区阿萨德" />
+        </RelativeLayout>
+
+        <View style="@style/line_horizontal" />
+
+        <RelativeLayout style="@style/chat_person_info_relative">
+
+            <TextView
+                style="@style/chat_person_info_label"
+
+                android:text="报销方式"
+                android:textColor="@color/text_grey" />
+
+            <TextView
+                style="@style/chat_person_info_content"
+                android:text="城镇职工" />
+        </RelativeLayout>
+
+        <View style="@style/line_horizontal" />
+
+        <RelativeLayout style="@style/chat_person_info_relative">
+
+            <TextView
+                style="@style/chat_person_info_label"
+
+                android:text="文化程度"
+                android:textColor="@color/text_grey" />
+
+            <TextView
+                style="@style/chat_person_info_content"
+                android:text="本科" />
+        </RelativeLayout>
+
+        <View style="@style/line_horizontal" />
+
+        <RelativeLayout style="@style/chat_person_info_relative">
+
+            <TextView
+                style="@style/chat_person_info_label"
+
+                android:text="原发病"
+                android:textColor="@color/text_grey" />
+
+            <TextView
+                style="@style/chat_person_info_content"
+                android:text="高血压" />
+        </RelativeLayout>
+
+        <View style="@style/line_horizontal" />
+
+        <RelativeLayout style="@style/chat_person_info_relative">
+
+            <TextView
+                style="@style/chat_person_info_label"
+
+                android:text="伴随疾病"
+                android:textColor="@color/text_grey" />
+
+            <TextView
+                style="@style/chat_person_info_content"
+                android:text="糖尿病" />
+        </RelativeLayout>
+
+        <View style="@style/line_horizontal" />
+
+        <RelativeLayout style="@style/chat_person_info_relative">
+
+            <TextView
+                style="@style/chat_person_info_label"
+
+                android:text="主要治疗方式"
+                android:textColor="@color/text_grey" />
+
+            <TextView
+                style="@style/chat_person_info_content"
+                android:text="" />
+        </RelativeLayout>
+
+        <View style="@style/line_horizontal" />
+
+        <RelativeLayout style="@style/chat_person_info_relative">
+
+            <TextView
+                style="@style/chat_person_info_label"
+
+                android:text="备注信息"
+                android:textColor="@color/text_grey" />
+
+            <ImageView
+                style="@style/chat_person_info_content"
+                android:layout_height="14dp"
+                android:layout_marginRight="-10dp"
+                android:src="@drawable/arrom_right" />
+        </RelativeLayout>
+
+        <View style="@style/line_horizontal" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/basic_manager"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="6dp"
+        android:paddingTop="6dp"
+        android:src="@drawable/arrow_buttom" />
+
+</LinearLayout>

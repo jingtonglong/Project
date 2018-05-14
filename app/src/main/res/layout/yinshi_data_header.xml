@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="@dimen/padding_size_middle">
+
+        <View
+            android:layout_width="8dp"
+            android:layout_height="16dp"
+            android:background="@drawable/orange_icon_background" />
+
+        <TextView
+            style="@style/text_black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_middle"
+            android:text="近七天内连续三天饮食平均含量统计" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingLeft="6dp"
+        android:paddingRight="6dp">
+
+        <LinearLayout style="@style/yinshi_data_header_linear">
+
+            <TextView
+                style="@style/yinshi_data_header_text_top"
+                android:text="1000" />
+
+            <TextView
+                style="@style/yinshi_data_header_text_middle"
+
+                android:text="千卡(CKAL)" />
+
+            <TextView
+                style="@style/yinshi_data_header_text_bottom"
+                android:text="热量" />
+        </LinearLayout>
+
+        <LinearLayout style="@style/yinshi_data_header_linear">
+
+            <TextView
+                style="@style/yinshi_data_header_text_top"
+                android:text="20" />
+
+            <TextView
+                style="@style/yinshi_data_header_text_middle"
+
+                android:text="克(g)" />
+
+            <TextView
+                style="@style/yinshi_data_header_text_bottom"
+                android:text="蛋白质" />
+        </LinearLayout>
+
+        <LinearLayout style="@style/yinshi_data_header_linear">
+
+            <TextView
+                style="@style/yinshi_data_header_text_top"
+                android:text="5" />
+
+            <TextView
+                style="@style/yinshi_data_header_text_middle"
+
+                android:text="毫克(mg)" />
+
+            <TextView
+                style="@style/yinshi_data_header_text_bottom"
+                android:text="钾" />
+        </LinearLayout>
+
+        <LinearLayout style="@style/yinshi_data_header_linear">
+
+            <TextView
+                style="@style/yinshi_data_header_text_top"
+                android:text="4" />
+
+            <TextView
+                style="@style/yinshi_data_header_text_middle"
+
+                android:text="毫克(mg)" />
+
+            <TextView
+                style="@style/yinshi_data_header_text_bottom"
+                android:text="钠" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:orientation="horizontal"
+        android:paddingLeft="6dp"
+        android:paddingRight="6dp">
+
+        <LinearLayout style="@style/yinshi_data_header_linear">
+
+            <TextView
+                style="@style/yinshi_data_header_text_top"
+                android:text="8" />
+
+            <TextView
+                style="@style/yinshi_data_header_text_middle"
+
+                android:text="毫克(mg)" />
+
+            <TextView
+                style="@style/yinshi_data_header_text_bottom"
+                android:text="磷" />
+        </LinearLayout>
+
+        <LinearLayout style="@style/yinshi_data_header_linear">
+
+            <TextView
+                style="@style/yinshi_data_header_text_top"
+                android:text="20" />
+
+            <TextView
+                style="@style/yinshi_data_header_text_middle"
+
+                android:text="毫克(mg)" />
+
+            <TextView
+                style="@style/yinshi_data_header_text_bottom"
+                android:text="钙" />
+        </LinearLayout>
+
+        <LinearLayout style="@style/yinshi_data_header_linear">
+
+            <TextView
+                style="@style/yinshi_data_header_text_top"
+                android:text="800" />
+
+            <TextView
+                style="@style/yinshi_data_header_text_middle"
+
+                android:text="毫升(ml)" />
+
+            <TextView
+                style="@style/yinshi_data_header_text_bottom"
+                android:text="水分" />
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/yinshi_data_header_linear"
+            android:visibility="invisible">
+
+            <TextView
+                style="@style/yinshi_data_header_text_top"
+                android:text="4" />
+
+            <TextView
+                style="@style/yinshi_data_header_text_middle"
+
+                android:text="毫克(mg)" />
+
+            <TextView
+                style="@style/yinshi_data_header_text_bottom"
+                android:text="钠" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        style="@style/line_margin"
+        android:layout_marginTop="12dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+        android:padding="@dimen/padding_size_middle">
+
+        <View
+            android:layout_width="8dp"
+            android:layout_height="16dp"
+            android:background="@drawable/orange_icon_background" />
+
+        <TextView
+            style="@style/text_black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_middle"
+            android:text="近七天饮食详情" />
+    </LinearLayout>
+
+</LinearLayout>

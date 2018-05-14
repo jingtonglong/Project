@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <View style="@style/line_margin" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:paddingBottom="@dimen/padding_size_middle"
+        android:paddingTop="@dimen/padding_size_middle">
+
+        <TextView
+            android:layout_width="8dp"
+            android:layout_height="16dp"
+            android:background="@drawable/blue_banyuan_circle_background" />
+
+        <TextView
+            style="@style/text_black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:text="2018-12-12" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="120dp"
+            android:background="@drawable/green2_circle_background"
+            android:paddingLeft="12dp"
+            android:paddingRight="12dp"
+            android:text="已审查"
+            android:textColor="@color/text_green2" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="12dp"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <ImageView
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:src="@drawable/add_orange" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="6dp"
+                android:text="新增数据"
+                android:textColor="@color/text_orange"
+                android:textSize="@dimen/text_size" />
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="12dp"
+            android:src="@drawable/arrom_right" />
+    </RelativeLayout>
+
+    <View style="@style/line_horizontal" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <View style="@style/line_horizontal" />
+
+        <LinearLayout style="@style/yinshi_data_item_linear">
+
+            <LinearLayout style="@style/yinshi_data_item_sub_linear">
+
+                <TextView
+                    style="@style/yinshi_data_item_sub_text_left"
+                    android:text="能量" />
+
+                <TextView
+                    style="@style/yinshi_data_item_sub_text_middle"
+                    android:text="1000" />
+
+                <TextView
+                    style="@style/yinshi_data_item_sub_text_right"
+                    android:text="千卡(CKAL)" />
+            </LinearLayout>
+
+            <View style="@style/line_vertical" />
+
+            <LinearLayout style="@style/yinshi_data_item_sub_linear">
+
+                <TextView
+                    style="@style/yinshi_data_item_sub_text_left"
+                    android:text="蛋白质" />
+
+                <TextView
+                    style="@style/yinshi_data_item_sub_text_middle"
+                    android:text="20" />
+
+                <TextView
+                    style="@style/yinshi_data_item_sub_text_right"
+                    android:text="克(g)" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <View style="@style/line_horizontal" />
+
+        <LinearLayout style="@style/yinshi_data_item_linear">
+
+            <LinearLayout style="@style/yinshi_data_item_sub_linear">
+
+                <TextView
+                    style="@style/yinshi_data_item_sub_text_left"
+                    android:text="钾" />
+
+                <TextView
+                    style="@style/yinshi_data_item_sub_text_middle"
+                    android:text="1000" />
+
+                <TextView
+                    style="@style/yinshi_data_item_sub_text_right"
+                    android:text="毫克(mg)" />
+            </LinearLayout>
+
+            <View style="@style/line_vertical" />
+
+            <LinearLayout style="@style/yinshi_data_item_sub_linear">
+
+                <TextView
+                    style="@style/yinshi_data_item_sub_text_left"
+                    android:text="钠" />
+
+                <TextView
+                    style="@style/yinshi_data_item_sub_text_middle"
+                    android:text="20" />
+
+                <TextView
+                    style="@style/yinshi_data_item_sub_text_right"
+                    android:text="毫克(mg)" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <View style="@style/line_horizontal" />
+
+        <LinearLayout style="@style/yinshi_data_item_linear">
+
+            <LinearLayout style="@style/yinshi_data_item_sub_linear">
+
+                <TextView
+                    style="@style/yinshi_data_item_sub_text_left"
+                    android:text="磷" />
+
+                <TextView
+                    style="@style/yinshi_data_item_sub_text_middle"
+                    android:text="1000" />
+
+                <TextView
+                    style="@style/yinshi_data_item_sub_text_right"
+                    android:text="毫克(mg)" />
+            </LinearLayout>
+
+            <View style="@style/line_vertical" />
+
+            <LinearLayout style="@style/yinshi_data_item_sub_linear">
+
+                <TextView
+                    style="@style/yinshi_data_item_sub_text_left"
+                    android:text="钙" />
+
+                <TextView
+                    style="@style/yinshi_data_item_sub_text_middle"
+                    android:text="20" />
+
+                <TextView
+                    style="@style/yinshi_data_item_sub_text_right"
+                    android:text="毫克(mg)" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <View style="@style/line_horizontal" />
+
+        <LinearLayout style="@style/yinshi_data_item_linear">
+
+            <LinearLayout style="@style/yinshi_data_item_sub_linear">
+
+                <TextView
+                    style="@style/yinshi_data_item_sub_text_left"
+                    android:text="水分" />
+
+                <TextView
+                    style="@style/yinshi_data_item_sub_text_middle"
+                    android:text="1000" />
+
+                <TextView
+                    style="@style/yinshi_data_item_sub_text_right"
+                    android:text="毫升(ml)" />
+            </LinearLayout>
+
+            <View style="@style/line_vertical" />
+
+            <LinearLayout
+                style="@style/yinshi_data_item_sub_linear"
+                android:visibility="invisible"></LinearLayout>
+        </LinearLayout>
+
+        <View style="@style/line_horizontal" />
+    </LinearLayout>
+
+</LinearLayout>

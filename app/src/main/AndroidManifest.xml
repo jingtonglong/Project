@@ -131,7 +131,8 @@
         <activity android:name=".mvp.view.activity.RegisterSuccessfulActivity" />
         <activity android:name=".mvp.view.activity.HeaderChangeActivity" />
         <activity android:name=".mvp.view.activity.AboutUsActivity" />
-        <activity android:name=".mvp.view.activity.CropImageActivity"></activity>
+        <activity android:name=".mvp.view.activity.CropImageActivity" />
+        <activity android:name=".mvp.view.activity.HuanZheManagerActivity"></activity>
     </application>
 
 </manifest>

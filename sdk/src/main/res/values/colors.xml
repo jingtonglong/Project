@@ -11,10 +11,15 @@
     <color name="text_black">#656565</color>
     <color name="text_black_deep">#BF000000</color>
     <color name="text_green">#45D5A0</color>
+    <color name="text_orange1">#F7A98B</color>
+    <color name="text_blue">#43CED9</color>
+    <color name="text_red">#FF87BF</color>
     <color name="text_orange">#FFC895 </color>
+    <color name="text_green1">#8CC63F</color>
     <color name="margin_background">#F7F7F7</color>
     <color name="line_color">#E3E3E3</color>
-
+    <color name="icon_blue">#4BC5EA</color>
+    <color name="text_green2">#ADCBBC</color>
     <color name="home_title_background"> #557CE3 </color>
 
     <color name="home_blue">#A6D0DD</color>
