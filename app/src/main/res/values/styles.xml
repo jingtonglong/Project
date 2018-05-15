@@ -418,7 +418,8 @@
         <item name="android:textColor">@color/text_green</item>
         <item name="android:gravity">center</item>
     </style>
-    <style name="yinshi_data_item_sub_text_right" >
+
+    <style name="yinshi_data_item_sub_text_right">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_weight">3</item>
@@ -444,6 +445,7 @@
         <item name="android:gravity">center</item>
         <item name="android:textSize">@dimen/text_size</item>
     </style>
+
     <style name="yinshi_data_header_text_middle">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
@@ -458,5 +460,114 @@
         <item name="android:textColor">@color/text_black</item>
         <item name="android:gravity">center</item>
         <item name="android:textSize">@dimen/text_size</item>
+    </style>
+
+    <style name="yinshi_detail_date_linear">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">center_horizontal</item>
+    </style>
+
+    <style name="yinshi_detail_date_xingqi">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/text_size</item>
+    </style>
+
+    <style name="yinshi_detail_date_jihao">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:layout_marginTop">6dp</item>
+        <item name="android:textSize">@dimen/text_size</item>
+    </style>
+
+    <style name="yinshi_detail_title_linear">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:padding">@dimen/padding_size_middle</item>
+        <item name="android:background">@color/eef7f2</item>
+    </style>
+
+    <style name="text_white">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/text_size</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="yinshi_detail_title_tv_left" parent="text_white">
+        <item name="android:textColor">@color/adcbbc</item>
+    </style>
+
+    <style name="yinshi_detail_title_tv_right" parent="text_white">
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:text">@string/picture_browse</item>
+        <item name="android:textColor">@color/text_black</item>
+    </style>
+
+    <style name="yinshi_detail_title_icon_right">
+        <item name="android:layout_width">16dp</item>
+        <item name="android:layout_height">16dp</item>
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:layout_marginRight">68dp</item>
+        <item name="android:src">@drawable/picture_browse</item>
+    </style>
+
+    <style name="yinshi_detail_add_linear">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:gravity">center</item>
+        <item name="android:padding">@dimen/padding_size_middle</item>
+    </style>
+
+    <style name="yinshi_detail_add_icon">
+        <item name="android:layout_width">16dp</item>
+        <item name="android:layout_height">16dp</item>
+        <item name="android:src">@drawable/add_hese</item>
+    </style>
+
+    <style name="yinshi_detail_add_text" parent="text_white">
+        <item name="android:textColor">@color/hese</item>
+        <item name="android:layout_marginLeft">10dp</item>
+    </style>
+
+    <style name="shipin_select_radio_button">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:button">@null</item>
+        <item name="android:checked">false</item>
+        <item name="android:textSize">@dimen/text_size_small</item>
+        <item name="android:drawablePadding">4dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:paddingTop">@dimen/padding_size_middle</item>
+        <item name="android:paddingBottom">@dimen/padding_size_middle</item>
+        <item name="android:background">@drawable/shiwu_select_background_color</item>
+        <item name="android:textColor">@drawable/shiwu_text_color</item>
+    </style>
+
+    <style name="shiwu_editext" parent="Theme.AppCompat.Light">
+        <item name="colorControlNormal">@color/text_grey</item>
+        <item name="colorControlActivated">@color/text_grey</item>
+    </style>
+
+    <style name="PictureDialog" parent="@android:style/Theme.Dialog">
+        <!-- 有无边框 -->
+        <item name="android:windowFrame">@null</item>
+        <!-- 是否浮现在activity之上 -->
+        <item name="android:windowIsFloating">true</item>
+        <!-- 是否透明 -->
+        <item name="android:windowIsTranslucent">true</item>
+        <!-- 背景透明 -->
+        <item name="android:windowBackground">@color/white</item>
+        <!-- 模糊 -->
+        <item name="android:backgroundDimEnabled">true</item>
+        <!--无标题 -->
+        <item name="android:windowNoTitle">true</item>
     </style>
 </resources>

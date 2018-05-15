@@ -1,11 +1,15 @@
 package com.jtlrm.ckd.mvp.view.fragment;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
+import android.widget.TextView;
 
 import com.jtlrm.ckd.R;
 import com.jtlrm.ckd.base.fragment.BaseFragment;
+import com.jtlrm.ckd.mvp.view.activity.YinShidetailActivity;
 
 import butterknife.BindView;
 
@@ -21,6 +25,9 @@ public class YinShiDataFragment extends BaseFragment {
 
     @BindView(R.id.recyclerView)
     RecyclerView recyclerView;
+    @BindView(R.id.tiaozhuan)
+    TextView tiaozhuan;
+
     public YinShiDataFragment() {
 
     }
@@ -59,7 +66,12 @@ public class YinShiDataFragment extends BaseFragment {
 
     @Override
     protected void initEvent() {
-
+        tiaozhuan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(context, YinShidetailActivity.class));
+            }
+        });
     }
 
 

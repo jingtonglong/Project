@@ -114,25 +114,73 @@
         <!-- <category android:name="com.ys.yarc" /> -->
         <!-- </intent-filter> -->
         <!-- </receiver> -->
-        <activity android:name=".mvp.view.activity.MyQRCodeActivity" />
-        <activity android:name=".mvp.view.activity.ZhangHaoActivity" />
-        <activity android:name=".mvp.view.activity.ChangePhoneActivity" />
-        <activity android:name=".mvp.view.activity.MyWorkerActivity" />
-        <activity android:name=".mvp.view.activity.CreateGroupActivity" />
-        <activity android:name=".mvp.view.activity.PickContactsActivity" />
-        <activity android:name=".mvp.view.activity.PicWorkerActivity" />
-        <activity android:name=".mvp.view.activity.ChatPersonInfoActivity" />
-        <activity android:name=".mvp.view.activity.RemarkActivity" />
-        <activity android:name=".mvp.view.activity.ForgetPasswordActivity" />
-        <activity android:name=".mvp.view.activity.RebuilPasswordActivity" />
-        <activity android:name=".mvp.view.activity.ServiceRuleActivity" />
-        <activity android:name=".mvp.view.activity.SettingPasswordActivity" />
-        <activity android:name=".mvp.view.activity.CompleteInfoActivity" />
-        <activity android:name=".mvp.view.activity.RegisterSuccessfulActivity" />
-        <activity android:name=".mvp.view.activity.HeaderChangeActivity" />
-        <activity android:name=".mvp.view.activity.AboutUsActivity" />
-        <activity android:name=".mvp.view.activity.CropImageActivity" />
-        <activity android:name=".mvp.view.activity.HuanZheManagerActivity"></activity>
+        <activity
+            android:name=".mvp.view.activity.MyQRCodeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".mvp.view.activity.ZhangHaoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".mvp.view.activity.ChangePhoneActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".mvp.view.activity.MyWorkerActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".mvp.view.activity.CreateGroupActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".mvp.view.activity.PickContactsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".mvp.view.activity.PicWorkerActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".mvp.view.activity.ChatPersonInfoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".mvp.view.activity.RemarkActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".mvp.view.activity.ForgetPasswordActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".mvp.view.activity.RebuilPasswordActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".mvp.view.activity.ServiceRuleActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".mvp.view.activity.SettingPasswordActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".mvp.view.activity.CompleteInfoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".mvp.view.activity.RegisterSuccessfulActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".mvp.view.activity.HeaderChangeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".mvp.view.activity.AboutUsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".mvp.view.activity.CropImageActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".mvp.view.activity.HuanZheManagerActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".mvp.view.activity.YinShidetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".mvp.view.activity.ShiWuSelectActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".mvp.view.activity.YinShiTuPianActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/PictureDialog" />
     </application>
 
 </manifest>

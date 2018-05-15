@@ -6,6 +6,11 @@
 
     <color name="app_color">#FF3285FF</color>
 
+    <color name="eef7f2">#EEF7F2</color>
+
+    <color name="adcbbc">#ADCBBC</color>
+    <color name="hese">#CCC4BC</color>
+
     <!--MD_dialog相关-->
     <color name="card_background">#ffffff</color>
     <color name="card_shadow">#10000000</color>

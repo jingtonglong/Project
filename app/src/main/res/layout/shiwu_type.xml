@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_weight="7">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RadioGroup
+            android:id="@+id/main_group"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RadioButton
+                android:id="@+id/shiwu_button_1"
+                style="@style/shipin_select_radio_button"
+                android:checked="true"
+                android:drawableTop="@drawable/food_1"
+                android:text="水果类" />
+
+            <RadioButton
+                android:id="@+id/shiwu_button_2"
+                style="@style/shipin_select_radio_button"
+                android:drawableTop="@drawable/food_2"
+                android:text="肉蛋类" />
+
+            <RadioButton
+                android:id="@+id/shiwu_button_3"
+                style="@style/shipin_select_radio_button"
+                android:drawableTop="@drawable/food_3"
+                android:text="淀粉类" />
+
+            <RadioButton
+                android:id="@+id/shiwu_button_4"
+                style="@style/shipin_select_radio_button"
+                android:drawableTop="@drawable/food_4"
+                android:text="油脂类" />
+
+            <RadioButton
+                android:id="@+id/shiwu_button_5"
+                style="@style/shipin_select_radio_button"
+                android:drawableTop="@drawable/food_5"
+                android:text="坚果类" />
+
+            <RadioButton
+                android:id="@+id/shiwu_button_6"
+                style="@style/shipin_select_radio_button"
+                android:drawableTop="@drawable/food_6"
+                android:text="谷薯类" />
+
+            <RadioButton
+                android:id="@+id/shiwu_button_7"
+                style="@style/shipin_select_radio_button"
+                android:drawableTop="@drawable/food_7"
+                android:text="绿叶类" />
+
+            <RadioButton
+                android:id="@+id/shiwu_button_8"
+                style="@style/shipin_select_radio_button"
+                android:drawableTop="@drawable/food_8"
+                android:text="豆类" />
+
+            <RadioButton
+                android:id="@+id/shiwu_button_9"
+                style="@style/shipin_select_radio_button"
+                android:drawableTop="@drawable/food_9"
+                android:text="低脂奶类" />
+
+        </RadioGroup>
+
+    </LinearLayout>
+</ScrollView>
