@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".mvp.view.activity.YinShidetailActivity">
+
+    <com.base.sdk.widget.TitleBar
+        android:id="@+id/title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_bar_size" />
+
+    <RelativeLayout
+        style="@style/yinshi_detail_title_linear"
+        android:background="@color/text_green">
+
+        <TextView
+            style="@style/text_white"
+            android:text="选择日期" />
+
+        <TextView
+            android:id="@+id/yinshi_title_date"
+            style="@style/yinshi_detail_title_tv_right"
+            android:text="2018-12" />
+
+        <ImageView
+            style="@style/yinshi_detail_title_icon_right"
+            android:src="@drawable/rili" />
+    </RelativeLayout>
+
+    <View style="@style/line_horizontal.white" />
+
+    <include layout="@layout/yinshi_detail_date" />
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout style="@style/yinshi_detail_title_linear">
+
+                <TextView
+                    style="@style/yinshi_detail_title_tv_left"
+                    android:text="早餐" />
+
+                <TextView
+                    android:id="@+id/picture_browse"
+                    style="@style/yinshi_detail_title_tv_right" />
+
+                <ImageView style="@style/yinshi_detail_title_icon_right" />
+            </RelativeLayout>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/news_recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/white"
+                android:clipToPadding="false"
+                android:overScrollMode="never"
+                android:visibility="gone"
+                tools:listitem="@layout/adapter_news" />
+
+            <LinearLayout style="@style/yinshi_detail_add_linear">
+
+                <ImageView style="@style/yinshi_detail_add_icon" />
+
+                <TextView
+                    style="@style/yinshi_detail_add_text"
+                    android:text="新增早餐" />
+            </LinearLayout>
+
+            <RelativeLayout style="@style/yinshi_detail_title_linear">
+
+                <TextView
+                    style="@style/yinshi_detail_title_tv_left"
+                    android:text="早上加餐" />
+
+                <TextView style="@style/yinshi_detail_title_tv_right" />
+
+                <ImageView style="@style/yinshi_detail_title_icon_right" />
+            </RelativeLayout>
+
+            <android.support.v7.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/white"
+                android:clipToPadding="false"
+                android:overScrollMode="never"
+                android:visibility="gone"
+                tools:listitem="@layout/adapter_news" />
+
+            <LinearLayout style="@style/yinshi_detail_add_linear">
+
+                <ImageView style="@style/yinshi_detail_add_icon" />
+
+                <TextView
+                    style="@style/yinshi_detail_add_text"
+                    android:text="新增早上加餐" />
+            </LinearLayout>
+
+            <RelativeLayout style="@style/yinshi_detail_title_linear">
+
+                <TextView
+                    style="@style/yinshi_detail_title_tv_left"
+                    android:text="午餐" />
+
+                <TextView style="@style/yinshi_detail_title_tv_right" />
+
+                <ImageView style="@style/yinshi_detail_title_icon_right" />
+            </RelativeLayout>
+
+            <android.support.v7.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/white"
+                android:clipToPadding="false"
+                android:overScrollMode="never"
+                android:visibility="gone"
+                tools:listitem="@layout/adapter_news" />
+
+            <LinearLayout style="@style/yinshi_detail_add_linear">
+
+                <ImageView style="@style/yinshi_detail_add_icon" />
+
+                <TextView
+                    style="@style/yinshi_detail_add_text"
+                    android:text="新增午餐" />
+            </LinearLayout>
+
+            <RelativeLayout style="@style/yinshi_detail_title_linear">
+
+                <TextView
+                    style="@style/yinshi_detail_title_tv_left"
+                    android:text="下午加餐" />
+
+                <TextView style="@style/yinshi_detail_title_tv_right" />
+
+                <ImageView style="@style/yinshi_detail_title_icon_right" />
+            </RelativeLayout>
+
+            <android.support.v7.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/white"
+                android:clipToPadding="false"
+                android:overScrollMode="never"
+                android:visibility="gone"
+                tools:listitem="@layout/adapter_news" />
+
+            <LinearLayout style="@style/yinshi_detail_add_linear">
+
+                <ImageView style="@style/yinshi_detail_add_icon" />
+
+                <TextView
+                    style="@style/yinshi_detail_add_text"
+                    android:text="新增下午加餐" />
+            </LinearLayout>
+
+            <RelativeLayout style="@style/yinshi_detail_title_linear">
+
+                <TextView
+                    style="@style/yinshi_detail_title_tv_left"
+                    android:text="晚餐" />
+
+                <TextView style="@style/yinshi_detail_title_tv_right" />
+
+                <ImageView style="@style/yinshi_detail_title_icon_right" />
+            </RelativeLayout>
+
+            <android.support.v7.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/white"
+                android:clipToPadding="false"
+                android:overScrollMode="never"
+                android:visibility="gone"
+                tools:listitem="@layout/adapter_news" />
+
+            <LinearLayout style="@style/yinshi_detail_add_linear">
+
+                <ImageView style="@style/yinshi_detail_add_icon" />
+
+                <TextView
+                    style="@style/yinshi_detail_add_text"
+                    android:text="新增晚餐" />
+            </LinearLayout>
+
+            <RelativeLayout style="@style/yinshi_detail_title_linear">
+
+                <TextView
+                    style="@style/yinshi_detail_title_tv_left"
+                    android:text="晚上加餐" />
+
+                <TextView style="@style/yinshi_detail_title_tv_right" />
+
+                <ImageView style="@style/yinshi_detail_title_icon_right" />
+            </RelativeLayout>
+
+            <android.support.v7.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/white"
+                android:clipToPadding="false"
+                android:overScrollMode="never"
+                android:visibility="gone"
+                tools:listitem="@layout/adapter_news" />
+
+            <LinearLayout style="@style/yinshi_detail_add_linear">
+
+                <ImageView style="@style/yinshi_detail_add_icon" />
+
+                <TextView
+                    style="@style/yinshi_detail_add_text"
+                    android:text="新增晚上加餐" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+
+</LinearLayout>

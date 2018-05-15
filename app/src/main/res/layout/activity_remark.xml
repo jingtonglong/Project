@@ -16,7 +16,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/margin_middle"
-        android:background="@drawable/white_background"
+        android:background="@drawable/grey_background"
         android:gravity="start"
         android:hint="请输入备注信息"
         android:lines="8"

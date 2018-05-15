@@ -8,63 +8,120 @@
     tools:context="com.jtlrm.ckd.mvp.view.activity.PersonInfoActivity">
 
     <com.base.sdk.widget.TitleBar
-        android:id="@+id/person_info_title"
+        android:id="@+id/title_bar"
         android:layout_width="match_parent"
         android:layout_height="@dimen/title_bar_size" />
 
-    <LinearLayout style="@style/person_info_linear">
 
-        <ImageView
-            style="@style/person_info_icon"
-            android:src="@drawable/login_user_icon" />
+    <RelativeLayout style="@style/chat_person_info_relative">
 
         <TextView
-            style="@style/person_info_label"
-            android:text="姓名:" />
-
-        <EditText
-            android:id="@+id/person_info_name"
-            style="@style/person_info_input" />
-    </LinearLayout>
-
-    <View style="@style/line_left" />
-
-    <LinearLayout style="@style/person_info_linear">
+            style="@style/chat_person_info_label"
+            android:text="头像" />
 
         <ImageView
-            style="@style/person_info_icon"
-            android:src="@drawable/login_user_icon" />
-
-        <TextView
-
-            style="@style/person_info_label"
-            android:text="手机:" />
-
-        <EditText android:id="@+id/person_info_phone"
-            style="@style/person_info_input" />
-    </LinearLayout>
-
-    <View style="@style/line_left" />
-
-    <LinearLayout style="@style/person_info_linear">
+            style="@style/chat_person_info_content"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginRight="20dp"
+            android:onClick="selectHeader"
+            android:src="@drawable/person_change" />
 
         <ImageView
-            style="@style/person_info_icon"
-            android:src="@drawable/login_user_icon" />
+            style="@style/chat_person_info_content"
+            android:layout_marginRight="6dp"
+            android:src="@drawable/more" />
+    </RelativeLayout>
+
+    <View style="@style/line_horizontal" />
+
+    <RelativeLayout style="@style/chat_person_info_relative">
 
         <TextView
-            style="@style/person_info_label"
-            android:text="邮箱:" />
+            style="@style/chat_person_info_label"
+            android:text="姓名" />
 
-        <EditText
-            android:id="@+id/person_info_email"
-            style="@style/person_info_input" />
-    </LinearLayout>
+        <TextView
+            style="@style/chat_person_info_content"
+            android:text="张丽娟" />
+    </RelativeLayout>
 
-    <View style="@style/line_left" />
+    <View style="@style/line_horizontal" />
 
-    <Button
-        android:id="@+id/person_info_submit"
-        style="@style/submit_button"
-        android:text="确认" />
+    <RelativeLayout style="@style/chat_person_info_relative">
+
+        <TextView
+            style="@style/chat_person_info_label"
+            android:text="性别" />
+
+        <TextView
+            style="@style/chat_person_info_content"
+            android:text="女" />
+    </RelativeLayout>
+
+    <View style="@style/line_horizontal" />
+
+    <RelativeLayout style="@style/chat_person_info_relative">
+
+        <TextView
+            style="@style/chat_person_info_label"
+            android:text="出生日期" />
+
+        <TextView
+            style="@style/chat_person_info_content"
+            android:layout_marginRight="20dp"
+            android:text="19/12/4" />
+
+        <ImageView
+            style="@style/chat_person_info_content"
+            android:layout_marginRight="6dp"
+            android:src="@drawable/more" />
+    </RelativeLayout>
+
+    <View style="@style/line_horizontal" />
+
+    <RelativeLayout style="@style/chat_person_info_relative">
+
+        <TextView
+            style="@style/chat_person_info_label"
+            android:text="电话" />
+
+        <TextView
+            style="@style/chat_person_info_content"
+            android:layout_marginRight="20dp"
+            android:text="1666666666" />
+
+        <ImageView
+            style="@style/chat_person_info_content"
+            android:layout_marginRight="6dp"
+            android:src="@drawable/more" />
+    </RelativeLayout>
+
+    <View style="@style/line_horizontal" />
+
+    <RelativeLayout style="@style/chat_person_info_relative">
+
+        <TextView
+            style="@style/chat_person_info_label"
+            android:text="所属医院" />
+
+        <TextView
+            style="@style/chat_person_info_content"
+            android:text="四川华西医院" />
+    </RelativeLayout>
+
+    <View style="@style/line_horizontal" />
+
+    <RelativeLayout style="@style/chat_person_info_relative">
+
+        <TextView
+            style="@style/chat_person_info_label"
+            android:text="职务" />
+
+        <TextView
+            style="@style/chat_person_info_content"
+            android:text="医生" />
+    </RelativeLayout>
+
+    <View style="@style/line_horizontal" />
 </LinearLayout>

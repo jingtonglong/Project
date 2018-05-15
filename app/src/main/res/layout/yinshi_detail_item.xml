@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:paddingBottom="@dimen/padding_size_middle"
+    android:paddingTop="@dimen/padding_size_middle">
+
+    <ImageView
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:layout_marginLeft="@dimen/margin_middle"
+        android:src="@drawable/yinshi_delete" />
+
+    <TextView
+        style="@style/text_black"
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin_middle"
+        android:text="食物" />
+
+    <EditText
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin_middle"
+        android:background="@null"
+        android:inputType="number"
+        android:text="3232"
+        android:textColor="@color/text_black"
+        android:textSize="@dimen/text_size" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="end"
+        android:paddingRight="@dimen/margin_middle"
+        android:text="g"
+        android:textColor="@color/text_grey"
+        android:textSize="12sp" />
+
+</LinearLayout>

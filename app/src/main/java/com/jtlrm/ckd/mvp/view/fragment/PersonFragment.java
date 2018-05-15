@@ -8,6 +8,7 @@ import com.hyphenate.EMCallBack;
 import com.hyphenate.chatuidemo.DemoHelper;
 import com.jtlrm.ckd.R;
 import com.jtlrm.ckd.base.fragment.BaseFragment;
+import com.jtlrm.ckd.mvp.view.activity.AboutUsActivity;
 import com.jtlrm.ckd.mvp.view.activity.LoginActivity;
 import com.jtlrm.ckd.mvp.view.activity.MyQRCodeActivity;
 import com.jtlrm.ckd.mvp.view.activity.PersonInfoActivity;
@@ -61,7 +62,7 @@ public class PersonFragment extends BaseFragment implements View.OnClickListener
                 startActivity(new Intent(context, ZhangHaoActivity.class));
                 break;
             case R.id.person_4:
-                startActivity(new Intent(context, UpdateAppActivity.class));
+                startActivity(new Intent(context, AboutUsActivity.class));
                 break;
             case R.id.person_5:
                 loginout();

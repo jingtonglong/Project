@@ -23,9 +23,40 @@
                     android:text="随访排班" />
             </LinearLayout>
 
-            <TextView
-                style="@style/home_middle_left_content"
-                android:text="今日计划 21人" />
+            <LinearLayout style="@style/home_middle_left_linear1">
+
+                <TextView
+                    style="@style/home_middle_left_content"
+                    android:text="今日计划" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/orange_text"
+                        android:text="1" />
+
+                    <TextView
+                        style="@style/orange_text"
+                        android:layout_marginLeft="2dp"
+                        android:text="1" />
+
+                    <TextView
+                        style="@style/orange_text"
+                        android:layout_marginLeft="2dp"
+                        android:text="1" />
+
+                    <TextView
+                        style="@style/home_middle_left_content"
+                        android:layout_marginLeft="6dp"
+                        android:text="人" />
+                </LinearLayout>
+            </LinearLayout>
+
+
         </LinearLayout>
 
         <View style="@style/line_horizontal" />
@@ -43,9 +74,38 @@
                     android:text="数据审核" />
             </LinearLayout>
 
-            <TextView
-                style="@style/home_middle_left_content"
-                android:text="待审核数据 21条" />
+            <LinearLayout style="@style/home_middle_left_linear1">
+
+                <TextView
+                    style="@style/home_middle_left_content"
+                    android:text="待审核数据" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/orange_text"
+                        android:text="1" />
+
+                    <TextView
+                        style="@style/orange_text"
+                        android:layout_marginLeft="2dp"
+                        android:text="2" />
+
+                    <TextView
+                        style="@style/orange_text"
+                        android:layout_marginLeft="2dp"
+                        android:text="1" />
+
+                    <TextView
+                        style="@style/home_middle_left_content"
+                        android:layout_marginLeft="6dp"
+                        android:text="条" />
+                </LinearLayout>
+            </LinearLayout>
         </LinearLayout>
     </LinearLayout>
 

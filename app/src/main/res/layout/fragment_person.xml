@@ -13,7 +13,7 @@
         android:layout_centerHorizontal="true"
         android:background="@drawable/person_top_background"
         android:gravity="center_horizontal"
-        android:padding="30dp"
+        android:paddingTop="40dp"
         android:text="个人中心"
         android:textColor="@color/white"
         android:textSize="@dimen/text_size_middle" />
@@ -69,9 +69,7 @@
                     <ImageView style="@style/person_image_right" />
                 </RelativeLayout>
 
-                <View
-                    style="@style/line"
-                    android:layout_marginLeft="@dimen/margin_middle" />
+                <View style="@style/line" />
 
                 <RelativeLayout
                     android:id="@+id/person_2"
@@ -100,8 +98,7 @@
 
                 <RelativeLayout
                     android:id="@+id/person_3"
-                    style="@style/person_relative"
-                    android:layout_marginTop="@dimen/margin_middle">
+                    style="@style/person_relative">
 
                     <ImageView
                         style="@style/person_image_left"
@@ -114,9 +111,7 @@
                     <ImageView style="@style/person_image_right" />
                 </RelativeLayout>
 
-                <View
-                    style="@style/line"
-                    android:layout_marginLeft="@dimen/margin_middle" />
+                <View style="@style/line" />
 
                 <RelativeLayout
                     android:id="@+id/person_4"

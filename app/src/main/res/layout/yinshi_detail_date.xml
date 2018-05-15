@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:background="@color/text_green"
+    android:padding="@dimen/padding_size_middle"
+    android:layout_height="wrap_content">
+
+    <LinearLayout style="@style/yinshi_detail_date_linear">
+
+        <TextView
+            style="@style/yinshi_detail_date_xingqi"
+            android:text="周日" />
+
+        <TextView
+            style="@style/yinshi_detail_date_jihao"
+            android:text="12" />
+    </LinearLayout>
+    <LinearLayout style="@style/yinshi_detail_date_linear">
+
+        <TextView
+            style="@style/yinshi_detail_date_xingqi"
+            android:text="周日" />
+
+        <TextView
+            style="@style/yinshi_detail_date_jihao"
+            android:text="12" />
+    </LinearLayout>
+    <LinearLayout style="@style/yinshi_detail_date_linear">
+
+        <TextView
+            style="@style/yinshi_detail_date_xingqi"
+            android:text="周日" />
+
+        <TextView
+            style="@style/yinshi_detail_date_jihao"
+            android:text="12" />
+    </LinearLayout>
+    <LinearLayout style="@style/yinshi_detail_date_linear">
+
+        <TextView
+            style="@style/yinshi_detail_date_xingqi"
+            android:text="周日" />
+
+        <TextView
+            style="@style/yinshi_detail_date_jihao"
+            android:text="12" />
+    </LinearLayout>
+    <LinearLayout style="@style/yinshi_detail_date_linear">
+
+        <TextView
+            style="@style/yinshi_detail_date_xingqi"
+            android:text="周日" />
+
+        <TextView
+            style="@style/yinshi_detail_date_jihao"
+            android:text="12" />
+    </LinearLayout>
+    <LinearLayout style="@style/yinshi_detail_date_linear">
+
+        <TextView
+            style="@style/yinshi_detail_date_xingqi"
+            android:text="周日" />
+
+        <TextView
+            style="@style/yinshi_detail_date_jihao"
+            android:text="12" />
+    </LinearLayout>
+    <LinearLayout style="@style/yinshi_detail_date_linear">
+
+        <TextView
+            style="@style/yinshi_detail_date_xingqi"
+            android:text="周日" />
+
+        <TextView
+            style="@style/yinshi_detail_date_jihao"
+            android:text="12" />
+    </LinearLayout>
+</LinearLayout>

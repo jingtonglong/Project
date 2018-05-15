@@ -1,7 +1,8 @@
 package com.jtlrm.ckd.mvp.view.activity;
 
-import android.support.v7.app.AppCompatActivity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 import com.jtlrm.ckd.R;
 import com.jtlrm.ckd.base.acitvity.TitleBarActivity;
@@ -36,5 +37,9 @@ public class CompleteInfoActivity extends TitleBarActivity {
     @Override
     protected void initEvent() {
 
+    }
+
+    public void submit(View v) {
+        startActivity(new Intent(context, RegisterSuccessfulActivity.class));
     }
 }

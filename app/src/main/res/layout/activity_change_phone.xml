@@ -33,7 +33,7 @@
 
         <EditText
             style="@style/person_info_input"
-            android:layout_width="200dp"
+            android:layout_width="180dp"
             android:hint="请输入接收到的验证码" />
 
         <TextView

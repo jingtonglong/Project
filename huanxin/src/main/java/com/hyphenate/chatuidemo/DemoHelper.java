@@ -73,6 +73,8 @@ import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
+import me.leolin.shortcutbadger.ShortcutBadger;
+
 public class DemoHelper {
     /**
      * data sync listener
@@ -1240,6 +1242,8 @@ public class DemoHelper {
                         getNotifier().onNewMsg(message);
                     }
                 }
+                int count = EMClient.getInstance().chatManager().getUnreadMsgsCount();
+                ShortcutBadger.applyCount(appContext, count);
 			}
 			
 			@Override

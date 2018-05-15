@@ -45,6 +45,7 @@ import com.hyphenate.chat.EMGroup;
 import com.hyphenate.chat.EMMucSharedFile;
 import com.hyphenate.chat.EMPushConfigs;
 import com.hyphenate.chatuidemo.R;
+import com.hyphenate.easeui.model.EasePreferenceManager;
 import com.hyphenate.easeui.ui.EaseGroupListener;
 import com.hyphenate.easeui.utils.EaseUserUtils;
 import com.hyphenate.easeui.widget.EaseAlertDialog;
@@ -684,47 +685,13 @@ public class GroupDetailsActivity extends BaseActivity implements OnClickListene
 
 
     private void toggleBlockOfflineMsg() {
-        if (EMClient.getInstance().pushManager().getPushConfigs() == null) {
-            return;
+        if (offlinePushSwitch.isSwitchOpen()) {
+            EasePreferenceManager.getInstance().closeNotification(groupId);
+            offlinePushSwitch.closeSwitch();
+        } else {
+            EasePreferenceManager.getInstance().openNotification(groupId);
+            offlinePushSwitch.openSwitch();
         }
-        progressDialog = createProgressDialog();
-        progressDialog.setMessage("processing...");
-        progressDialog.show();
-//		final ArrayList list = (ArrayList) Arrays.asList(groupId);
-        final List<String> list = new ArrayList<String>();
-        list.add(groupId);
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    if (offlinePushSwitch.isSwitchOpen()) {
-                        EMClient.getInstance().pushManager().updatePushServiceForGroup(list, false);
-                    } else {
-                        EMClient.getInstance().pushManager().updatePushServiceForGroup(list, true);
-                    }
-                    runOnUiThread(new Runnable() {
-                        @Override
-                        public void run() {
-                            progressDialog.dismiss();
-                            if (offlinePushSwitch.isSwitchOpen()) {
-                                offlinePushSwitch.closeSwitch();
-                            } else {
-                                offlinePushSwitch.openSwitch();
-                            }
-                        }
-                    });
-                } catch (HyphenateException e) {
-                    e.printStackTrace();
-                    runOnUiThread(new Runnable() {
-                        @Override
-                        public void run() {
-                            progressDialog.dismiss();
-                            Toast.makeText(GroupDetailsActivity.this, "progress failed", Toast.LENGTH_SHORT).show();
-                        }
-                    });
-                }
-            }
-        }).start();
     }
 
     private ProgressDialog createProgressDialog() {
@@ -1072,7 +1039,7 @@ public class GroupDetailsActivity extends BaseActivity implements OnClickListene
 
                         boolean[] normalVisibilities = {
                                 false,      //R.id.menu_item_transfer_owner,
-                                false,  isCurrentOwner(group) ? true : false,       //R.id.menu_item_add_admin,
+                                false, isCurrentOwner(group) ? true : false,       //R.id.menu_item_add_admin,
                                 false,      //R.id.menu_item_rm_admin,
                                 true,       //R.id.menu_item_remove_member,
                                 true,       //R.id.menu_item_add_to_blacklist,
@@ -1139,32 +1106,25 @@ public class GroupDetailsActivity extends BaseActivity implements OnClickListene
 
                     try {
                         group = EMClient.getInstance().groupManager().getGroupFromServer(groupId);
-
                         adminList.clear();
                         adminList.addAll(group.getAdminList());
                         memberList.clear();
-                        memberList.add(group.getOwner());
-                        memberList.addAll(group.getMembers());
-                        //    EMCursorResult<String> result = null;
-//                        do {
-//                            // page size set to 20 is convenient for testing, should be applied to big value
-//                            result = EMClient.getInstance().groupManager().fetchGroupMembers(groupId,
-//                                    result != null ? result.getCursor() : "",
-//                                    20);
-//                            EMLog.d(TAG, "fetchGroupMembers result.size:" + result.getData().size());
-//                            memberList.addAll(result.getData());
-//                        } while (result.getCursor() != null && !result.getCursor().isEmpty());
+                        EMCursorResult<String> result = null;
+                        do {
+                            // page size set to 20 is convenient for testing, should be applied to big value
+                            result = EMClient.getInstance().groupManager().fetchGroupMembers(groupId,
+                                    result != null ? result.getCursor() : "",
+                                    20);
+                            memberList.addAll(result.getData());
+                            memberList.add(0, group.getOwner());
+                        } while (result.getCursor() != null && !result.getCursor().isEmpty());
 
                         muteList.clear();
                         muteList.addAll(EMClient.getInstance().groupManager().fetchGroupMuteList(groupId, 0, 200).keySet());
                         blackList.clear();
                         blackList.addAll(EMClient.getInstance().groupManager().fetchGroupBlackList(groupId, 0, 200));
-
                     } catch (Exception e) {
-                        //e.printStackTrace();  // User may have no permission for fetch mute, fetch black list operation
-                    } finally {
-//                        memberList.remove(group.getOwner());
-//                        memberList.removeAll(adminList);
+
                     }
 
                     try {
@@ -1201,11 +1161,16 @@ public class GroupDetailsActivity extends BaseActivity implements OnClickListene
                             } else {
                                 switchButton.closeSwitch();
                             }
-                            List<String> disabledIds = EMClient.getInstance().pushManager().getNoPushGroups();
-                            if (disabledIds != null && disabledIds.contains(groupId)) {
-                                offlinePushSwitch.openSwitch();
-                            } else {
+//                            List<String> disabledIds = EMClient.getInstance().pushManager().getNoPushGroups();
+//                            if (disabledIds != null && disabledIds.contains(groupId)) {
+//                                offlinePushSwitch.openSwitch();
+//                            } else {
+//                                offlinePushSwitch.closeSwitch();
+//                            }
+                            if (EasePreferenceManager.getInstance().groupIsClose(groupId)) {
                                 offlinePushSwitch.closeSwitch();
+                            } else {
+                                offlinePushSwitch.openSwitch();
                             }
 
                             announcementText.setText(group.getAnnouncement());
@@ -1264,10 +1229,8 @@ public class GroupDetailsActivity extends BaseActivity implements OnClickListene
                 @Override
                 public void run() {
                     memberList = group.getMembers();
-                    memberList.add(0, group.getOwner() + "");
-//                    memberList.remove(group.getOwner());
-//                    memberList.removeAll(adminList);
-//                    memberList.removeAll(muteList);
+                    memberList.remove(group.getOwner());
+                    memberList.add(0, group.getOwner());
                     refreshMembersAdapter();
                 }
             });

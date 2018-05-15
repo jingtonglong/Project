@@ -9,6 +9,7 @@
 
     <View
         android:id="@+id/top"
+        android:layout_height="30dp"
         style="@style/line_margin" />
 
     <include
