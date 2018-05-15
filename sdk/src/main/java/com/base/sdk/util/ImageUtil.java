@@ -28,6 +28,11 @@ public class ImageUtil {
                 .error(R.drawable.person_change).centerCrop().transform(new GlideCircleTransform(imageView.getContext())).into(imageView);
     }
 
+    public static void loadRoundImage(ImageView imageView, String url) {
+        GlideApp.with(imageView.getContext()).load(url)
+               .centerCrop().transform(new GlideRoundTransform(imageView.getContext())).into(imageView);
+    }
+
     public static void loadImageSizeNews(ImageView imageView, String url) {
         GlideApp.with(imageView.getContext()).load(url).placeholder(R.drawable.no_banner).error(R.drawable.no_banner).override(230, 164).centerCrop().into(imageView);
     }

@@ -180,7 +180,8 @@
         <activity
             android:name=".mvp.view.activity.YinShiTuPianActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/PictureDialog" />
+            android:theme="@style/NoTitleTranslucentTheme"
+            />
     </application>
 
 </manifest>
