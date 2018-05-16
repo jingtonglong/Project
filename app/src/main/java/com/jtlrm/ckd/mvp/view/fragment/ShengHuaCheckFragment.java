@@ -9,12 +9,8 @@ import com.jtlrm.ckd.base.fragment.BaseFragment;
  * 生化检查
  */
 public class ShengHuaCheckFragment extends BaseFragment {
-     private static final String ARG_PARAM1 = "param1";
-
-
-
+    private static final String ARG_PARAM1 = "param1";
     private String mParam1;
-
 
     public ShengHuaCheckFragment() {
 
@@ -38,7 +34,6 @@ public class ShengHuaCheckFragment extends BaseFragment {
     }
 
 
-
     @Override
     protected int setContentLayout() {
         return R.layout.fragment_sheng_hua_check;
@@ -46,7 +41,8 @@ public class ShengHuaCheckFragment extends BaseFragment {
 
     @Override
     protected void initView() {
-
+        //R.layout.shenghua_check_header
+       // startActivity(new Intent(context, ShengHuaCheckDetailActivity.class));
     }
 
     @Override

@@ -49,7 +49,7 @@ public class YinYangBaoGaoFragment extends BaseFragment {
 
     @Override
     protected void initView() {
-
+        //R.layout.yingyang_baogao_data_header;
     }
 
     @Override

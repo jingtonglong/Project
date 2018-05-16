@@ -180,8 +180,11 @@
         <activity
             android:name=".mvp.view.activity.YinShiTuPianActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/NoTitleTranslucentTheme"
-            />
+            android:theme="@style/NoTitleTranslucentTheme" />
+        <activity android:name=".mvp.view.activity.ShengHuaCheckDetailActivity" />
+        <activity android:name=".mvp.view.activity.ShengHuaDataEditorActivity" />
+        <activity android:name=".mvp.view.activity.YingYangPingGuDetailActivity" />
+        <activity android:name=".mvp.view.activity.YingYangPingGuEditorActivity"></activity>
     </application>
 
 </manifest>

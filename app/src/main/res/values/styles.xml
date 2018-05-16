@@ -386,10 +386,18 @@
     </style>
 
     <style name="text_black">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
         <item name="android:textColor">@color/text_black</item>
         <item name="android:textSize">@dimen/text_size</item>
     </style>
 
+    <style name="text_grey">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/text_grey</item>
+        <item name="android:textSize">@dimen/text_size_small</item>
+    </style>
 
     <style name="yinshi_data_item_linear">
         <item name="android:layout_width">match_parent</item>
@@ -560,5 +568,37 @@
         <item name="android:windowNoTitle">true</item>
         <item name="android:windowBackground">@color/transparent</item>
         <item name="android:windowIsTranslucent">true</item>
+    </style>
+
+    <style name="yingyang_pinggu_detail_linear">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:padding">8dp</item>
+    </style>
+
+
+    <style name="yingyang_pinggu_detail_label" parent="text_black">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_weight">3</item>
+        <item name="android:padding">4dp</item>
+    </style>
+
+    <style name="yingyang_pinggu_detail_content" parent="text_black">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_weight">4</item>
+        <item name="android:padding">4dp</item>
+        <item name="android:background">@null</item>
+        <item name="android:layout_centerInParent">true</item>
+        <item name="android:gravity">center</item>
+        <item name="android:hint">"--"</item>
+    </style>
+
+    <style name="yingyang_pinggu_detail_right" parent="text_black">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_weight">3</item>
+        <item name="android:padding">4dp</item>
+        <item name="android:gravity">end</item>
+        <item name="android:layout_alignParentRight">true</item>
     </style>
 </resources>

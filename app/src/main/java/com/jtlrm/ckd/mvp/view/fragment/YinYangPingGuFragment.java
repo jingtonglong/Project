@@ -36,14 +36,6 @@ public class YinYangPingGuFragment extends BaseFragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-    }
-
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_yin_yang_ping_gu, container, false);
     }
 
     @Override
@@ -53,7 +45,7 @@ public class YinYangPingGuFragment extends BaseFragment {
 
     @Override
     protected void initView() {
-
+       // R.layout.yingyang_pinggu_data_header;
     }
 
     @Override

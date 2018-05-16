@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/margin_background"
+        android:paddingBottom="6dp"
+        android:paddingLeft="@dimen/padding_size_middle"
+        android:paddingTop="6dp"
+        android:text="四月"
+        android:textColor="@color/text_grey"
+        android:textSize="@dimen/text_size_small" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:paddingBottom="@dimen/padding_size_middle"
+        android:paddingTop="@dimen/padding_size_middle">
+
+        <TextView
+            android:layout_width="8dp"
+            android:layout_height="16dp"
+            android:background="@drawable/blue_banyuan_circle_background" />
+
+        <TextView
+            style="@style/text_black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:text="2018-12-12" />
+
+        <TextView
+            style="@style/text_grey"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="32dp"
+            android:text="可编辑" />
+
+        <ImageView
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="12dp"
+            android:src="@drawable/arrom_right" />
+    </RelativeLayout>
+</LinearLayout>

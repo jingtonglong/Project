@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.base.sdk.widget.TitleBar
+        android:id="@+id/title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_bar_size" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout style="@style/yingyang_pinggu_detail_linear">
+
+                <TextView
+                    style="@style/yingyang_pinggu_detail_label"
+                    android:text="身高" />
+
+                <EditText style="@style/yingyang_pinggu_detail_content" />
+
+                <TextView
+                    style="@style/yingyang_pinggu_detail_right"
+                    android:text="cm" />
+            </LinearLayout>
+
+            <View style="@style/line_horizontal" />
+
+            <LinearLayout style="@style/yingyang_pinggu_detail_linear">
+
+                <TextView
+                    style="@style/yingyang_pinggu_detail_label"
+                    android:text="体重" />
+
+                <EditText style="@style/yingyang_pinggu_detail_content" />
+
+                <TextView
+                    style="@style/yingyang_pinggu_detail_right"
+                    android:text="kg" />
+            </LinearLayout>
+
+            <View style="@style/line_horizontal" />
+
+            <LinearLayout style="@style/yingyang_pinggu_detail_linear">
+
+                <TextView
+                    style="@style/yingyang_pinggu_detail_label"
+                    android:text="BMI" />
+
+                <EditText style="@style/yingyang_pinggu_detail_content" />
+
+                <TextView
+                    style="@style/yingyang_pinggu_detail_right"
+                    android:text="" />
+            </LinearLayout>
+
+            <View style="@style/line_horizontal" />
+
+            <LinearLayout style="@style/yingyang_pinggu_detail_linear">
+
+                <TextView
+                    style="@style/yingyang_pinggu_detail_label"
+                    android:text="上臂围" />
+
+                <EditText style="@style/yingyang_pinggu_detail_content" />
+
+                <TextView
+                    style="@style/yingyang_pinggu_detail_right"
+                    android:text="cm" />
+            </LinearLayout>
+
+            <View style="@style/line_horizontal" />
+
+            <LinearLayout style="@style/yingyang_pinggu_detail_linear">
+
+                <TextView
+                    style="@style/yingyang_pinggu_detail_label"
+                    android:text="肱三头肌皮褶厚度" />
+
+                <EditText style="@style/yingyang_pinggu_detail_content" />
+
+                <TextView
+                    style="@style/yingyang_pinggu_detail_right"
+                    android:text="mm" />
+            </LinearLayout>
+
+            <View style="@style/line_horizontal" />
+
+            <LinearLayout style="@style/yingyang_pinggu_detail_linear">
+
+                <TextView
+                    style="@style/yingyang_pinggu_detail_label"
+                    android:text="左手握力" />
+
+                <EditText style="@style/yingyang_pinggu_detail_content" />
+
+                <TextView
+                    style="@style/yingyang_pinggu_detail_right"
+                    android:text="kg" />
+            </LinearLayout>
+
+            <View style="@style/line_horizontal" />
+
+            <LinearLayout style="@style/yingyang_pinggu_detail_linear">
+
+                <TextView
+                    style="@style/yingyang_pinggu_detail_label"
+                    android:text="右手握力" />
+
+                <EditText style="@style/yingyang_pinggu_detail_content" />
+
+                <TextView
+                    style="@style/yingyang_pinggu_detail_right"
+                    android:text="kg" />
+            </LinearLayout>
+
+            <View style="@style/line_horizontal" />
+
+            <LinearLayout style="@style/yingyang_pinggu_detail_linear">
+
+                <TextView
+                    style="@style/yingyang_pinggu_detail_label"
+                    android:text="舒张压" />
+
+                <EditText style="@style/yingyang_pinggu_detail_content" />
+
+                <TextView
+                    style="@style/yingyang_pinggu_detail_right"
+                    android:text="mmHg" />
+            </LinearLayout>
+
+            <View style="@style/line_horizontal" />
+
+            <LinearLayout style="@style/yingyang_pinggu_detail_linear">
+
+                <TextView
+                    style="@style/yingyang_pinggu_detail_label"
+                    android:text="收缩压" />
+
+                <EditText style="@style/yingyang_pinggu_detail_content" />
+
+                <TextView
+                    style="@style/yingyang_pinggu_detail_right"
+                    android:text="mmHg" />
+            </LinearLayout>
+
+            <View style="@style/line_horizontal" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
