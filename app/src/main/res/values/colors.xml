@@ -8,9 +8,12 @@
 
     <color name="eef7f2">#EEF7F2</color>
 
+    <color name="yellow1">#FF8B00</color>
+
     <color name="adcbbc">#ADCBBC</color>
     <color name="hese">#CCC4BC</color>
 
+    <color name="blue1">#4BC5EA</color>
     <!--MD_dialog相关-->
     <color name="card_background">#ffffff</color>
     <color name="card_shadow">#10000000</color>

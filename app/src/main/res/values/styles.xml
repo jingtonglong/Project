@@ -601,4 +601,104 @@
         <item name="android:gravity">end</item>
         <item name="android:layout_alignParentRight">true</item>
     </style>
+
+    <style name="yingyang_baogao_detail_title_rela">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="yingyang_baogao_detail_title_icon">
+        <item name="android:layout_width">8dp</item>
+        <item name="android:layout_height">16dp</item>
+        <item name="android:layout_centerVertical">true</item>
+    </style>
+
+    <style name="yingyang_baogao_detail_title_label" parent="text_black">
+        <item name="android:layout_marginLeft">14dp</item>
+        <item name="android:layout_centerVertical">true</item>
+    </style>
+
+    <style name="yingyang_baogao_detail_title_arrow">
+        <item name="android:layout_width">14dp</item>
+        <item name="android:layout_height">14dp</item>
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:layout_centerVertical">true</item>
+    </style>
+
+    <style name="yingyang_baogao_detail_title_sub_container">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:layout_marginTop">12dp</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:layout_marginBottom">12dp</item>
+    </style>
+
+    <style name="green_text">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/text_size</item>
+        <item name="android:textColor">@color/text_green</item>
+    </style>
+
+    <style name="baogao_green_line">
+        <item name="android:layout_width">1dp</item>
+        <item name="android:layout_height">10dp</item>
+        <item name="android:background">@color/text_green</item>
+        <item name="android:layout_marginLeft">4dp</item>
+        <item name="android:layout_marginRight">4dp</item>
+    </style>
+
+    <style name="circle_point_orange">
+        <item name="android:layout_width">6dp</item>
+        <item name="android:layout_height">6dp</item>
+        <item name="android:background">@drawable/orange_icon_background</item>
+    </style>
+
+    <style name="baogao_item_label" parent="text_black">
+        <item name="android:layout_marginLeft">4dp</item>
+    </style>
+
+    <style name="renti_celiang_container">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:paddingTop">@dimen/padding_size_middle</item>
+        <item name="android:paddingBottom">@dimen/padding_size_middle</item>
+    </style>
+
+    <style name="renti_celiang_sub_container">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:layout_centerVertical">true</item>
+    </style>
+
+    <style name="renti_celiang_sub_content" parent="text_black">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/text_black_deep</item>
+
+    </style>
+
+    <style name="renti_celiang_sub_label" parent="text_black">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+
+    </style>
+
+    <style name="renti_celiang_sub_danwei" >
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/adcbbc</item>
+    </style>
+
+    <style name="adcbbc_line">
+        <item name="android:layout_width">1dp</item>
+        <item name="android:layout_height">30dp</item>
+        <item name="android:background">@color/adcbbc</item>
+    </style>
+
 </resources>

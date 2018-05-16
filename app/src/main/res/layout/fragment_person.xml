@@ -19,12 +19,12 @@
         android:textSize="@dimen/text_size_middle" />
 
     <ImageView
-        android:layout_width="@dimen/picture_height_middle"
-        android:layout_height="@dimen/picture_height_middle"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="-20dp"
+        android:layout_marginTop="-40dp"
         android:src="@drawable/person_change" />
 
     <TextView

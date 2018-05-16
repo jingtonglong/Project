@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/margin_middle"
+    android:background="@drawable/grey_round_background"
+    android:orientation="vertical"
+    android:padding="@dimen/padding_size_middle">
+
+
+    <RelativeLayout style="@style/yingyang_baogao_detail_title_rela">
+
+        <View
+            style="@style/yingyang_baogao_detail_title_icon"
+            android:background="@drawable/yellow_icon_background" />
+
+        <TextView
+            style="@style/yingyang_baogao_detail_title_label"
+            android:text="患病情况" />
+
+        <ImageView
+            style="@style/yingyang_baogao_detail_title_arrow"
+            android:src="@drawable/arrow_down" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:orientation="vertical">
+
+        <LinearLayout style="@style/yingyang_baogao_detail_title_sub_container">
+
+            <TextView
+                style="@style/green_text"
+                android:text="01" />
+
+            <View style="@style/baogao_green_line" />
+
+            <TextView
+                style="@style/green_text"
+                android:text="慢性肾病" />
+        </LinearLayout>
+
+        <LinearLayout style="@style/yingyang_baogao_detail_title_sub_container">
+
+            <View style="@style/circle_point_orange" />
+
+            <TextView
+                style="@style/baogao_item_label"
+                android:text="3期" />
+        </LinearLayout>
+
+        <View
+            style="@style/line_horizontal"
+            android:layout_marginTop="12dp" />
+
+        <LinearLayout style="@style/yingyang_baogao_detail_title_sub_container">
+
+            <TextView
+                style="@style/green_text"
+                android:text="02" />
+
+            <View style="@style/baogao_green_line" />
+
+            <TextView
+                style="@style/green_text"
+                android:text="其他合并疾病" />
+        </LinearLayout>
+
+        <LinearLayout style="@style/yingyang_baogao_detail_title_sub_container">
+
+            <View style="@style/circle_point_orange" />
+
+            <TextView
+                style="@style/baogao_item_label"
+                android:text="糖尿病" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
