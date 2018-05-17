@@ -2,10 +2,9 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginTop="@dimen/margin_middle"
+
     android:background="@drawable/grey_round_background"
-    android:orientation="vertical"
-    android:padding="@dimen/padding_size_middle">
+    android:orientation="vertical">
 
     <RelativeLayout style="@style/yingyang_baogao_detail_title_rela">
 
@@ -25,7 +24,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:visibility="gone"
+
         android:orientation="vertical">
 
         <LinearLayout style="@style/yingyang_baogao_detail_title_sub_container">
@@ -44,10 +43,7 @@
         <LinearLayout style="@style/renti_celiang_container">
 
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="vertical">
+                style="@style/renti_celiang_sub_container_match_parent">
 
                 <LinearLayout style="@style/renti_celiang_sub_container">
 
@@ -68,11 +64,9 @@
             <View style="@style/adcbbc_line" />
 
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
+                style="@style/renti_celiang_sub_container_match_parent"
                 android:gravity="center_horizontal"
-                android:orientation="vertical">
+                >
 
                 <LinearLayout
                     android:id="@+id/tizhong"
@@ -99,11 +93,8 @@
             <View style="@style/adcbbc_line" />
 
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="end"
-                android:orientation="vertical">
+                style="@style/renti_celiang_sub_container_match_parent"
+                android:gravity="end">
 
                 <LinearLayout
                     style="@style/renti_celiang_sub_container"
@@ -126,9 +117,7 @@
 
         <View style="@style/line_horizontal" />
 
-        <RelativeLayout
-            style="@style/renti_celiang_container"
-            android:layout_marginTop="@dimen/margin_middle">
+        <RelativeLayout style="@style/renti_celiang_container">
 
             <LinearLayout style="@style/renti_celiang_sub_container">
 
@@ -171,9 +160,7 @@
 
         <View style="@style/line_horizontal" />
 
-        <RelativeLayout
-            style="@style/renti_celiang_container"
-            android:layout_marginTop="@dimen/margin_middle">
+        <RelativeLayout style="@style/renti_celiang_container">
 
             <LinearLayout style="@style/renti_celiang_sub_container">
 
@@ -216,9 +203,7 @@
 
         <View style="@style/line_horizontal" />
 
-        <RelativeLayout
-            style="@style/renti_celiang_container"
-            android:layout_marginTop="@dimen/margin_middle">
+        <RelativeLayout style="@style/renti_celiang_container">
 
             <LinearLayout style="@style/renti_celiang_sub_container">
 
@@ -249,9 +234,7 @@
 
         <View style="@style/line_horizontal" />
 
-        <RelativeLayout
-            style="@style/renti_celiang_container"
-            android:layout_marginTop="@dimen/margin_middle">
+        <RelativeLayout style="@style/renti_celiang_container">
 
             <LinearLayout style="@style/renti_celiang_sub_container">
 
@@ -286,9 +269,7 @@
 
         <View style="@style/line_horizontal" />
 
-        <RelativeLayout
-            style="@style/renti_celiang_container"
-            android:layout_marginTop="@dimen/margin_middle">
+        <RelativeLayout style="@style/renti_celiang_container">
 
             <LinearLayout style="@style/renti_celiang_sub_container">
 
@@ -339,9 +320,7 @@
 
         <View style="@style/line_horizontal" />
 
-        <RelativeLayout
-            style="@style/renti_celiang_container"
-            android:layout_marginTop="@dimen/margin_middle">
+        <RelativeLayout style="@style/renti_celiang_container">
 
             <TextView
                 style="@style/renti_celiang_sub_label"
@@ -361,9 +340,7 @@
 
         <View style="@style/line_horizontal" />
 
-        <RelativeLayout
-            style="@style/renti_celiang_container"
-            android:layout_marginTop="@dimen/margin_middle">
+        <RelativeLayout style="@style/renti_celiang_container">
 
             <TextView
                 style="@style/renti_celiang_sub_label"
@@ -383,9 +360,7 @@
 
         <View style="@style/line_horizontal" />
 
-        <RelativeLayout
-            style="@style/renti_celiang_container"
-            android:layout_marginTop="@dimen/margin_middle">
+        <RelativeLayout style="@style/renti_celiang_container">
 
             <TextView
                 style="@style/renti_celiang_sub_label"
@@ -420,9 +395,7 @@
 
         <View style="@style/line_horizontal" />
 
-        <RelativeLayout
-            style="@style/renti_celiang_container"
-            android:layout_marginTop="@dimen/margin_middle">
+        <RelativeLayout style="@style/renti_celiang_container">
 
             <TextView
                 style="@style/renti_celiang_sub_label"
@@ -442,9 +415,7 @@
 
         <View style="@style/line_horizontal" />
 
-        <RelativeLayout
-            style="@style/renti_celiang_container"
-            android:layout_marginTop="@dimen/margin_middle">
+        <RelativeLayout style="@style/renti_celiang_container">
 
             <TextView
                 style="@style/renti_celiang_sub_label"
@@ -464,9 +435,7 @@
 
         <View style="@style/line_horizontal" />
 
-        <RelativeLayout
-            style="@style/renti_celiang_container"
-            android:layout_marginTop="@dimen/margin_middle">
+        <RelativeLayout style="@style/renti_celiang_container">
 
             <TextView
                 style="@style/renti_celiang_sub_label"
@@ -486,9 +455,7 @@
 
         <View style="@style/line_horizontal" />
 
-        <RelativeLayout
-            style="@style/renti_celiang_container"
-            android:layout_marginTop="@dimen/margin_middle">
+        <RelativeLayout style="@style/renti_celiang_container">
 
             <TextView
                 style="@style/renti_celiang_sub_label"
@@ -508,9 +475,7 @@
 
         <View style="@style/line_horizontal" />
 
-        <RelativeLayout
-            style="@style/renti_celiang_container"
-            android:layout_marginTop="@dimen/margin_middle">
+        <RelativeLayout style="@style/renti_celiang_container">
 
             <TextView
                 style="@style/renti_celiang_sub_label"
@@ -546,9 +511,7 @@
 
         <View style="@style/line_horizontal" />
 
-        <RelativeLayout
-            style="@style/renti_celiang_container"
-            android:layout_marginTop="@dimen/margin_middle">
+        <RelativeLayout style="@style/renti_celiang_container">
 
             <TextView
                 style="@style/renti_celiang_sub_label"
@@ -568,9 +531,7 @@
 
         <View style="@style/line_horizontal" />
 
-        <RelativeLayout
-            style="@style/renti_celiang_container"
-            android:layout_marginTop="@dimen/margin_middle">
+        <RelativeLayout style="@style/renti_celiang_container">
 
             <TextView
                 style="@style/renti_celiang_sub_label"
@@ -590,9 +551,7 @@
 
         <View style="@style/line_horizontal" />
 
-        <RelativeLayout
-            style="@style/renti_celiang_container"
-            android:layout_marginTop="@dimen/margin_middle">
+        <RelativeLayout style="@style/renti_celiang_container">
 
             <TextView
                 style="@style/renti_celiang_sub_label"
@@ -612,9 +571,7 @@
 
         <View style="@style/line_horizontal" />
 
-        <RelativeLayout
-            style="@style/renti_celiang_container"
-            android:layout_marginTop="@dimen/margin_middle">
+        <RelativeLayout style="@style/renti_celiang_container">
 
             <TextView
                 style="@style/renti_celiang_sub_label"
@@ -634,9 +591,7 @@
 
         <View style="@style/line_horizontal" />
 
-        <RelativeLayout
-            style="@style/renti_celiang_container"
-            android:layout_marginTop="@dimen/margin_middle">
+        <RelativeLayout style="@style/renti_celiang_container">
 
             <TextView
                 style="@style/renti_celiang_sub_label"
@@ -656,9 +611,7 @@
 
         <View style="@style/line_horizontal" />
 
-        <RelativeLayout
-            style="@style/renti_celiang_container"
-            android:layout_marginTop="@dimen/margin_middle">
+        <RelativeLayout style="@style/renti_celiang_container">
 
             <TextView
                 style="@style/renti_celiang_sub_label"
@@ -678,9 +631,7 @@
 
         <View style="@style/line_horizontal" />
 
-        <RelativeLayout
-            style="@style/renti_celiang_container"
-            android:layout_marginTop="@dimen/margin_middle">
+        <RelativeLayout style="@style/renti_celiang_container">
 
             <TextView
                 style="@style/renti_celiang_sub_label"
@@ -700,9 +651,7 @@
 
         <View style="@style/line_horizontal" />
 
-        <RelativeLayout
-            style="@style/renti_celiang_container"
-            android:layout_marginTop="@dimen/margin_middle">
+        <RelativeLayout style="@style/renti_celiang_container">
 
             <TextView
                 style="@style/renti_celiang_sub_label"

@@ -605,6 +605,7 @@
     <style name="yingyang_baogao_detail_title_rela">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">@dimen/margin_middle</item>
     </style>
 
     <style name="yingyang_baogao_detail_title_icon">
@@ -632,6 +633,10 @@
         <item name="android:layout_marginTop">12dp</item>
         <item name="android:gravity">center_vertical</item>
         <item name="android:layout_marginBottom">12dp</item>
+        <item name="android:layout_marginLeft">@dimen/margin_middle</item>
+        <item name="android:layout_marginRight">@dimen/margin_middle</item>
+
+
     </style>
 
     <style name="green_text">
@@ -666,6 +671,8 @@
         <item name="android:gravity">center_vertical</item>
         <item name="android:paddingTop">@dimen/padding_size_middle</item>
         <item name="android:paddingBottom">@dimen/padding_size_middle</item>
+        <item name="android:layout_marginLeft">@dimen/margin_middle</item>
+        <item name="android:layout_marginRight">@dimen/margin_middle</item>
     </style>
 
     <style name="renti_celiang_sub_container">
@@ -675,6 +682,24 @@
         <item name="android:gravity">center_horizontal</item>
         <item name="android:layout_centerVertical">true</item>
     </style>
+
+
+    <style name="renti_celiang_sub_sub_container">
+        <item name="android:layout_width">60dp</item>
+        <item name="android:layout_height">60dp</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:layout_marginBottom">6dp</item>
+    </style>
+
+    <style name="renti_celiang_sub_container_match_parent">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:layout_weight">1</item>
+    </style>
+
 
     <style name="renti_celiang_sub_content" parent="text_black">
         <item name="android:layout_width">wrap_content</item>

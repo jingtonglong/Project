@@ -1,6 +1,185 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/grey_round_background"
+    android:orientation="vertical">
 
+    <RelativeLayout style="@style/yingyang_baogao_detail_title_rela">
+
+        <View
+            style="@style/yingyang_baogao_detail_title_icon"
+            android:background="@drawable/purple_icon_background" />
+
+        <TextView
+            style="@style/yingyang_baogao_detail_title_label"
+            android:text="处方原则" />
+
+        <ImageView
+            style="@style/yingyang_baogao_detail_title_arrow"
+            android:src="@drawable/arrow_down" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+       android:visibility="gone"
+        android:orientation="vertical">
+        <View style="@style/line_horizontal" />
+
+        <RelativeLayout
+            style="@style/renti_celiang_container"
+           >
+
+            <TextView
+                style="@style/renti_celiang_sub_label"
+                android:text="钠" />
+
+
+            <TextView
+                style="@style/renti_celiang_sub_content"
+                android:layout_centerHorizontal="true"
+                android:text="1200" />
+
+            <TextView
+                style="@style/renti_celiang_sub_danwei"
+                android:layout_alignParentRight="true"
+                android:text="mg/d" />
+        </RelativeLayout>
+
+        <View style="@style/line_horizontal" />
+
+        <RelativeLayout
+            style="@style/renti_celiang_container"
+           >
+
+            <TextView
+                style="@style/renti_celiang_sub_label"
+                android:text="钾" />
+
+
+            <TextView
+                style="@style/renti_celiang_sub_content"
+                android:layout_centerHorizontal="true"
+                android:text="1200" />
+
+            <TextView
+                style="@style/renti_celiang_sub_danwei"
+                android:layout_alignParentRight="true"
+                android:text="mg/d" />
+        </RelativeLayout>
+
+        <View style="@style/line_horizontal" />
+
+        <RelativeLayout
+            style="@style/renti_celiang_container"
+           >
+
+            <TextView
+                style="@style/renti_celiang_sub_label"
+                android:text="磷" />
+
+
+            <TextView
+                style="@style/renti_celiang_sub_content"
+                android:layout_centerHorizontal="true"
+                android:text="1200" />
+
+            <TextView
+                style="@style/renti_celiang_sub_danwei"
+                android:layout_alignParentRight="true"
+                android:text="mg/d" />
+        </RelativeLayout>
+
+        <View style="@style/line_horizontal" />
+
+        <RelativeLayout
+            style="@style/renti_celiang_container"
+           >
+
+            <TextView
+                style="@style/renti_celiang_sub_label"
+                android:text="钙" />
+
+
+            <TextView
+                style="@style/renti_celiang_sub_content"
+                android:layout_centerHorizontal="true"
+                android:text="1200" />
+
+            <TextView
+                style="@style/renti_celiang_sub_danwei"
+                android:layout_alignParentRight="true"
+                android:text="mg/d" />
+        </RelativeLayout>
+
+        <View style="@style/line_horizontal" />
+
+        <RelativeLayout
+            style="@style/renti_celiang_container"
+           >
+
+            <TextView
+                style="@style/renti_celiang_sub_label"
+                android:text="热量摄入量" />
+
+
+            <TextView
+                style="@style/renti_celiang_sub_content"
+                android:layout_centerHorizontal="true"
+                android:text="1200" />
+
+            <TextView
+                style="@style/renti_celiang_sub_danwei"
+                android:layout_alignParentRight="true"
+                android:text="kcal/(kg体重*d)" />
+        </RelativeLayout>
+
+        <View style="@style/line_horizontal" />
+
+        <RelativeLayout
+            style="@style/renti_celiang_container"
+           >
+
+            <TextView
+                style="@style/renti_celiang_sub_label"
+                android:text="蛋白摄入量" />
+
+
+            <TextView
+                style="@style/renti_celiang_sub_content"
+                android:layout_centerHorizontal="true"
+                android:text="1200" />
+
+            <TextView
+                style="@style/renti_celiang_sub_danwei"
+                android:layout_alignParentRight="true"
+                android:text="g/(kg体重*d)" />
+        </RelativeLayout>
+
+        <View style="@style/line_horizontal" />
+
+        <RelativeLayout
+            style="@style/renti_celiang_container"
+           >
+
+            <TextView
+                style="@style/renti_celiang_sub_label"
+                android:text="优质蛋白比例" />
+
+
+            <TextView
+                style="@style/renti_celiang_sub_content"
+                android:layout_centerHorizontal="true"
+                android:text="50" />
+
+            <TextView
+                style="@style/renti_celiang_sub_danwei"
+                android:layout_alignParentRight="true"
+                android:text="%" />
+
+        </RelativeLayout>
+
+        <View style="@style/line_horizontal" />
+    </LinearLayout>
 </LinearLayout>

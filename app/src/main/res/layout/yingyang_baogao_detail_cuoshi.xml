@@ -1,6 +1,315 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/grey_round_background"
+    android:orientation="vertical">
 
+    <RelativeLayout style="@style/yingyang_baogao_detail_title_rela">
+
+        <View
+            style="@style/yingyang_baogao_detail_title_icon"
+            android:background="@drawable/pink_icon_background" />
+
+        <TextView
+            style="@style/yingyang_baogao_detail_title_label"
+            android:text="处方措施" />
+
+        <ImageView
+            style="@style/yingyang_baogao_detail_title_arrow"
+            android:src="@drawable/arrow_down" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout style="@style/yingyang_baogao_detail_title_sub_container">
+
+            <TextView
+                style="@style/green_text"
+                android:text="01" />
+
+            <View style="@style/baogao_green_line" />
+
+            <TextView
+                style="@style/green_text"
+                android:text="全天食物里" />
+        </LinearLayout>
+
+        <LinearLayout style="@style/renti_celiang_container">
+
+            <LinearLayout
+                style="@style/renti_celiang_sub_container_match_parent"
+                android:gravity="center_horizontal">
+
+                <LinearLayout style="@style/renti_celiang_sub_container">
+
+                    <LinearLayout
+                        style="@style/renti_celiang_sub_sub_container"
+                        android:background="@drawable/yingyang_baogao_circle1">
+
+                        <TextView
+                            style="@style/renti_celiang_sub_content"
+                            android:text="100" />
+
+                        <TextView
+                            style="@style/renti_celiang_sub_danwei"
+                            android:text="g" />
+                    </LinearLayout>
+
+                    <TextView
+                        style="@style/renti_celiang_sub_label"
+                        android:text="主食" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/renti_celiang_sub_container_match_parent"
+                android:gravity="center_horizontal">
+
+                <LinearLayout style="@style/renti_celiang_sub_container">
+
+                    <LinearLayout
+                        style="@style/renti_celiang_sub_sub_container"
+                        android:background="@drawable/yingyang_baogao_circle2">
+
+                        <TextView
+                            style="@style/renti_celiang_sub_content"
+                            android:text="100" />
+
+                        <TextView
+                            style="@style/renti_celiang_sub_danwei"
+                            android:text="g" />
+                    </LinearLayout>
+
+                    <TextView
+                        style="@style/renti_celiang_sub_label"
+                        android:text="肉类" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/renti_celiang_sub_container_match_parent"
+                android:gravity="center_horizontal">
+
+                <LinearLayout style="@style/renti_celiang_sub_container">
+
+                    <LinearLayout
+                        style="@style/renti_celiang_sub_sub_container"
+
+                        android:background="@drawable/yingyang_baogao_circle3">
+
+                        <TextView
+                            style="@style/renti_celiang_sub_content"
+                            android:text="100" />
+
+                        <TextView
+                            style="@style/renti_celiang_sub_danwei"
+                            android:text="g" />
+                    </LinearLayout>
+
+                    <TextView
+                        style="@style/renti_celiang_sub_label"
+                        android:text="鱼类" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/renti_celiang_sub_container_match_parent"
+                android:gravity="center_horizontal">
+
+                <LinearLayout style="@style/renti_celiang_sub_container">
+
+                    <LinearLayout
+                        style="@style/renti_celiang_sub_sub_container"
+                        android:background="@drawable/yingyang_baogao_circle4">
+
+                        <TextView
+                            style="@style/renti_celiang_sub_content"
+                            android:text="100" />
+
+                        <TextView
+                            style="@style/renti_celiang_sub_danwei"
+                            android:text="g" />
+                    </LinearLayout>
+
+                    <TextView
+                        style="@style/renti_celiang_sub_label"
+                        android:text="水果" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout style="@style/renti_celiang_container">
+
+            <LinearLayout
+                style="@style/renti_celiang_sub_container_match_parent"
+                android:gravity="center_horizontal">
+
+                <LinearLayout style="@style/renti_celiang_sub_container">
+
+                    <LinearLayout
+                        style="@style/renti_celiang_sub_sub_container"
+                        android:background="@drawable/yingyang_baogao_circle5">
+
+                        <TextView
+                            style="@style/renti_celiang_sub_content"
+                            android:text="100" />
+
+                        <TextView
+                            style="@style/renti_celiang_sub_danwei"
+                            android:text="g" />
+                    </LinearLayout>
+
+                    <TextView
+                        style="@style/renti_celiang_sub_label"
+                        android:text="烹饪油" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/renti_celiang_sub_container_match_parent"
+                android:gravity="center_horizontal">
+
+                <LinearLayout style="@style/renti_celiang_sub_container">
+
+                    <LinearLayout
+                        style="@style/renti_celiang_sub_sub_container"
+                        android:background="@drawable/yingyang_baogao_circle6">
+
+                        <TextView
+                            style="@style/renti_celiang_sub_content"
+                            android:text="100" />
+
+                        <TextView
+                            style="@style/renti_celiang_sub_danwei"
+                            android:text="g" />
+                    </LinearLayout>
+
+                    <TextView
+                        style="@style/renti_celiang_sub_label"
+                        android:text="鸡蛋" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/renti_celiang_sub_container_match_parent"
+                android:gravity="center_horizontal">
+
+                <LinearLayout style="@style/renti_celiang_sub_container">
+
+                    <LinearLayout
+                        style="@style/renti_celiang_sub_sub_container"
+                        android:background="@drawable/yingyang_baogao_circle7">
+
+                        <TextView
+                            style="@style/renti_celiang_sub_content"
+                            android:text="100" />
+
+                        <TextView
+                            style="@style/renti_celiang_sub_danwei"
+                            android:text="g" />
+                    </LinearLayout>
+
+                    <TextView
+                        style="@style/renti_celiang_sub_label"
+                        android:text="蔬菜" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/renti_celiang_sub_container_match_parent"
+                android:gravity="center_horizontal">
+
+                <LinearLayout style="@style/renti_celiang_sub_container">
+
+                    <LinearLayout
+                        style="@style/renti_celiang_sub_sub_container"
+                        android:background="@drawable/yingyang_baogao_circle8">
+
+                        <TextView
+                            style="@style/renti_celiang_sub_content"
+                            android:text="100" />
+
+                        <TextView
+                            style="@style/renti_celiang_sub_danwei"
+                            android:text="g" />
+                    </LinearLayout>
+
+                    <TextView
+                        style="@style/renti_celiang_sub_label"
+                        android:text="奶类" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <View style="@style/line_horizontal" />
+
+        <LinearLayout style="@style/yingyang_baogao_detail_title_sub_container">
+
+            <TextView
+                style="@style/green_text"
+                android:text="02" />
+
+            <View style="@style/baogao_green_line" />
+
+            <TextView
+                style="@style/green_text"
+                android:text="主食替代治疗" />
+        </LinearLayout>
+
+        <LinearLayout style="@style/renti_celiang_container">
+
+            <LinearLayout style="@style/renti_celiang_sub_container_match_parent">
+
+                <TextView
+                    style="@style/renti_celiang_sub_content"
+                    android:text="170" />
+
+                <TextView
+                    style="@style/renti_celiang_sub_danwei"
+                    android:text="麦淀粉" />
+
+                <TextView
+                    style="@style/renti_celiang_sub_danwei"
+                    android:text="g" />
+            </LinearLayout>
+
+            <View style="@style/adcbbc_line" />
+
+            <LinearLayout
+                style="@style/renti_celiang_sub_container_match_parent"
+                android:layout_marginLeft="20dp">
+
+                <TextView
+                    style="@style/renti_celiang_sub_content"
+                    android:text="62" />
+
+                <TextView
+                    style="@style/renti_celiang_sub_danwei"
+                    android:text="W0868大米" />
+
+                <TextView
+                    style="@style/renti_celiang_sub_danwei"
+                    android:text="g" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <View style="@style/line_horizontal" />
+
+        <LinearLayout style="@style/yingyang_baogao_detail_title_sub_container">
+
+            <TextView
+                style="@style/green_text"
+                android:text="02" />
+
+            <View style="@style/baogao_green_line" />
+
+            <TextView
+                style="@style/green_text"
+                android:text="主食替代治疗" />
+        </LinearLayout>
+    </LinearLayout>
 </LinearLayout>
