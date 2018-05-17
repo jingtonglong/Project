@@ -1,0 +1,479 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/margin_middle"
+    android:background="@drawable/grey_round_background"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/expand_linear_4"
+        style="@style/yingyang_baogao_detail_title_rela">
+
+        <View
+            style="@style/yingyang_baogao_detail_title_icon"
+            android:background="@drawable/pink_icon_background" />
+
+        <TextView
+            style="@style/yingyang_baogao_detail_title_label"
+            android:text="处方措施" />
+
+        <ImageView
+            android:id="@+id/expand_4"
+            style="@style/yingyang_baogao_detail_title_arrow"
+            android:src="@drawable/arrow_down" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/expand_container_4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <LinearLayout style="@style/yingyang_baogao_detail_title_sub_container">
+
+            <TextView
+                style="@style/green_text"
+                android:text="01" />
+
+            <View style="@style/baogao_green_line" />
+
+            <TextView
+                style="@style/green_text"
+                android:text="主食选择" />
+
+            <TextView
+                style="@style/renti_celiang_sub_danwei"
+                android:text="（必填）" />
+        </LinearLayout>
+
+        <View style="@style/line_horizontal" />
+
+        <LinearLayout style="@style/renti_celiang_container">
+
+            <CheckBox style="@style/yingyang_baogao_checkbox" />
+
+            <TextView
+                style="@style/text_deep_margin_left"
+                android:text="普通大米" />
+
+            <TextView
+                style="@style/danwei_margin_left"
+                android:text="g/天" />
+
+            <EditText style="@style/yingyang_baogao_right_input" />
+        </LinearLayout>
+
+        <View style="@style/line_horizontal" />
+
+        <LinearLayout style="@style/renti_celiang_container">
+
+            <CheckBox style="@style/yingyang_baogao_checkbox" />
+
+            <TextView
+                style="@style/text_deep_margin_left"
+                android:text="麦淀粉" />
+
+            <TextView
+                style="@style/danwei_margin_left"
+                android:text="g/天" />
+
+            <EditText style="@style/yingyang_baogao_right_input" />
+        </LinearLayout>
+
+        <View style="@style/line_horizontal" />
+
+        <LinearLayout style="@style/renti_celiang_container">
+
+            <CheckBox style="@style/yingyang_baogao_checkbox" />
+
+            <TextView
+                style="@style/text_deep_margin_left"
+                android:text="W0868大米" />
+
+            <TextView
+                style="@style/danwei_margin_left"
+                android:text="g/天" />
+
+            <EditText style="@style/yingyang_baogao_right_input" />
+        </LinearLayout>
+
+        <View style="@style/line_horizontal" />
+
+        <LinearLayout style="@style/renti_celiang_container">
+
+            <CheckBox style="@style/yingyang_baogao_checkbox" />
+
+            <TextView
+                style="@style/text_deep_margin_left"
+                android:text="脱蛋白低磷预煮大米" />
+
+            <TextView
+                style="@style/danwei_margin_left"
+                android:text="g/天" />
+
+            <EditText style="@style/yingyang_baogao_right_input" />
+        </LinearLayout>
+
+        <View style="@style/line_horizontal" />
+
+        <LinearLayout style="@style/renti_celiang_container">
+
+            <CheckBox style="@style/yingyang_baogao_checkbox" />
+
+            <TextView
+                style="@style/text_deep_margin_left"
+                android:text="低蛋白面条" />
+
+            <TextView
+                style="@style/danwei_margin_left"
+                android:text="g/天" />
+
+            <EditText style="@style/yingyang_baogao_right_input" />
+        </LinearLayout>
+
+        <View style="@style/line_horizontal" />
+
+        <LinearLayout style="@style/renti_celiang_container">
+
+            <CheckBox style="@style/yingyang_baogao_checkbox" />
+
+            <TextView
+                style="@style/text_deep_margin_left"
+                android:text="低蛋白河粉" />
+
+            <TextView
+                style="@style/danwei_margin_left"
+                android:text="g/天" />
+
+            <EditText style="@style/yingyang_baogao_right_input" />
+        </LinearLayout>
+
+
+        <View style="@style/line_horizontal" />
+
+        <LinearLayout style="@style/yingyang_baogao_detail_title_sub_container">
+
+            <TextView
+                style="@style/green_text"
+                android:text="02" />
+
+            <View style="@style/baogao_green_line" />
+
+            <TextView
+                style="@style/green_text"
+                android:text="其他食物全天食物量" />
+
+            <TextView
+                style="@style/renti_celiang_sub_danwei"
+                android:text="（必填）" />
+        </LinearLayout>
+
+        <View style="@style/line_horizontal" />
+
+        <LinearLayout style="@style/yingyang_pinggu_detail_linear">
+
+            <TextView
+                style="@style/yingyang_pinggu_detail_label"
+                android:text="肉类" />
+
+            <EditText style="@style/yingyang_pinggu_detail_content" />
+
+            <TextView
+                style="@style/yingyang_bao_add_danwei"
+                android:text="g" />
+        </LinearLayout>
+
+        <View style="@style/line_horizontal" />
+
+        <LinearLayout style="@style/yingyang_pinggu_detail_linear">
+
+            <TextView
+                style="@style/yingyang_pinggu_detail_label"
+                android:text="鱼类" />
+
+            <EditText style="@style/yingyang_pinggu_detail_content" />
+
+            <TextView
+                style="@style/yingyang_bao_add_danwei"
+                android:text="g" />
+        </LinearLayout>
+
+        <View style="@style/line_horizontal" />
+
+        <LinearLayout style="@style/yingyang_pinggu_detail_linear">
+
+            <TextView
+                style="@style/yingyang_pinggu_detail_label"
+                android:text="鸡蛋类" />
+
+            <EditText style="@style/yingyang_pinggu_detail_content" />
+
+            <TextView
+                style="@style/yingyang_bao_add_danwei"
+                android:text="g" />
+        </LinearLayout>
+
+        <View style="@style/line_horizontal" />
+
+        <LinearLayout style="@style/yingyang_pinggu_detail_linear">
+
+            <TextView
+                style="@style/yingyang_pinggu_detail_label"
+                android:text="奶类" />
+
+            <EditText style="@style/yingyang_pinggu_detail_content" />
+
+            <TextView
+                style="@style/yingyang_bao_add_danwei"
+                android:text="g" />
+        </LinearLayout>
+
+        <View style="@style/line_horizontal" />
+
+        <LinearLayout style="@style/yingyang_pinggu_detail_linear">
+
+            <TextView
+                style="@style/yingyang_pinggu_detail_label"
+                android:text="水果类" />
+
+            <EditText style="@style/yingyang_pinggu_detail_content" />
+
+            <TextView
+                style="@style/yingyang_bao_add_danwei"
+                android:text="g" />
+        </LinearLayout>
+
+        <View style="@style/line_horizontal" />
+
+        <LinearLayout style="@style/yingyang_pinggu_detail_linear">
+
+            <TextView
+                style="@style/yingyang_pinggu_detail_label"
+                android:text="蔬菜" />
+
+            <EditText style="@style/yingyang_pinggu_detail_content" />
+
+            <TextView
+                style="@style/yingyang_bao_add_danwei"
+                android:text="g" />
+        </LinearLayout>
+
+        <View style="@style/line_horizontal" />
+
+        <LinearLayout style="@style/yingyang_pinggu_detail_linear">
+
+            <TextView
+                style="@style/yingyang_pinggu_detail_label"
+                android:text="烹饪油" />
+
+            <EditText style="@style/yingyang_pinggu_detail_content" />
+
+            <TextView
+                style="@style/yingyang_bao_add_danwei"
+                android:text="g" />
+        </LinearLayout>
+
+        <View style="@style/line_horizontal" />
+
+        <LinearLayout style="@style/yingyang_pinggu_detail_linear">
+
+            <TextView
+                style="@style/yingyang_pinggu_detail_label"
+                android:text="优质蛋白比例" />
+
+            <EditText style="@style/yingyang_pinggu_detail_content" />
+
+            <TextView
+                style="@style/yingyang_bao_add_danwei"
+                android:text="%" />
+        </LinearLayout>
+
+        <View style="@style/line_horizontal" />
+
+
+        <LinearLayout style="@style/yingyang_baogao_detail_title_sub_container">
+
+            <TextView
+                style="@style/green_text"
+                android:text="03" />
+
+            <View style="@style/baogao_green_line" />
+
+            <TextView
+                style="@style/green_text"
+                android:text="控盐饮食" />
+
+            <TextView
+                style="@style/renti_celiang_sub_danwei"
+                android:text="（必填）" />
+        </LinearLayout>
+
+        <View style="@style/line_horizontal" />
+
+        <LinearLayout style="@style/renti_celiang_container">
+
+            <CheckBox style="@style/yingyang_baogao_checkbox" />
+
+            <TextView
+                style="@style/text_deep_margin_left"
+                android:text="全天食盐摄入量低于" />
+
+            <TextView
+                style="@style/danwei_margin_left"
+                android:text="g" />
+
+            <EditText style="@style/yingyang_baogao_right_input" />
+        </LinearLayout>
+
+        <View style="@style/line_horizontal" />
+
+        <LinearLayout style="@style/renti_celiang_container">
+
+            <CheckBox style="@style/yingyang_baogao_checkbox" />
+
+            <TextView
+                style="@style/text_deep_margin_left"
+                android:text="无盐饮食" />
+
+        </LinearLayout>
+
+        <View style="@style/line_horizontal" />
+
+        <LinearLayout style="@style/renti_celiang_container">
+
+            <CheckBox style="@style/yingyang_baogao_checkbox" />
+
+            <TextView
+                style="@style/text_deep_margin_left"
+                android:text="低钠饮食" />
+        </LinearLayout>
+
+        <LinearLayout style="@style/yingyang_baogao_detail_title_sub_container">
+
+            <TextView
+                style="@style/green_text"
+                android:text="04" />
+
+            <View style="@style/baogao_green_line" />
+
+            <TextView
+                style="@style/green_text"
+                android:text="水分控制(全天水分摄入量)" />
+
+            <TextView
+                style="@style/renti_celiang_sub_danwei"
+                android:text="（必填）" />
+        </LinearLayout>
+
+
+        <View style="@style/line_horizontal" />
+
+        <LinearLayout style="@style/renti_celiang_container">
+
+            <CheckBox style="@style/yingyang_baogao_checkbox" />
+
+            <TextView
+                style="@style/text_deep_margin_left"
+                android:text="前一天尿量" />
+
+            <TextView
+                style="@style/danwei_margin_left"
+                android:text="ml" />
+
+            <EditText style="@style/yingyang_baogao_right_input" />
+        </LinearLayout>
+
+        <View style="@style/line_horizontal" />
+
+        <LinearLayout style="@style/renti_celiang_container">
+
+            <CheckBox style="@style/yingyang_baogao_checkbox" />
+
+            <TextView
+                style="@style/text_deep_margin_left"
+                android:text="其他" />
+
+            <TextView
+                style="@style/danwei_margin_left"
+                android:text="ml" />
+
+            <EditText style="@style/yingyang_baogao_right_input" />
+        </LinearLayout>
+
+        <View style="@style/line_horizontal" />
+
+        <LinearLayout style="@style/yingyang_baogao_detail_title_sub_container">
+
+            <TextView
+                style="@style/green_text"
+                android:text="05" />
+
+            <View style="@style/baogao_green_line" />
+
+            <TextView
+                style="@style/green_text"
+                android:text="营养补充剂" />
+
+            <TextView
+                style="@style/renti_celiang_sub_danwei"
+                android:text="（必填）" />
+        </LinearLayout>
+
+        <View style="@style/line_horizontal" />
+
+        <LinearLayout style="@style/renti_celiang_container">
+
+            <CheckBox style="@style/yingyang_baogao_checkbox" />
+
+            <TextView
+                style="@style/text_deep_margin_left"
+                android:text="低蛋白-能量补充剂" />
+
+        </LinearLayout>
+
+        <View style="@style/line_horizontal" />
+
+        <LinearLayout style="@style/renti_celiang_container">
+
+            <CheckBox style="@style/yingyang_baogao_checkbox" />
+
+            <TextView
+                style="@style/text_deep_margin_left"
+                android:text="优蛋白-能量补充剂" />
+
+        </LinearLayout>
+
+
+        <View style="@style/line_horizontal" />
+
+        <LinearLayout style="@style/yingyang_baogao_detail_title_sub_container">
+
+            <TextView
+                style="@style/green_text"
+                android:text="06" />
+
+            <View style="@style/baogao_green_line" />
+
+            <TextView
+                style="@style/green_text"
+                android:text="其他" />
+        </LinearLayout>
+
+        <RelativeLayout
+            style="@style/yingyang_baogao_detail_title_sub_container"
+            android:background="@drawable/grey_search_background"
+            android:layout_marginBottom="@dimen/margin_middle"
+            android:padding="8dp">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:lines="1"
+                android:textColor="@color/text_black_deep"
+                android:textSize="@dimen/text_size" />
+        </RelativeLayout>
+    </LinearLayout>
+</LinearLayout>

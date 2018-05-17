@@ -185,7 +185,10 @@
         <activity android:name=".mvp.view.activity.ShengHuaDataEditorActivity" />
         <activity android:name=".mvp.view.activity.YingYangPingGuDetailActivity" />
         <activity android:name=".mvp.view.activity.YingYangPingGuEditorActivity" />
-        <activity android:name=".mvp.view.activity.YingYangBaoGaoDetailActivity"></activity>
+        <activity android:name=".mvp.view.activity.YingYangBaoGaoDetailActivity" />
+        <activity android:name=".mvp.view.activity.YingYangBaoGaoAddActivity" />
+        <activity android:name=".mvp.view.activity.NewHuanZheJianDangActivity" />
+        <activity android:name=".mvp.view.activity.NewHuanZheJianDangActivity2"></activity>
     </application>
 
 </manifest>

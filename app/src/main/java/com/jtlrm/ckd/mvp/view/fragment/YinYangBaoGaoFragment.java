@@ -1,15 +1,17 @@
 package com.jtlrm.ckd.mvp.view.fragment;
 
 import android.content.Context;
-import android.net.Uri;
+import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.jtlrm.ckd.R;
 import com.jtlrm.ckd.base.fragment.BaseFragment;
+import com.jtlrm.ckd.mvp.view.activity.YingYangBaoGaoAddActivity;
+import com.jtlrm.ckd.mvp.view.activity.YingYangBaoGaoDetailActivity;
+
+import butterknife.BindView;
 
 /**
  * 营养报告
@@ -20,7 +22,8 @@ public class YinYangBaoGaoFragment extends BaseFragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
 
-
+    @BindView(R.id.tiaozhuan)
+    TextView tiaozhuan;
     public YinYangBaoGaoFragment() {
         // Required empty public constructor
     }
@@ -59,7 +62,12 @@ public class YinYangBaoGaoFragment extends BaseFragment {
 
     @Override
     protected void initEvent() {
-
+        tiaozhuan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(context, YingYangBaoGaoAddActivity.class));
+            }
+        });
     }
 
     @Override

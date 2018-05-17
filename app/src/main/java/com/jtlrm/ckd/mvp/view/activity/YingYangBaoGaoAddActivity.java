@@ -13,8 +13,7 @@ import java.util.List;
 
 import butterknife.BindViews;
 
-public class YingYangBaoGaoDetailActivity extends BaseActivity implements View.OnClickListener {
-
+public class YingYangBaoGaoAddActivity extends BaseActivity implements View.OnClickListener{
     @BindViews({R.id.expand_1, R.id.expand_2, R.id.expand_3, R.id.expand_4})
     List<ImageView> expandArrows;
     @BindViews({R.id.expand_container_1, R.id.expand_container_2, R.id.expand_container_3, R.id.expand_container_4})
@@ -28,7 +27,7 @@ public class YingYangBaoGaoDetailActivity extends BaseActivity implements View.O
 
     @Override
     protected void setContentLayout() {
-        setContentView(R.layout.activity_ying_yang_bao_gao_detail);
+        setContentView(R.layout.activity_ying_yang_bao_gao_add);
     }
 
     @Override
@@ -46,10 +45,6 @@ public class YingYangBaoGaoDetailActivity extends BaseActivity implements View.O
         for (RelativeLayout imageView : expandRelative) {
             imageView.setOnClickListener(this);
         }
-    }
-
-    public void goBack(View view) {
-        finish();
     }
 
     @Override

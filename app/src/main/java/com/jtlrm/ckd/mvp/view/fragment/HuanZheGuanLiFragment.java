@@ -9,6 +9,7 @@ import com.base.sdk.widget.TitleBar;
 import com.jtlrm.ckd.R;
 import com.jtlrm.ckd.base.fragment.BaseFragment;
 import com.jtlrm.ckd.mvp.view.activity.HuanZheManagerActivity;
+import com.jtlrm.ckd.mvp.view.activity.NewHuanZheJianDangActivity;
 
 import butterknife.BindView;
 
@@ -31,6 +32,12 @@ public class HuanZheGuanLiFragment extends BaseFragment {
         titleBar.tvMiddle.setText("患者管理");
         titleBar.tvRight.setText("新患者建档");
         titleBar.tvRight.setVisibility(View.VISIBLE);
+        titleBar.tvRight.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(context, NewHuanZheJianDangActivity.class));
+            }
+        });
     }
 
     @Override

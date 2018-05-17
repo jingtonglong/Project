@@ -3,9 +3,13 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@drawable/grey_round_background"
+    android:layout_marginTop="@dimen/margin_middle"
+
     android:orientation="vertical">
 
-    <RelativeLayout style="@style/yingyang_baogao_detail_title_rela">
+    <RelativeLayout
+        android:id="@+id/expand_linear_3"
+        style="@style/yingyang_baogao_detail_title_rela">
 
         <View
             style="@style/yingyang_baogao_detail_title_icon"
@@ -16,11 +20,13 @@
             android:text="处方原则" />
 
         <ImageView
+            android:id="@+id/expand_3"
             style="@style/yingyang_baogao_detail_title_arrow"
             android:src="@drawable/arrow_down" />
     </RelativeLayout>
 
     <LinearLayout
+        android:id="@+id/expand_container_3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
        android:visibility="gone"

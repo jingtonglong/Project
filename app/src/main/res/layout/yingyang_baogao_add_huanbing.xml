@@ -6,7 +6,6 @@
     android:background="@drawable/grey_round_background"
     android:orientation="vertical">
 
-
     <RelativeLayout
         android:id="@+id/expand_linear_1"
         style="@style/yingyang_baogao_detail_title_rela">
@@ -29,8 +28,8 @@
         android:id="@+id/expand_container_1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:visibility="gone"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:visibility="gone">
 
         <LinearLayout style="@style/yingyang_baogao_detail_title_sub_container">
 
@@ -43,19 +42,35 @@
             <TextView
                 style="@style/green_text"
                 android:text="慢性肾病" />
-        </LinearLayout>
-
-        <LinearLayout style="@style/yingyang_baogao_detail_title_sub_container">
-
-            <View style="@style/circle_point_orange" />
 
             <TextView
-                style="@style/baogao_item_label"
-                android:text="3期" />
+                style="@style/renti_celiang_sub_danwei"
+                android:text="（必填）" />
         </LinearLayout>
+
+        <RelativeLayout
+            style="@style/yingyang_baogao_detail_title_sub_container"
+            android:background="@drawable/grey_search_background"
+            android:padding="12dp">
+
+            <TextView
+                style="@style/renti_celiang_sub_content"
+                android:layout_centerVertical="true"
+                android:text="170" />
+
+            <ImageView
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="6dp"
+                android:src="@drawable/shiti_sanjiao" />
+        </RelativeLayout>
 
         <View
             style="@style/line_horizontal"
+            android:layout_marginLeft="@dimen/margin_middle"
+            android:layout_marginRight="@dimen/margin_middle"
             android:layout_marginTop="12dp" />
 
         <LinearLayout style="@style/yingyang_baogao_detail_title_sub_container">
@@ -69,15 +84,30 @@
             <TextView
                 style="@style/green_text"
                 android:text="其他合并疾病" />
-        </LinearLayout>
-
-        <LinearLayout style="@style/yingyang_baogao_detail_title_sub_container">
-
-            <View style="@style/circle_point_orange" />
 
             <TextView
-                style="@style/baogao_item_label"
-                android:text="糖尿病" />
+                style="@style/renti_celiang_sub_danwei"
+                android:text="（必填）" />
         </LinearLayout>
+
+        <RelativeLayout
+            style="@style/yingyang_baogao_detail_title_sub_container"
+            android:layout_marginBottom="@dimen/margin_middle"
+            android:background="@drawable/grey_search_background"
+            android:padding="12dp">
+
+            <TextView
+                style="@style/renti_celiang_sub_content"
+                android:layout_centerVertical="true"
+                android:text="糖尿病" />
+
+            <ImageView
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="6dp"
+                android:src="@drawable/shiti_sanjiao" />
+        </RelativeLayout>
     </LinearLayout>
 </LinearLayout>

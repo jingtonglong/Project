@@ -3,9 +3,12 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@drawable/grey_round_background"
+    android:layout_marginTop="@dimen/margin_middle"
     android:orientation="vertical">
 
-    <RelativeLayout style="@style/yingyang_baogao_detail_title_rela">
+    <RelativeLayout
+        android:id="@+id/expand_linear_4"
+        style="@style/yingyang_baogao_detail_title_rela">
 
         <View
             style="@style/yingyang_baogao_detail_title_icon"
@@ -16,14 +19,17 @@
             android:text="处方措施" />
 
         <ImageView
+            android:id="@+id/expand_4"
             style="@style/yingyang_baogao_detail_title_arrow"
             android:src="@drawable/arrow_down" />
     </RelativeLayout>
 
     <LinearLayout
+        android:id="@+id/expand_container_4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:visibility="gone">
 
         <LinearLayout style="@style/yingyang_baogao_detail_title_sub_container">
 
@@ -303,13 +309,122 @@
 
             <TextView
                 style="@style/green_text"
-                android:text="02" />
+                android:text="03" />
 
             <View style="@style/baogao_green_line" />
 
             <TextView
                 style="@style/green_text"
-                android:text="主食替代治疗" />
+                android:text="控盐饮食" />
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/renti_celiang_container"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/renti_celiang_sub_content"
+                android:text="170" />
+
+            <TextView
+                style="@style/renti_celiang_sub_danwei"
+                android:text="全天食盐摄入量低于" />
+
+            <TextView
+                style="@style/renti_celiang_sub_danwei"
+                android:text="g" />
+
+        </LinearLayout>
+
+        <View style="@style/line_horizontal" />
+
+
+        <LinearLayout style="@style/yingyang_baogao_detail_title_sub_container">
+
+            <TextView
+                style="@style/green_text"
+                android:text="04" />
+
+            <View style="@style/baogao_green_line" />
+
+            <TextView
+                style="@style/green_text"
+                android:text="水分控制(全天水分摄入量)" />
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/renti_celiang_container"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/renti_celiang_sub_content"
+                android:text="+500" />
+
+            <TextView
+                style="@style/renti_celiang_sub_danwei"
+                android:text="前一天尿量" />
+
+            <TextView
+                style="@style/renti_celiang_sub_danwei"
+                android:text="ml" />
+
+        </LinearLayout>
+
+        <View style="@style/line_horizontal" />
+
+        <LinearLayout style="@style/yingyang_baogao_detail_title_sub_container">
+
+            <TextView
+                style="@style/green_text"
+                android:text="05" />
+
+            <View style="@style/baogao_green_line" />
+
+            <TextView
+                style="@style/green_text"
+                android:text="营养补充剂" />
+        </LinearLayout>
+
+        <LinearLayout style="@style/yingyang_baogao_detail_title_sub_container">
+
+            <View style="@style/circle_point_orange" />
+
+            <TextView
+                style="@style/baogao_item_label"
+                android:text="低蛋白-能量补充剂" />
+        </LinearLayout>
+
+        <LinearLayout style="@style/yingyang_baogao_detail_title_sub_container">
+
+            <View style="@style/circle_point_orange" />
+
+            <TextView
+                style="@style/baogao_item_label"
+                android:text="优蛋白-能量补充剂" />
+        </LinearLayout>
+
+        <View style="@style/line_horizontal" />
+
+        <LinearLayout style="@style/yingyang_baogao_detail_title_sub_container">
+
+            <TextView
+                style="@style/green_text"
+                android:text="06" />
+
+            <View style="@style/baogao_green_line" />
+
+            <TextView
+                style="@style/green_text"
+                android:text="其他" />
+        </LinearLayout>
+
+        <LinearLayout style="@style/yingyang_baogao_detail_title_sub_container">
+
+            <View style="@style/circle_point_orange" />
+
+            <TextView
+                style="@style/baogao_item_label"
+                android:text="请保持少油少盐饮食" />
         </LinearLayout>
     </LinearLayout>
 </LinearLayout>

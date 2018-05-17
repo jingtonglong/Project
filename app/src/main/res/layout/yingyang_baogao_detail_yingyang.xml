@@ -2,11 +2,13 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
     android:background="@drawable/grey_round_background"
+    android:layout_marginTop="@dimen/margin_middle"
     android:orientation="vertical">
 
-    <RelativeLayout style="@style/yingyang_baogao_detail_title_rela">
+    <RelativeLayout
+        android:id="@+id/expand_linear_2"
+        style="@style/yingyang_baogao_detail_title_rela">
 
         <View
             style="@style/yingyang_baogao_detail_title_icon"
@@ -17,15 +19,17 @@
             android:text="营养评估" />
 
         <ImageView
+            android:id="@+id/expand_2"
             style="@style/yingyang_baogao_detail_title_arrow"
             android:src="@drawable/arrow_down" />
     </RelativeLayout>
 
     <LinearLayout
+        android:id="@+id/expand_container_2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:visibility="gone">
 
         <LinearLayout style="@style/yingyang_baogao_detail_title_sub_container">
 
@@ -37,13 +41,12 @@
 
             <TextView
                 style="@style/green_text"
-                android:text="其他合并疾病" />
+                android:text="人体测量" />
         </LinearLayout>
 
         <LinearLayout style="@style/renti_celiang_container">
 
-            <LinearLayout
-                style="@style/renti_celiang_sub_container_match_parent">
+            <LinearLayout style="@style/renti_celiang_sub_container_match_parent">
 
                 <LinearLayout style="@style/renti_celiang_sub_container">
 
@@ -65,8 +68,7 @@
 
             <LinearLayout
                 style="@style/renti_celiang_sub_container_match_parent"
-                android:gravity="center_horizontal"
-                >
+                android:gravity="center_horizontal">
 
                 <LinearLayout
                     android:id="@+id/tizhong"

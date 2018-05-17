@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".mvp.view.activity.NewHuanZheJianDangActivity">
+
+    <com.base.sdk.widget.TitleBar
+        android:id="@+id/title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_bar_size" />
+
+    <TextView
+        style="@style/text_deep_margin_left"
+        android:layout_marginTop="40dp"
+        android:text="请录入患者手机号码" />
+    <RelativeLayout
+        style="@style/yingyang_baogao_detail_title_sub_container"
+        android:background="@drawable/grey_search_background"
+        android:layout_marginBottom="@dimen/margin_middle"
+        android:layout_marginTop="40dp"
+        android:padding="12dp">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:lines="1"
+            android:hint="手机号码由11位数字组成"
+            android:textColor="@color/text_black_deep"
+            android:textSize="@dimen/text_size" />
+    </RelativeLayout>
+
+    <Button
+        style="@style/submit_button"
+        android:onClick="submit"
+        android:text="下一步" />
+</LinearLayout>

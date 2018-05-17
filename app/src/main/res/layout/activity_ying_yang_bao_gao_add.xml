@@ -5,9 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".mvp.view.activity.YingYangBaoGaoDetailActivity">
+    tools:context=".mvp.view.activity.YingYangBaoGaoAddActivity">
 
-    <include layout="@layout/yingyang_baogao_detail_top" />
+    <include layout="@layout/yingyang_baogao_add_top" />
 
     <ScrollView
         android:layout_width="match_parent"
@@ -20,14 +20,13 @@
             android:paddingRight="@dimen/padding_size_middle"
             android:orientation="vertical">
 
-            <include layout="@layout/yingyang_baogao_detail_huanbing" />
+            <include layout="@layout/yingyang_baogao_add_huanbing" />
 
-            <include layout="@layout/yingyang_baogao_detail_yingyang" />
+            <include layout="@layout/yingyang_baogao_add_yingyang" />
 
-            <include layout="@layout/yingyang_baogao_detail_yuanze" />
+            <include layout="@layout/yingyang_baogao_add_yuanze" />
 
-            <include layout="@layout/yingyang_baogao_detail_cuoshi" />
+            <include layout="@layout/yingyang_baogao_add_cuoshi" />
         </LinearLayout>
     </ScrollView>
-
 </LinearLayout>

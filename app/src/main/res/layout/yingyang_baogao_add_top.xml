@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="140dp"
+    android:background="@drawable/yinyang_top_bg"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/padding_size_middle"
+    android:paddingRight="@dimen/padding_size_middle"
+    android:paddingTop="40dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:onClick="goBack"
+            android:src="@drawable/zuo_fan_ye" />
+
+        <TextView
+            style="@style/text_white"
+            android:layout_centerHorizontal="true"
+            android:text="营养报告查看" />
+
+
+        <TextView
+            style="@style/text_white"
+            android:layout_alignParentRight="true"
+            android:text="完成" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:layout_marginTop="24dp">
+
+        <TextView
+            android:id="@+id/name"
+            style="@style/text_white"
+            android:text="某某某" />
+
+        <TextView
+            android:id="@+id/sex"
+            style="@style/text_white"
+            android:text="男"
+            android:layout_marginLeft="@dimen/margin_middle"
+            android:textSize="@dimen/text_size_small" />
+
+        <TextView
+            android:id="@+id/age"
+            style="@style/text_white"
+            android:text="61岁"
+            android:layout_marginLeft="@dimen/margin_middle"
+            android:textSize="@dimen/text_size_small" />
+    </LinearLayout>
+</LinearLayout>

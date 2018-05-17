@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".mvp.view.activity.NewHuanZheJianDangActivity2">
+
+    <com.base.sdk.widget.TitleBar
+        android:id="@+id/title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_bar_size" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout style="@style/complete_info_relative">
+
+
+                <TextView
+                    style="@style/complete_info_label"
+                    android:text="完善手机号码111213546546用户的建档信息" />
+
+            </RelativeLayout>
+
+            <View style="@style/line_horizontal" />
+
+            <RelativeLayout style="@style/complete_info_relative">
+
+                <TextView
+                    style="@style/necessarily_icon"
+                    android:layout_marginLeft="@dimen/margin_middle" />
+
+                <TextView
+                    style="@style/complete_info_label"
+                    android:text="患者姓名" />
+
+                <EditText
+                    style="@style/complete_info_content"
+                    android:hint="请输入患者姓名" />
+            </RelativeLayout>
+
+            <View style="@style/line_horizontal" />
+
+            <RelativeLayout style="@style/complete_info_relative">
+
+                <TextView
+                    style="@style/necessarily_icon"
+                    android:layout_marginLeft="@dimen/margin_middle" />
+
+                <TextView
+                    style="@style/complete_info_label"
+                    android:text="性别" />
+
+                <RadioGroup
+                    style="@style/complete_info_content"
+                    android:layout_width="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        style="@style/complete_info_content_radio"
+                        android:checked="true"
+                        android:text="男" />
+
+                    <RadioButton
+                        style="@style/complete_info_content_radio"
+                        android:layout_marginLeft="46dp"
+                        android:text="女" />
+                </RadioGroup>
+            </RelativeLayout>
+
+            <View style="@style/line_horizontal" />
+
+            <RelativeLayout style="@style/complete_info_relative">
+
+                <TextView
+                    style="@style/necessarily_icon"
+                    android:layout_marginLeft="@dimen/margin_middle" />
+
+                <TextView
+                    style="@style/complete_info_label"
+                    android:text="出生日期" />
+
+                <TextView
+                    style="@style/complete_info_content"
+                    android:hint="年/月/日" />
+
+                <ImageView style="@style/select_more" />
+            </RelativeLayout>
+
+            <View style="@style/line_horizontal" />
+
+            <RelativeLayout style="@style/complete_info_relative">
+
+                <TextView
+                    style="@style/complete_info_label"
+                    android:text="家庭住址" />
+
+                <TextView
+                    style="@style/complete_info_content"
+                    android:hint="省/市/区" />
+
+                <ImageView style="@style/select_more" />
+            </RelativeLayout>
+
+            <View style="@style/line_horizontal" />
+
+            <RelativeLayout style="@style/complete_info_relative">
+
+                <EditText
+                    style="@style/text_black"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="24dp"
+                    android:background="@null"
+                    android:hint="请输入详细地址" />
+            </RelativeLayout>
+
+            <View style="@style/line_horizontal" />
+
+            <RelativeLayout style="@style/complete_info_relative">
+
+                <TextView
+                    style="@style/complete_info_label"
+                    android:text="身份证号码" />
+
+                <TextView
+                    style="@style/complete_info_content"
+                    android:hint="输入身份证号码" />
+
+                <ImageView style="@style/select_more" />
+            </RelativeLayout>
+
+            <View style="@style/line_horizontal" />
+
+            <RelativeLayout style="@style/complete_info_relative">
+
+                <TextView
+                    style="@style/complete_info_label"
+                    android:text="文化程度" />
+
+                <TextView
+                    style="@style/complete_info_content"
+                    android:hint="请选择" />
+
+                <ImageView style="@style/select_more" />
+            </RelativeLayout>
+
+            <View style="@style/line_horizontal" />
+
+            <RelativeLayout style="@style/complete_info_relative">
+
+                <TextView
+                    style="@style/complete_info_label"
+                    android:text="报销方式" />
+
+                <TextView
+                    style="@style/complete_info_content"
+                    android:hint="请选择" />
+
+                <ImageView style="@style/select_more" />
+            </RelativeLayout>
+
+            <View style="@style/line_horizontal" />
+
+            <RelativeLayout style="@style/complete_info_relative">
+
+                <TextView
+                    style="@style/complete_info_label"
+                    android:text="原发病" />
+
+                <TextView
+                    style="@style/complete_info_content"
+                    android:hint="请选择" />
+
+                <ImageView style="@style/select_more" />
+            </RelativeLayout>
+
+            <View style="@style/line_horizontal" />
+
+            <RelativeLayout style="@style/complete_info_relative">
+
+                <TextView
+                    style="@style/complete_info_label"
+                    android:text="伴随病" />
+
+                <TextView
+                    style="@style/complete_info_content"
+                    android:hint="请选择" />
+
+                <ImageView style="@style/select_more" />
+            </RelativeLayout>
+
+            <View style="@style/line_horizontal" />
+
+            <RelativeLayout style="@style/complete_info_relative">
+
+                <TextView
+                    style="@style/complete_info_label"
+                    android:text="备注" />
+
+                <EditText
+                    style="@style/complete_info_content"
+                    android:hint="请输入备注消息" />
+            </RelativeLayout>
+
+            <View style="@style/line_horizontal" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin_middle"
+                android:layout_marginTop="@dimen/margin_middle"
+                android:orientation="horizontal">
+
+                <Button
+                    style="@style/submit_button"
+                    android:layout_weight="1"
+                    android:text="建档" />
+
+                <Button
+                    style="@style/submit_button"
+                    android:layout_weight="1"
+                    android:text="建档并诊疗" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+
+</LinearLayout>

@@ -377,6 +377,16 @@
         <item name="android:button">@null</item>
     </style>
 
+    <style name="select_more">
+        <item name="android:layout_height">12dp</item>
+        <item name="android:layout_width">12dp</item>
+        <item name="android:src">@drawable/more</item>
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:layout_marginRight">12dp</item>
+
+    </style>
+
     <style name="necessarily_icon">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
@@ -580,13 +590,13 @@
 
     <style name="yingyang_pinggu_detail_label" parent="text_black">
         <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_weight">3</item>
+        <item name="android:layout_weight">1</item>
         <item name="android:padding">4dp</item>
     </style>
 
     <style name="yingyang_pinggu_detail_content" parent="text_black">
         <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_weight">4</item>
+        <item name="android:layout_weight">1</item>
         <item name="android:padding">4dp</item>
         <item name="android:background">@null</item>
         <item name="android:layout_centerInParent">true</item>
@@ -596,10 +606,15 @@
 
     <style name="yingyang_pinggu_detail_right" parent="text_black">
         <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_weight">3</item>
+        <item name="android:layout_weight">1</item>
         <item name="android:padding">4dp</item>
         <item name="android:gravity">end</item>
         <item name="android:layout_alignParentRight">true</item>
+    </style>
+
+    <style name="yingyang_bao_add_danwei" parent="yingyang_pinggu_detail_right">
+        <item name="android:textColor">@color/adcbbc</item>
+
     </style>
 
     <style name="yingyang_baogao_detail_title_rela">
@@ -705,7 +720,6 @@
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textColor">@color/text_black_deep</item>
-
     </style>
 
     <style name="renti_celiang_sub_label" parent="text_black">
@@ -726,4 +740,22 @@
         <item name="android:background">@color/adcbbc</item>
     </style>
 
+    <style name="yingyang_baogao_checkbox">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:button">@drawable/checkbox_bg_selector</item>
+    </style>
+
+    <style name="text_deep_margin_left" parent="renti_celiang_sub_content">
+        <item name="android:layout_marginLeft">@dimen/margin_middle</item>
+    </style>
+
+    <style name="danwei_margin_left" parent="renti_celiang_sub_danwei">
+        <item name="android:layout_marginLeft">@dimen/margin_middle</item>
+    </style>
+
+    <style name="yingyang_baogao_right_input" parent="yingyang_pinggu_detail_content">
+        <item name="android:layout_marginLeft">40dp</item>
+        <item name="android:gravity">end</item>
+    </style>
 </resources>

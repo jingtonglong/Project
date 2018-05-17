@@ -1,0 +1,523 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="@dimen/margin_middle"
+    android:background="@drawable/grey_round_background"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/expand_linear_2"
+        style="@style/yingyang_baogao_detail_title_rela">
+
+        <View
+            style="@style/yingyang_baogao_detail_title_icon"
+            android:background="@drawable/blue_icon_background" />
+
+        <TextView
+            style="@style/yingyang_baogao_detail_title_label"
+            android:text="营养评估" />
+
+        <ImageView
+            android:id="@+id/expand_2"
+            style="@style/yingyang_baogao_detail_title_arrow"
+            android:src="@drawable/arrow_down" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/expand_container_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <LinearLayout style="@style/yingyang_baogao_detail_title_sub_container">
+
+            <TextView
+                style="@style/green_text"
+                android:text="01" />
+
+            <View style="@style/baogao_green_line" />
+
+            <TextView
+                style="@style/green_text"
+                android:text="人体测量" />
+        </LinearLayout>
+
+        <LinearLayout style="@style/yingyang_pinggu_detail_linear">
+
+            <TextView
+                style="@style/yingyang_pinggu_detail_label"
+                android:text="身高" />
+
+            <EditText style="@style/yingyang_pinggu_detail_content" />
+
+            <TextView
+                style="@style/yingyang_bao_add_danwei"
+                android:text="cm" />
+        </LinearLayout>
+
+        <View style="@style/line_horizontal" />
+
+        <LinearLayout style="@style/yingyang_pinggu_detail_linear">
+
+            <TextView
+                style="@style/yingyang_pinggu_detail_label"
+                android:text="体重" />
+
+            <EditText style="@style/yingyang_pinggu_detail_content" />
+
+            <TextView
+                style="@style/yingyang_bao_add_danwei"
+                android:text="kg" />
+        </LinearLayout>
+
+        <View style="@style/line_horizontal" />
+
+        <LinearLayout style="@style/yingyang_pinggu_detail_linear">
+
+            <TextView
+                style="@style/yingyang_pinggu_detail_label"
+                android:text="BMI" />
+
+            <EditText style="@style/yingyang_pinggu_detail_content" />
+
+            <TextView style="@style/yingyang_bao_add_danwei" />
+        </LinearLayout>
+
+        <View style="@style/line_horizontal" />
+
+        <LinearLayout style="@style/yingyang_pinggu_detail_linear">
+
+            <TextView
+                style="@style/yingyang_pinggu_detail_label"
+                android:text="左手握力" />
+
+            <EditText style="@style/yingyang_pinggu_detail_content" />
+
+            <TextView
+                style="@style/yingyang_bao_add_danwei"
+                android:text="kg" />
+        </LinearLayout>
+
+        <View style="@style/line_horizontal" />
+
+        <LinearLayout style="@style/yingyang_pinggu_detail_linear">
+
+            <TextView
+                style="@style/yingyang_pinggu_detail_label"
+                android:text="右手握力" />
+
+            <EditText style="@style/yingyang_pinggu_detail_content" />
+
+            <TextView
+                style="@style/yingyang_bao_add_danwei"
+                android:text="kg" />
+        </LinearLayout>
+
+        <View style="@style/line_horizontal" />
+
+        <LinearLayout style="@style/yingyang_pinggu_detail_linear">
+
+            <TextView
+                style="@style/yingyang_pinggu_detail_label"
+                android:text="收缩压" />
+
+            <EditText style="@style/yingyang_pinggu_detail_content" />
+
+            <TextView
+                style="@style/yingyang_bao_add_danwei"
+                android:text="mmHg" />
+        </LinearLayout>
+
+        <View style="@style/line_horizontal" />
+
+        <LinearLayout style="@style/yingyang_pinggu_detail_linear">
+
+            <TextView
+                style="@style/yingyang_pinggu_detail_label"
+                android:text="舒张压" />
+
+            <EditText style="@style/yingyang_pinggu_detail_content" />
+
+            <TextView
+                style="@style/yingyang_bao_add_danwei"
+                android:text="mmHg" />
+        </LinearLayout>
+
+        <View style="@style/line_horizontal" />
+
+        <LinearLayout style="@style/yingyang_pinggu_detail_linear">
+
+            <TextView
+                style="@style/yingyang_pinggu_detail_label"
+                android:text="标准体重" />
+
+            <EditText style="@style/yingyang_pinggu_detail_content" />
+
+            <TextView
+                style="@style/yingyang_bao_add_danwei"
+                android:text="kg" />
+        </LinearLayout>
+
+        <View style="@style/line_horizontal" />
+
+        <RelativeLayout style="@style/yingyang_pinggu_detail_linear">
+
+            <TextView
+                style="@style/yingyang_pinggu_detail_label"
+                android:layout_centerVertical="true"
+                android:text="上臂围" />
+
+
+            <LinearLayout
+                style="@style/renti_celiang_sub_container"
+                android:layout_width="250dp"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true">
+
+                <EditText
+                    style="@style/yingyang_pinggu_detail_content"
+                    android:layout_width="100dp" />
+
+                <TextView
+                    style="@style/renti_celiang_sub_danwei"
+                    android:text="参考值:男性27.5cm,女性25.8cm" />
+            </LinearLayout>
+
+            <TextView
+                style="@style/yingyang_bao_add_danwei"
+                android:layout_centerVertical="true"
+                android:text="cm" />
+        </RelativeLayout>
+
+        <View style="@style/line_horizontal" />
+
+        <RelativeLayout style="@style/yingyang_pinggu_detail_linear">
+
+            <TextView
+                style="@style/yingyang_pinggu_detail_label"
+                android:layout_centerVertical="true"
+                android:text="@string/gongsantouji_pizhehoudu" />
+
+
+            <LinearLayout
+                style="@style/renti_celiang_sub_container"
+                android:layout_width="250dp"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true">
+
+                <EditText
+                    style="@style/yingyang_pinggu_detail_content"
+                    android:layout_width="100dp" />
+
+                <TextView
+                    style="@style/renti_celiang_sub_danwei"
+                    android:text="参考值:男性8.3mm,女性15.3mm" />
+            </LinearLayout>
+
+            <TextView
+                style="@style/yingyang_bao_add_danwei"
+                android:layout_centerVertical="true"
+                android:text="cm" />
+        </RelativeLayout>
+
+
+        <View style="@style/line_horizontal" />
+
+        <LinearLayout style="@style/yingyang_baogao_detail_title_sub_container">
+
+            <TextView
+                style="@style/green_text"
+                android:text="02" />
+
+            <View style="@style/baogao_green_line" />
+
+            <TextView
+                style="@style/green_text"
+                android:text="饮食摄入量" />
+        </LinearLayout>
+
+        <View style="@style/line_horizontal" />
+
+        <LinearLayout style="@style/yingyang_pinggu_detail_linear">
+
+            <TextView
+                style="@style/yingyang_pinggu_detail_label"
+                android:text="全天热量摄入量" />
+
+            <EditText style="@style/yingyang_pinggu_detail_content" />
+
+            <TextView
+                style="@style/yingyang_bao_add_danwei"
+                android:text="kcal" />
+        </LinearLayout>
+
+        <View style="@style/line_horizontal" />
+
+        <LinearLayout style="@style/yingyang_pinggu_detail_linear">
+
+            <TextView
+                style="@style/yingyang_pinggu_detail_label"
+                android:text="全天蛋白摄入量" />
+
+            <EditText style="@style/yingyang_pinggu_detail_content" />
+
+            <TextView
+                style="@style/yingyang_bao_add_danwei"
+                android:text="g" />
+        </LinearLayout>
+
+        <View style="@style/line_horizontal" />
+
+        <LinearLayout style="@style/yingyang_pinggu_detail_linear">
+
+            <TextView
+                style="@style/yingyang_pinggu_detail_label"
+                android:text="优质蛋白比例" />
+
+            <EditText style="@style/yingyang_pinggu_detail_content" />
+
+            <TextView
+                style="@style/yingyang_bao_add_danwei"
+                android:text="%" />
+        </LinearLayout>
+
+        <View style="@style/line_horizontal" />
+
+        <LinearLayout style="@style/yingyang_baogao_detail_title_sub_container">
+
+            <TextView
+                style="@style/green_text"
+                android:text="03" />
+
+            <View style="@style/baogao_green_line" />
+
+            <TextView
+                style="@style/green_text"
+                android:text="量表评分" />
+        </LinearLayout>
+
+
+        <View style="@style/line_horizontal" />
+
+        <LinearLayout style="@style/yingyang_pinggu_detail_linear">
+
+            <TextView
+                style="@style/yingyang_pinggu_detail_label"
+                android:text="NRS2002评分" />
+
+            <EditText style="@style/yingyang_pinggu_detail_content" />
+
+            <TextView
+                style="@style/yingyang_bao_add_danwei"
+                android:text="分" />
+        </LinearLayout>
+
+
+        <View style="@style/line_horizontal" />
+
+        <LinearLayout style="@style/yingyang_pinggu_detail_linear">
+
+            <TextView
+                style="@style/yingyang_pinggu_detail_label"
+                android:text="SGA评分" />
+
+            <EditText style="@style/yingyang_pinggu_detail_content" />
+
+            <TextView style="@style/yingyang_bao_add_danwei" />
+        </LinearLayout>
+
+
+        <View style="@style/line_horizontal" />
+
+        <LinearLayout style="@style/yingyang_pinggu_detail_linear">
+
+            <TextView
+                style="@style/yingyang_pinggu_detail_label"
+                android:text="MIS评分" />
+
+            <EditText style="@style/yingyang_pinggu_detail_content" />
+
+            <TextView
+                style="@style/yingyang_bao_add_danwei"
+                android:text="分" />
+        </LinearLayout>
+
+
+        <View style="@style/line_horizontal" />
+
+        <LinearLayout style="@style/yingyang_pinggu_detail_linear">
+
+            <TextView
+                style="@style/yingyang_pinggu_detail_label"
+                android:text="SF36评分" />
+
+            <EditText style="@style/yingyang_pinggu_detail_content" />
+
+            <TextView
+                style="@style/yingyang_bao_add_danwei"
+                android:text="分" />
+        </LinearLayout>
+
+
+        <View style="@style/line_horizontal" />
+
+        <LinearLayout style="@style/yingyang_pinggu_detail_linear">
+
+            <TextView
+                style="@style/yingyang_pinggu_detail_label"
+                android:text="MNA评分" />
+
+            <EditText style="@style/yingyang_pinggu_detail_content" />
+
+            <TextView
+                style="@style/yingyang_bao_add_danwei"
+                android:text="分" />
+        </LinearLayout>
+
+
+        <View style="@style/line_horizontal" />
+
+        <LinearLayout style="@style/yingyang_baogao_detail_title_sub_container">
+
+            <TextView
+                style="@style/green_text"
+                android:text="04" />
+
+            <View style="@style/baogao_green_line" />
+
+            <TextView
+                style="@style/green_text"
+                android:text="生化检查" />
+        </LinearLayout>
+
+        <View style="@style/line_horizontal" />
+
+        <LinearLayout style="@style/yingyang_pinggu_detail_linear">
+
+            <TextView
+                style="@style/yingyang_pinggu_detail_label"
+                android:text="e-GFR" />
+
+            <EditText style="@style/yingyang_pinggu_detail_content" />
+
+            <TextView
+                style="@style/yingyang_bao_add_danwei"
+                android:text="ml/min/1.73㎡" />
+        </LinearLayout>
+
+        <View style="@style/line_horizontal" />
+
+        <LinearLayout style="@style/yingyang_pinggu_detail_linear">
+
+            <TextView
+                style="@style/yingyang_pinggu_detail_label"
+                android:text="肌酐" />
+
+            <EditText style="@style/yingyang_pinggu_detail_content" />
+
+            <TextView
+                style="@style/yingyang_bao_add_danwei"
+                android:text="mmol/L" />
+        </LinearLayout>
+
+        <View style="@style/line_horizontal" />
+
+        <LinearLayout style="@style/yingyang_pinggu_detail_linear">
+
+            <TextView
+                style="@style/yingyang_pinggu_detail_label"
+                android:text="尿素氮" />
+
+            <EditText style="@style/yingyang_pinggu_detail_content" />
+
+            <TextView
+                style="@style/yingyang_bao_add_danwei"
+                android:text="mmol/L" />
+        </LinearLayout>
+
+        <View style="@style/line_horizontal" />
+
+        <LinearLayout style="@style/yingyang_pinggu_detail_linear">
+
+            <TextView
+                style="@style/yingyang_pinggu_detail_label"
+                android:text="血清白蛋白" />
+
+            <EditText style="@style/yingyang_pinggu_detail_content" />
+
+            <TextView
+                style="@style/yingyang_bao_add_danwei"
+                android:text="g/L" />
+        </LinearLayout>
+
+        <View style="@style/line_horizontal" />
+
+        <LinearLayout style="@style/yingyang_pinggu_detail_linear">
+
+            <TextView
+                style="@style/yingyang_pinggu_detail_label"
+                android:text="24小时尿蛋白" />
+
+            <EditText style="@style/yingyang_pinggu_detail_content" />
+
+            <TextView
+                style="@style/yingyang_bao_add_danwei"
+                android:text="mmol/L" />
+        </LinearLayout>
+
+        <View style="@style/line_horizontal" />
+
+        <LinearLayout style="@style/yingyang_pinggu_detail_linear">
+
+            <TextView
+                style="@style/yingyang_pinggu_detail_label"
+                android:text="空腹血糖" />
+
+            <EditText style="@style/yingyang_pinggu_detail_content" />
+
+            <TextView
+                style="@style/yingyang_bao_add_danwei"
+                android:text="mmol/L" />
+        </LinearLayout>
+
+        <View style="@style/line_horizontal" />
+
+        <LinearLayout style="@style/yingyang_pinggu_detail_linear">
+
+            <TextView
+                style="@style/yingyang_pinggu_detail_label"
+                android:text="糖化血红蛋白" />
+
+            <EditText style="@style/yingyang_pinggu_detail_content" />
+
+            <TextView
+                style="@style/yingyang_bao_add_danwei"
+                android:text="%" />
+        </LinearLayout>
+
+        <View style="@style/line_horizontal" />
+
+        <RelativeLayout style="@style/renti_celiang_container">
+
+            <TextView
+                style="@style/renti_celiang_sub_label"
+                android:text="检查日期" />
+
+            <TextView
+                style="@style/renti_celiang_sub_content"
+                android:layout_centerHorizontal="true"
+                android:text="" />
+
+            <TextView
+                style="@style/renti_celiang_sub_label"
+                android:layout_alignParentRight="true"
+                android:text="2018-8-5" />
+        </RelativeLayout>
+
+        <View style="@style/line_horizontal"
+            android:layout_marginBottom="@dimen/margin_middle"
+            />
+    </LinearLayout>
+</LinearLayout>
