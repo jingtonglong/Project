@@ -20,7 +20,7 @@
     <color name="line_color">#E3E3E3</color>
     <color name="icon_blue">#4BC5EA</color>
     <color name="text_green2">#ADCBBC</color>
-    <color name="home_title_background"> #557CE3 </color>
+    <color name="home_title_background">#557CE3</color>
 
     <color name="home_blue">#A6D0DD</color>
     <!--MD_dialog相关-->

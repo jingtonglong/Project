@@ -188,7 +188,9 @@
         <activity android:name=".mvp.view.activity.YingYangBaoGaoDetailActivity" />
         <activity android:name=".mvp.view.activity.YingYangBaoGaoAddActivity" />
         <activity android:name=".mvp.view.activity.NewHuanZheJianDangActivity" />
-        <activity android:name=".mvp.view.activity.NewHuanZheJianDangActivity2"></activity>
+        <activity android:name=".mvp.view.activity.NewHuanZheJianDangActivity2" />
+        <activity android:name=".mvp.view.activity.LiangBiaoPingGuSubListActivity" />
+        <activity android:name=".mvp.view.activity.HomeQueryHuanZheActivity"></activity>
     </application>
 
 </manifest>

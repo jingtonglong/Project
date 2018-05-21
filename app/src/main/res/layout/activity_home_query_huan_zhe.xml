@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".mvp.view.activity.HomeQueryHuanZheActivity">
+
+    <include layout="@layout/search_huanzhe_layout" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/no_data"
+            android:layout_width="220dp"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:src="@drawable/search_no_data"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:id="@+id/yes_data"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/text_black"
+                android:layout_width="match_parent"
+                android:background="@color/line_color"
+                android:padding="@dimen/padding_size_middle"
+                android:text="查询结果" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/white"
+                android:clipToPadding="false"
+                android:overScrollMode="never"
+                tools:listitem="@layout/search_huanzhe_item" />
+        </LinearLayout>
+    </RelativeLayout>
+</LinearLayout>

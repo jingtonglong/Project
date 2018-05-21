@@ -402,6 +402,13 @@
         <item name="android:textSize">@dimen/text_size</item>
     </style>
 
+    <style name="text_black_deep">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/text_black_deep</item>
+        <item name="android:textSize">@dimen/text_size</item>
+    </style>
+
     <style name="text_grey">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
@@ -621,6 +628,15 @@
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_margin">@dimen/margin_middle</item>
+    </style>
+
+    <style name="liangbiao_linear">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">@dimen/margin_middle</item>
+        <item name="android:layout_marginLeft">@dimen/margin_middle</item>
+        <item name="android:layout_marginRight">@dimen/margin_middle</item>
+        <item name="android:padding">@dimen/margin_middle</item>
     </style>
 
     <style name="yingyang_baogao_detail_title_icon">

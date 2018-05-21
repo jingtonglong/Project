@@ -10,7 +10,9 @@
         android:layout_weight="1"
         android:orientation="vertical">
 
-        <LinearLayout style="@style/home_middle_left">
+        <LinearLayout
+            android:id="@+id/home_1"
+            style="@style/home_middle_left">
 
             <LinearLayout style="@style/home_middle_left_linear">
 
@@ -61,7 +63,9 @@
 
         <View style="@style/line_horizontal" />
 
-        <LinearLayout style="@style/home_middle_left">
+        <LinearLayout
+            android:id="@+id/home_2"
+            style="@style/home_middle_left">
 
             <LinearLayout style="@style/home_middle_left_linear">
 
@@ -117,7 +121,9 @@
         android:layout_weight="1"
         android:orientation="vertical">
 
-        <LinearLayout style="@style/home_middle_right">
+        <LinearLayout
+            android:id="@+id/home_3"
+            style="@style/home_middle_right">
 
             <RelativeLayout
                 android:layout_width="wrap_content"
@@ -140,7 +146,9 @@
 
         <View style="@style/line_horizontal" />
 
-        <LinearLayout style="@style/home_middle_right">
+        <LinearLayout
+            android:id="@+id/home_4"
+            style="@style/home_middle_right">
 
             <RelativeLayout
                 android:layout_width="wrap_content"
@@ -163,7 +171,9 @@
 
         <View style="@style/line_horizontal" />
 
-        <LinearLayout style="@style/home_middle_right">
+        <LinearLayout
+            android:id="@+id/home_5"
+            style="@style/home_middle_right">
 
             <RelativeLayout
                 android:layout_width="wrap_content"

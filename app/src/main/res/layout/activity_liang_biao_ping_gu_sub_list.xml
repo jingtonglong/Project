@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".mvp.view.activity.LiangBiaoPingGuSubListActivity">
+    <com.base.sdk.widget.TitleBar
+        android:id="@+id/title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_bar_size" />
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        android:id="@+id/refreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="12dp"
+        android:background="@android:color/white"
+        app:srlAccentColor="@android:color/white"
+        app:srlEnableHeaderTranslationContent="false"
+        app:srlEnableNestedScrolling="true"
+        app:srlEnablePreviewInEditMode="false"
+        app:srlPrimaryColor="@color/colorPrimary">
+
+        <com.scwang.smartrefresh.header.MaterialHeader
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/white"
+            android:clipToPadding="false"
+            android:overScrollMode="never"
+            tools:listitem="@layout/liangbiao_item" />
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+</LinearLayout>

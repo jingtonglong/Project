@@ -4,12 +4,14 @@ import android.content.Context;
 import android.text.Html;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.base.sdk.util.ImageUtil;
 import com.base.sdk.widget.TitleBar;
 import com.jtlrm.ckd.R;
 import com.jtlrm.ckd.base.fragment.BaseFragment;
+import com.jtlrm.ckd.mvp.view.activity.HomeQueryHuanZheActivity;
 import com.youth.banner.Banner;
 import com.youth.banner.loader.ImageLoader;
 
@@ -17,18 +19,20 @@ import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
+import butterknife.BindViews;
 
 
 /**
  * 首页
  */
-public class HomeFragment extends BaseFragment {
+public class HomeFragment extends BaseFragment implements View.OnClickListener{
 
     @BindView(R.id.home_title)
     TitleBar titleBar;
     @BindView(R.id.home_banner)
     Banner banner;
-
+    @BindViews({R.id.home_1,R.id.home_2,R.id.home_3,R.id.home_4,R.id.home_5})
+    List<LinearLayout> homeItems;
     @Override
     protected int setContentLayout() {
         return R.layout.fragment_home;
@@ -57,6 +61,9 @@ public class HomeFragment extends BaseFragment {
 
     @Override
     protected void initEvent() {
+        for (LinearLayout linearLayout:homeItems) {
+            linearLayout.setOnClickListener(this);
+        }
     }
 
     public static List<HotNewsFragment.BannerItem> BANNER_ITEMS = new ArrayList<HotNewsFragment.BannerItem>() {{
@@ -64,6 +71,26 @@ public class HomeFragment extends BaseFragment {
         add(new HotNewsFragment.BannerItem("三生三世十里桃花", R.drawable.image_movie_header_12981501221820220));
         add(new HotNewsFragment.BannerItem("豆福传", R.drawable.image_movie_header_12231501221682438));
     }};
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.home_1:
+                break;
+            case R.id.home_2:
+                break;
+            case R.id.home_3:
+                HomeQueryHuanZheActivity.goSearch(context, 3);
+                break;
+            case R.id.home_4:
+                HomeQueryHuanZheActivity.goSearch(context, 4);
+                break;
+            case R.id.home_5:
+                HomeQueryHuanZheActivity.goSearch(context, 5);
+                break;
+
+        }
+    }
 
 
     public class GlideImageLoader extends ImageLoader {

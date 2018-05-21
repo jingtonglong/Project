@@ -20,7 +20,9 @@
             android:paddingRight="@dimen/padding_size_middle"
             android:orientation="vertical">
 
-            <include layout="@layout/yingyang_baogao_detail_huanbing" />
+            <include layout="@layout/yingyang_baogao_detail_huanbing"
+
+                />
 
             <include layout="@layout/yingyang_baogao_detail_yingyang" />
 
