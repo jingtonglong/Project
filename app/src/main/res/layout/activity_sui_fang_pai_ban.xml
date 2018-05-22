@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".mvp.view.activity.SuiFangPaiBanActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/text_green"
+        android:orientation="vertical">
+
+        <include layout="@layout/search_huanzhe_layout" />
+
+        <RelativeLayout
+            style="@style/yinshi_detail_title_linear"
+            android:background="@color/text_green">
+
+            <TextView
+                style="@style/text_white"
+                android:text="选择日期" />
+
+            <TextView
+                android:id="@+id/yinshi_title_date"
+                style="@style/yinshi_detail_title_tv_right"
+                android:text="2018-12"
+                android:textColor="@color/white" />
+
+            <ImageView
+                style="@style/yinshi_detail_title_icon_right"
+                android:src="@drawable/rili" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/liangbiao_1"
+        style="@style/liangbiao_linear"
+        android:layout_marginLeft="0dp">
+
+        <View
+            style="@style/yingyang_baogao_detail_title_icon"
+            android:background="@drawable/yellow_icon_background" />
+
+        <TextView
+            style="@style/yingyang_baogao_detail_title_label"
+            android:text="今日已安排了2人随访" />
+    </RelativeLayout>
+</LinearLayout>

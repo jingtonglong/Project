@@ -23,6 +23,7 @@
         <TextView
             android:id="@+id/yinshi_title_date"
             style="@style/yinshi_detail_title_tv_right"
+            android:textColor="@color/white"
             android:text="2018-12" />
 
         <ImageView

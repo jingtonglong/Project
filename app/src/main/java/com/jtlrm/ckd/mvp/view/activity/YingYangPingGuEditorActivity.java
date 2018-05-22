@@ -1,6 +1,7 @@
 package com.jtlrm.ckd.mvp.view.activity;
 
-import android.support.v7.app.AppCompatActivity;
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
@@ -8,6 +9,11 @@ import com.jtlrm.ckd.R;
 import com.jtlrm.ckd.base.acitvity.TitleBarActivity;
 
 public class YingYangPingGuEditorActivity extends TitleBarActivity {
+
+    public static void goYinYang(Context context) {
+        Intent intent = new Intent(context, YingYangPingGuEditorActivity.class);
+        context.startActivity(intent);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

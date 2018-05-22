@@ -26,6 +26,7 @@ public class HomeQueryHuanZheActivity extends BaseActivity implements View.OnCli
     @BindView(R.id.yes_data)
     RelativeLayout yesData;
     int type;
+
     public static void goSearch(Context context, int type){
         Intent intent = new Intent(context, HomeQueryHuanZheActivity.class);
         intent.putExtra("type", type);

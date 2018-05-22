@@ -1,6 +1,7 @@
 package com.jtlrm.ckd.mvp.view.fragment;
 
 import android.content.Context;
+import android.content.Intent;
 import android.text.Html;
 import android.view.View;
 import android.widget.ImageView;
@@ -12,6 +13,7 @@ import com.base.sdk.widget.TitleBar;
 import com.jtlrm.ckd.R;
 import com.jtlrm.ckd.base.fragment.BaseFragment;
 import com.jtlrm.ckd.mvp.view.activity.HomeQueryHuanZheActivity;
+import com.jtlrm.ckd.mvp.view.activity.SuiFangPaiBanActivity;
 import com.youth.banner.Banner;
 import com.youth.banner.loader.ImageLoader;
 
@@ -25,14 +27,15 @@ import butterknife.BindViews;
 /**
  * 首页
  */
-public class HomeFragment extends BaseFragment implements View.OnClickListener{
+public class HomeFragment extends BaseFragment implements View.OnClickListener {
 
     @BindView(R.id.home_title)
     TitleBar titleBar;
     @BindView(R.id.home_banner)
     Banner banner;
-    @BindViews({R.id.home_1,R.id.home_2,R.id.home_3,R.id.home_4,R.id.home_5})
+    @BindViews({R.id.home_1, R.id.home_2, R.id.home_3, R.id.home_4, R.id.home_5})
     List<LinearLayout> homeItems;
+
     @Override
     protected int setContentLayout() {
         return R.layout.fragment_home;
@@ -61,7 +64,7 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener{
 
     @Override
     protected void initEvent() {
-        for (LinearLayout linearLayout:homeItems) {
+        for (LinearLayout linearLayout : homeItems) {
             linearLayout.setOnClickListener(this);
         }
     }
@@ -76,6 +79,7 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener{
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.home_1:
+                startActivity(new Intent(context, SuiFangPaiBanActivity.class));
                 break;
             case R.id.home_2:
                 break;
