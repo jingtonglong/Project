@@ -1,1 +1,1 @@
-include ':app', ':sdk', ':huanxin', ':easeui', ':arouter-compiler'
+include ':app', ':sdk', ':huanxin', ':easeui', ':arouter-compiler', ':calendarview'

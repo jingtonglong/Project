@@ -17,7 +17,7 @@ import butterknife.BindViews;
 
 public class HomeQueryHuanZheActivity extends BaseActivity implements View.OnClickListener{
 
-    @BindViews(R.id.back)
+    @BindView(R.id.back)
     ImageView back;
     @BindView(R.id.search_content)
     EditText inputContent;

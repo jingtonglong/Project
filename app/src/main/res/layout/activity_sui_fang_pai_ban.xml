@@ -35,6 +35,51 @@
         </RelativeLayout>
     </LinearLayout>
 
+    <com.haibin.calendarview.CalendarLayout
+        android:id="@+id/calendarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#45D5A0"
+        android:orientation="vertical"
+        app:calendar_content_view_id="@+id/recyclerView">
+
+        <com.haibin.calendarview.CalendarView
+            android:id="@+id/calendarView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#45D5A0"
+            app:calendar_height="46dp"
+            app:current_day_text_color="#fff"
+            app:current_month_lunar_text_color="#CFCFCF"
+            app:current_month_text_color="#fff"
+            app:month_view="com.haibin.calendarview.SimpleMonthView"
+            app:month_view_show_mode="mode_only_current"
+            app:other_month_text_color="#e1e1e1"
+            app:scheme_text_color="#fff"
+            app:scheme_theme_color="#fff"
+            app:selected_text_color="#45D5A0"
+            app:selected_theme_color="#fff"
+            app:week_background="#45D5A0"
+            app:week_start_with="mon"
+            app:week_text_color="#fff"
+            app:week_view="com.haibin.calendarview.SimpleWeekView"
+            app:year_view_day_text_color="#333333"
+            app:year_view_day_text_size="9sp"
+            app:year_view_month_text_color="#ff0000"
+            app:year_view_month_text_size="20sp"
+            app:year_view_scheme_color="#f17706" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/white"
+            android:clipToPadding="false"
+            android:overScrollMode="never"
+            tools:listitem="@layout/adapter_news" />
+
+    </com.haibin.calendarview.CalendarLayout>
+
     <RelativeLayout
         android:id="@+id/liangbiao_1"
         style="@style/liangbiao_linear"
@@ -48,4 +93,6 @@
             style="@style/yingyang_baogao_detail_title_label"
             android:text="今日已安排了2人随访" />
     </RelativeLayout>
+
+
 </LinearLayout>
