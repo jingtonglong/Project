@@ -3,64 +3,116 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/login_background"
+    android:background="@color/white"
     android:orientation="vertical">
 
-    <LinearLayout
-        style="@style/login_input_linear"
-        android:layout_marginTop="220dp">
-
-        <ImageView
-            style="@style/login_input_icon"
-            android:src="@drawable/login_user_icon" />
-
-        <View style="@style/login_input_line" />
-
-        <EditText
-            android:id="@+id/user_name"
-            style="@style/login_input_edit"
-            android:hint="请输入用户名" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        style="@style/login_input_linear"
-        android:layout_marginTop="28dp">
-
-        <ImageView
-            style="@style/login_input_icon"
-            android:src="@drawable/login_password_icon" />
-
-        <View style="@style/login_input_line" />
-
-        <EditText
-            android:id="@+id/password"
-            style="@style/login_input_edit"
-            android:hint="请输入密码"
-            android:inputType="textPassword" />
-
-    </LinearLayout>
-
-    <TextView
-        android:layout_width="wrap_content"
+    <RelativeLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="end"
-        android:layout_marginRight="@dimen/margin_xxbig"
-        android:layout_marginTop="@dimen/margin_middle"
-        android:text="注册"
-        android:onClick="register"
-        android:textColor="@color/white" />
+        android:background="@drawable/yinyang_top_bg">
 
-    <Button
-        android:id="@+id/submit"
-        android:layout_width="280dp"
-        android:layout_height="48dp"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginLeft="58dp"
-        android:layout_marginRight="58dp"
-        android:layout_marginTop="38dp"
-        android:background="@drawable/grey_background"
-        android:text="登 录"
-        android:textColor="@color/blue_400"
-        android:textSize="20sp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="CKD 营养管理"
+            android:textColor="@color/white"
+            android:textSize="28sp" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/margin_middle"
+        android:paddingRight="@dimen/margin_middle">
+
+        <LinearLayout
+            style="@style/login_input_linear"
+            android:layout_marginTop="40dp">
+
+            <ImageView
+                style="@style/login_input_icon"
+                android:src="@drawable/manager_phone_icon" />
+
+            <View style="@style/login_input_line" />
+
+            <EditText
+                android:id="@+id/user_name"
+                style="@style/login_input_edit"
+                android:hint="请输入手机号" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/login_input_linear"
+            android:layout_marginTop="28dp">
+
+            <ImageView
+                style="@style/login_input_icon"
+                android:src="@drawable/login_password_icon" />
+
+            <View style="@style/login_input_line" />
+
+            <EditText
+                android:id="@+id/password"
+                style="@style/login_input_edit"
+                android:hint="请输入密码"
+                android:inputType="textPassword" />
+
+        </LinearLayout>
+
+
+        <Button
+            android:id="@+id/submit"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="28dp"
+            android:background="@drawable/green_submit_background"
+            android:text="登  录"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+
+        <TextView
+            style="@style/text_grey"
+            android:layout_marginTop="38dp"
+            android:text="忘记密码?"
+            android:textSize="@dimen/text_size" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="50dp"
+                android:onClick="register"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="还没有账号?"
+                    android:textColor="@color/grey_600"
+                    android:textSize="@dimen/text_size_big" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="马上注册"
+                    android:textColor="@color/text_green"
+                    android:textSize="@dimen/text_size_big" />
+
+            </LinearLayout>
+        </RelativeLayout>
+
+
+    </LinearLayout>
 </LinearLayout>
