@@ -129,33 +129,32 @@ public final class MonthViewPager extends ViewPager {
                 if (mWeekPager.getVisibility() == VISIBLE) {
                     return;
                 }
-//
-//                if (!calendar.isCurrentMonth()) {
-//                    mDelegate.mSelectedCalendar = calendar;
-//                } else {
-//                    mDelegate.mSelectedCalendar = mDelegate.createCurrentDate();
-//                }
-                if (mDelegate.mClickCalendar != null) {
-                    mDelegate.mSelectedCalendar = mDelegate.mClickCalendar;
+
+                if (!calendar.isCurrentMonth()) {
+                    mDelegate.mSelectedCalendar = calendar;
                 } else {
                     mDelegate.mSelectedCalendar = mDelegate.createCurrentDate();
                 }
 
+                if (mDelegate.mClickCalendar == null) {
+                    mDelegate.mClickCalendar = mDelegate.createCurrentDate();
+                }
+
                 if (mDelegate.mDateSelectedListener != null && !isUsingScrollToCalendar) {
-                    mWeekBar.onDateSelected(mDelegate.mSelectedCalendar, mDelegate.getWeekStart(), false);
-                    mDelegate.mDateSelectedListener.onDateSelected(mDelegate.mSelectedCalendar, false);
+                    mWeekBar.onDateSelected(mDelegate.mClickCalendar, mDelegate.getWeekStart(), false);
+                    mDelegate.mDateSelectedListener.onDateSelected(mDelegate.mClickCalendar, false);
                 }
 
                 MonthView view = (MonthView) findViewWithTag(position);
                 if (view != null) {
-                    int index = view.getSelectedIndex(mDelegate.mSelectedCalendar);
+                    int index = view.getSelectedIndex(mDelegate.mClickCalendar);
                     view.mCurrentItem = index;
                     if (index >= 0 && mParentLayout != null) {
                         mParentLayout.setSelectPosition(index);
                     }
                     view.invalidate();
                 }
-                mWeekPager.updateSelected(mDelegate.mSelectedCalendar, false);
+                mWeekPager.updateSelected(mDelegate.mClickCalendar, false);
                 updateMonthViewHeight(calendar.getYear(), calendar.getMonth());
                 isUsingScrollToCalendar = false;
             }

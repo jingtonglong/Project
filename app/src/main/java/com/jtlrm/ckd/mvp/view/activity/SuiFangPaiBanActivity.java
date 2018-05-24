@@ -3,6 +3,7 @@ package com.jtlrm.ckd.mvp.view.activity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.widget.TextView;
 
 import com.base.sdk.base.net.CommonObserver;
 import com.haibin.calendarview.Calendar;
@@ -26,8 +27,8 @@ import butterknife.BindView;
 /**
  * 随访排班
  */
-public class SuiFangPaiBanActivity extends BaseActivity implements  CalendarView.OnDateSelectedListener,
-        CalendarView.OnYearChangeListener{
+public class SuiFangPaiBanActivity extends BaseActivity implements CalendarView.OnDateSelectedListener,
+        CalendarView.OnYearChangeListener {
 
     @BindView(R.id.calendarLayout)
     CalendarLayout mCalendarLayout;
@@ -35,11 +36,15 @@ public class SuiFangPaiBanActivity extends BaseActivity implements  CalendarView
     CalendarView mCalendarView;
     @BindView(R.id.recyclerView)
     RecyclerView recyclerView;
-//    @BindView(R.id.news_refreshLayout)
+    @BindView(R.id.select_date)
+    TextView selectText;
+    //    @BindView(R.id.news_refreshLayout)
 //    SmartRefreshLayout smartRefreshLayout;
     private int pageNum = 1;
     private int pageSize = 12;
     NewsAdapter adapter;
+    Calendar mCalendar; // 当前选中的时间
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -57,7 +62,6 @@ public class SuiFangPaiBanActivity extends BaseActivity implements  CalendarView
         recyclerView.setLayoutManager(new LinearLayoutManager(context));
         recyclerView.setAdapter(adapter);
     }
-
 
 
     @Override
@@ -92,7 +96,7 @@ public class SuiFangPaiBanActivity extends BaseActivity implements  CalendarView
                 try {
                     Thread.sleep(3000);
                     final List<NewsEntity> list = new ArrayList<>();
-                    for (int i = 0; i < 12;i++) {
+                    for (int i = 0; i < 12; i++) {
                         NewsEntity newsEntity = new NewsEntity();
                         newsEntity.setTitle("title" + i);
                         list.add(newsEntity);
@@ -154,6 +158,9 @@ public class SuiFangPaiBanActivity extends BaseActivity implements  CalendarView
 
     @Override
     public void onDateSelected(Calendar calendar, boolean isClick) {
-
+        if (mCalendar == null || mCalendar != calendar) {
+            mCalendar = calendar;
+            selectText.setText(calendar.getYear() + "-" + calendar.getMonth());
+        }
     }
 }
