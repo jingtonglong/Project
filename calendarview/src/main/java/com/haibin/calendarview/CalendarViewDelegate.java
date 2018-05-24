@@ -235,6 +235,9 @@ final class CalendarViewDelegate {
      */
     Calendar mSelectedCalendar;
 
+    /**
+     * 该变量专门用于记录点击选择的时间
+     */
     Calendar mClickCalendar;
 
 //    /**
