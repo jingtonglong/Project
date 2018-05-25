@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="@color/white"
     android:orientation="horizontal">
 
     <LinearLayout
@@ -14,8 +15,9 @@
 
         <ImageView
             android:id="@+id/back"
-            android:layout_width="14dp"
-            android:layout_height="14dp"
+            android:layout_width="@dimen/icon_size_middle"
+            android:layout_height="@dimen/icon_size_middle"
+            android:layout_marginLeft="@dimen/margin_middle"
             android:src="@drawable/title_back_bg" />
 
         <LinearLayout
@@ -23,8 +25,11 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/margin_middle"
             android:layout_marginRight="40dp"
-            android:background="@drawable/white_search_background"
+            android:background="@drawable/grey_search_background"
             android:gravity="center_vertical"
+            android:paddingLeft="14dp"
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp"
             android:orientation="horizontal">
 
             <ImageView
@@ -39,7 +44,10 @@
                 android:layout_marginLeft="@dimen/margin_middle"
                 android:background="@null"
                 android:maxLines="1"
-                android:text="输入姓名/手机四位查询患者"
+                android:imeOptions="actionSearch"
+                android:singleLine="true"
+                android:cursorVisible="true"
+                android:hint="输入姓名/手机四位查询患者"
                 android:textColor="@color/text_grey"
                 android:textSize="@dimen/text_size_middle" />
         </LinearLayout>

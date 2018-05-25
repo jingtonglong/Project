@@ -6,6 +6,7 @@
 
     <color name="app_color">#FF3285FF</color>
 
+    <color name="grey3">#D2D2D2</color>
     <color name="eef7f2">#EEF7F2</color>
     <color name="purple1">#BF8BFF</color>
     <color name="yellow1">#FF8B00</color>
@@ -14,6 +15,7 @@
     <color name="hese">#CCC4BC</color>
 
     <color name="blue1">#4BC5EA</color>
+    <color name="orange2">#FE5B00</color>
 
 
     <!--MD_dialog相关-->

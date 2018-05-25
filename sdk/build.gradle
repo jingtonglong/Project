@@ -67,4 +67,6 @@ dependencies {
     compile 'com.github.promeg:tinypinyin:2.0.3' // TinyPinyin核心包，约80KB
    // compile 'com.github.promeg:tinypinyin-lexicons-android-cncity:2.0.3' // 可选，适用于Android的中国地区词典
     compile 'com.isseiaoki:simplecropview:1.1.7'
+    // 侧滑菜单
+    compile 'com.yanzhenjie:recyclerview-swipe:1.1.4'
 }

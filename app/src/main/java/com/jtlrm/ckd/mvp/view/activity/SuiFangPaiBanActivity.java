@@ -1,23 +1,24 @@
 package com.jtlrm.ckd.mvp.view.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
+import android.view.View;
 import android.widget.TextView;
 
-import com.base.sdk.base.net.CommonObserver;
 import com.haibin.calendarview.Calendar;
 import com.haibin.calendarview.CalendarLayout;
 import com.haibin.calendarview.CalendarView;
 import com.jtlrm.ckd.R;
 import com.jtlrm.ckd.base.acitvity.BaseActivity;
-import com.jtlrm.ckd.entity.ListEntity;
 import com.jtlrm.ckd.entity.NewsEntity;
-import com.jtlrm.ckd.entity.ResultData;
-import com.jtlrm.ckd.mvp.view.adapter.NewsAdapter;
-import com.scwang.smartrefresh.layout.SmartRefreshLayout;
-import com.scwang.smartrefresh.layout.api.RefreshLayout;
-import com.scwang.smartrefresh.layout.listener.OnRefreshLoadmoreListener;
+import com.jtlrm.ckd.mvp.view.adapter.SuiFangPaiBanAdapter;
+import com.yanzhenjie.recyclerview.swipe.SwipeItemClickListener;
+import com.yanzhenjie.recyclerview.swipe.SwipeMenuRecyclerView;
+import com.yanzhenjie.recyclerview.swipe.widget.DefaultItemDecoration;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,21 +29,19 @@ import butterknife.BindView;
  * 随访排班
  */
 public class SuiFangPaiBanActivity extends BaseActivity implements CalendarView.OnDateSelectedListener,
-        CalendarView.OnYearChangeListener {
+        CalendarView.OnYearChangeListener, SwipeItemClickListener {
 
     @BindView(R.id.calendarLayout)
     CalendarLayout mCalendarLayout;
     @BindView(R.id.calendarView)
     CalendarView mCalendarView;
     @BindView(R.id.recyclerView)
-    RecyclerView recyclerView;
+    SwipeMenuRecyclerView recyclerView;
     @BindView(R.id.select_date)
     TextView selectText;
-    //    @BindView(R.id.news_refreshLayout)
-//    SmartRefreshLayout smartRefreshLayout;
     private int pageNum = 1;
     private int pageSize = 12;
-    NewsAdapter adapter;
+    SuiFangPaiBanAdapter adapter;
     Calendar mCalendar; // 当前选中的时间
 
     @Override
@@ -58,8 +57,10 @@ public class SuiFangPaiBanActivity extends BaseActivity implements CalendarView.
     @Override
     protected void initView() {
         initCalendar();
-        adapter = new NewsAdapter();
+        adapter = new SuiFangPaiBanAdapter();
         recyclerView.setLayoutManager(new LinearLayoutManager(context));
+        recyclerView.addItemDecoration(createItemDecoration());
+        recyclerView.setSwipeItemClickListener(this);
         recyclerView.setAdapter(adapter);
     }
 
@@ -67,26 +68,24 @@ public class SuiFangPaiBanActivity extends BaseActivity implements CalendarView.
     @Override
     protected void obtainData() {
         loadData();
+        initListHeaderAndFooter();
     }
+
 
     @Override
     protected void initEvent() {
         mCalendarView.setOnYearChangeListener(this);
         mCalendarView.setOnDateSelectedListener(this);
         adapter.openLoadAnimation();
-//        smartRefreshLayout.setOnRefreshLoadmoreListener(new OnRefreshLoadmoreListener() {
-//            @Override
-//            public void onLoadmore(RefreshLayout refreshlayout) {
-//                pageNum++;
-//                loadData();
-//            }
-//
-//            @Override
-//            public void onRefresh(RefreshLayout refreshlayout) {
-//                pageNum = 1;
-//                loadData();
-//            }
-//        });
+
+    }
+
+    /**
+     * 初始化Foot和header
+     */
+    private void initListHeaderAndFooter() {
+        View header = LayoutInflater.from(context).inflate(R.layout.suifang_paiban_header, null);
+        adapter.addHeaderView(header);
     }
 
     private void loadData() {
@@ -104,7 +103,6 @@ public class SuiFangPaiBanActivity extends BaseActivity implements CalendarView.
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
-                            closeFrshorLoadmore();
                             if (pageNum == 1) {
                                 adapter.replaceData(list);
                             } else {
@@ -119,18 +117,6 @@ public class SuiFangPaiBanActivity extends BaseActivity implements CalendarView.
         }).start();
     }
 
-
-    /**
-     * 关闭加载更多或者刷新
-     */
-    private void closeFrshorLoadmore() {
-//        if (smartRefreshLayout.isLoading()) {
-//            smartRefreshLayout.finishLoadmore();
-//        }
-//        if (smartRefreshLayout.isRefreshing()) {
-//            smartRefreshLayout.finishRefresh();
-//        }
-    }
 
     private void initCalendar() {
         List<Calendar> schemes = new ArrayList<>();
@@ -162,5 +148,18 @@ public class SuiFangPaiBanActivity extends BaseActivity implements CalendarView.
             mCalendar = calendar;
             selectText.setText(calendar.getYear() + "-" + calendar.getMonth());
         }
+    }
+
+    @Override
+    public void onItemClick(View itemView, int position) {
+
+    }
+
+    protected RecyclerView.ItemDecoration createItemDecoration() {
+        return new DefaultItemDecoration(ContextCompat.getColor(this, R.color.line_color));
+    }
+
+    public void goSearch(View view) {
+        startActivity(new Intent(context, SuiFangPaiBanSearchActivity.class));
     }
 }

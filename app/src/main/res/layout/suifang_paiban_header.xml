@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/liangbiao_linear">
+
+    <View
+        style="@style/yingyang_baogao_detail_title_icon"
+        android:background="@drawable/yellow_icon_background" />
+
+    <TextView
+        style="@style/yingyang_baogao_detail_title_label"
+        android:text="今日已安排了2人随访" />
+</RelativeLayout>
