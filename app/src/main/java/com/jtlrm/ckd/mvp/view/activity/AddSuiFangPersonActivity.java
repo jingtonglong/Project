@@ -4,19 +4,12 @@ import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.view.KeyEvent;
-import android.view.View;
-import android.view.inputmethod.EditorInfo;
-import android.widget.EditText;
-import android.widget.TextView;
 
-import com.base.sdk.util.CommonUtil;
 import com.jtlrm.ckd.R;
-import com.jtlrm.ckd.base.acitvity.BaseActivity;
+import com.jtlrm.ckd.base.acitvity.TitleBarActivity;
 import com.jtlrm.ckd.entity.NewsEntity;
-import com.jtlrm.ckd.mvp.view.adapter.SuiFangPaiBanSearchAdapter;
-import com.yanzhenjie.recyclerview.swipe.SwipeItemClickListener;
-import com.yanzhenjie.recyclerview.swipe.SwipeMenuRecyclerView;
+import com.jtlrm.ckd.mvp.view.adapter.AddSuiFangAdapter;
+import com.jtlrm.ckd.mvp.view.adapter.SuiFangPaiBanAdapter;
 import com.yanzhenjie.recyclerview.swipe.widget.DefaultItemDecoration;
 
 import java.util.ArrayList;
@@ -24,53 +17,43 @@ import java.util.List;
 
 import butterknife.BindView;
 
-/**
- *
- */
-public class SuiFangPaiBanSearchActivity extends BaseActivity implements SwipeItemClickListener {
-
+public class AddSuiFangPersonActivity extends TitleBarActivity {
     @BindView(R.id.recyclerView)
-    SwipeMenuRecyclerView recyclerView;
-    SuiFangPaiBanSearchAdapter adapter;
-    @BindView(R.id.search_content)
-    EditText searchContent;
+    RecyclerView recyclerView;
+    AddSuiFangAdapter adapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+    }
+
+    @Override
+    protected String getTitleText() {
+        return "选择随访患者";
     }
 
     @Override
     protected void setContentLayout() {
-        setContentView(R.layout.activity_sui_fang_pai_ban_search);
+        setContentView(R.layout.activity_add_sui_fang_person);
     }
 
     @Override
     protected void initView() {
-        adapter = new SuiFangPaiBanSearchAdapter();
+        adapter = new AddSuiFangAdapter();
         recyclerView.setLayoutManager(new LinearLayoutManager(context));
         recyclerView.addItemDecoration(createItemDecoration());
-        recyclerView.setSwipeItemClickListener(this);
         recyclerView.setAdapter(adapter);
     }
 
     @Override
     protected void obtainData() {
-
+        loadData();
     }
 
     @Override
     protected void initEvent() {
-        searchContent.setOnEditorActionListener(new TextView.OnEditorActionListener() {
-            @Override
-            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
-                if (actionId == EditorInfo.IME_ACTION_SEARCH) {
-                    showLoadingDialog("搜索中");
-                    CommonUtil.hideSoftInput(context,searchContent);
-                    loadData();
-                }
-                return false;
-            }
-        });
+
     }
 
     private void loadData() {
@@ -88,7 +71,6 @@ public class SuiFangPaiBanSearchActivity extends BaseActivity implements SwipeIt
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
-                            dismissLoadingDialog();
                             adapter.addData(list);
                         }
                     });
@@ -100,11 +82,6 @@ public class SuiFangPaiBanSearchActivity extends BaseActivity implements SwipeIt
     }
 
     protected RecyclerView.ItemDecoration createItemDecoration() {
-        return new DefaultItemDecoration(ContextCompat.getColor(this, R.color.margin_background),2,20, -1);
-    }
-
-    @Override
-    public void onItemClick(View itemView, int position) {
-
+        return new DefaultItemDecoration(ContextCompat.getColor(this, R.color.margin_background), 2, 20, -1);
     }
 }

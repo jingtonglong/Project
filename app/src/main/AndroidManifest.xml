@@ -192,7 +192,8 @@
         <activity android:name=".mvp.view.activity.LiangBiaoPingGuSubListActivity" />
         <activity android:name=".mvp.view.activity.HomeQueryHuanZheActivity" />
         <activity android:name=".mvp.view.activity.SuiFangPaiBanActivity" />
-        <activity android:name=".mvp.view.activity.SuiFangPaiBanSearchActivity"></activity>
+        <activity android:name=".mvp.view.activity.SuiFangPaiBanSearchActivity" />
+        <activity android:name=".mvp.view.activity.AddSuiFangPersonActivity"></activity>
     </application>
 
 </manifest>

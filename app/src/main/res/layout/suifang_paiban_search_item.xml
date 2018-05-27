@@ -29,7 +29,7 @@
         android:layout_height="100dp"
         android:gravity="center">
 
-        <include layout="@layout/huanzhe_manager_item" />
+        <include layout="@layout/suifang_paiban_huanzhe" />
     </LinearLayout>
 
     <TextView

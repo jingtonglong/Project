@@ -59,7 +59,7 @@ dependencies {
 
     compile 'cn.bingoogolapple:bga-badgeview:1.1.3@aar'
     compile 'com.flyco.dialog:FlycoDialog_Lib:1.3.2@aar'
-    compile 'com.contrarywind:Android-PickerView:4.1.2'
+    compile 'com.contrarywind:Android-PickerView:4.1.3'
     compile 'com.yanzhenjie:permission:1.1.2'
     // 视频框架不用的时候注销掉
    // compile 'com.shuyu:GSYVideoPlayer:4.1.1'
