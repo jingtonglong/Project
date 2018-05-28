@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/yingyang_pinggu_detail_linear">
+
+
+    <TextView
+        style="@style/yingyang_pinggu_detail_label"
+        android:text="身高" />
+
+    <EditText style="@style/yingyang_pinggu_detail_content" />
+
+    <TextView
+        style="@style/yingyang_pinggu_detail_right"
+        android:text="cm"
+        android:textColor="@color/text_grey" />
+
+</LinearLayout>

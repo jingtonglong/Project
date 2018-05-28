@@ -13,6 +13,8 @@ import com.base.sdk.widget.TitleBar;
 import com.jtlrm.ckd.R;
 import com.jtlrm.ckd.base.fragment.BaseFragment;
 import com.jtlrm.ckd.mvp.view.activity.HomeQueryHuanZheActivity;
+import com.jtlrm.ckd.mvp.view.activity.NewHuanZheJianDangActivity;
+import com.jtlrm.ckd.mvp.view.activity.ShuJuShenHeActivity;
 import com.jtlrm.ckd.mvp.view.activity.SuiFangPaiBanActivity;
 import com.youth.banner.Banner;
 import com.youth.banner.loader.ImageLoader;
@@ -35,6 +37,8 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
     Banner banner;
     @BindViews({R.id.home_1, R.id.home_2, R.id.home_3, R.id.home_4, R.id.home_5})
     List<LinearLayout> homeItems;
+    @BindView(R.id.huanzhe_jiandang)
+    LinearLayout huanzheJianDang;
 
     @Override
     protected int setContentLayout() {
@@ -67,6 +71,7 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
         for (LinearLayout linearLayout : homeItems) {
             linearLayout.setOnClickListener(this);
         }
+        huanzheJianDang.setOnClickListener(this);
     }
 
     public static List<HotNewsFragment.BannerItem> BANNER_ITEMS = new ArrayList<HotNewsFragment.BannerItem>() {{
@@ -82,6 +87,7 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
                 startActivity(new Intent(context, SuiFangPaiBanActivity.class));
                 break;
             case R.id.home_2:
+                startActivity(new Intent(context, ShuJuShenHeActivity.class));
                 break;
             case R.id.home_3:
                 HomeQueryHuanZheActivity.goSearch(context, 3);
@@ -92,7 +98,9 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
             case R.id.home_5:
                 HomeQueryHuanZheActivity.goSearch(context, 5);
                 break;
-
+            case R.id.huanzhe_jiandang:
+                startActivity(new Intent(context, NewHuanZheJianDangActivity.class));
+                break;
         }
     }
 

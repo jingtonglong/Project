@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#80999999"
+    android:orientation="vertical"
+    tools:context=".mvp.view.activity.ShenHeFalseActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <TextView
+            style="@style/text_black"
+            android:layout_width="match_parent"
+            android:background="@color/text_green"
+            android:gravity="center"
+            android:padding="@dimen/padding_size_middle"
+            android:text="审核不通过原因"
+            android:textColor="@color/white" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_middle"
+            android:background="@drawable/grey_round_background"
+            android:gravity="start"
+            android:hint="请填写审核不通过原因"
+            android:lines="6"
+            android:padding="6dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_middle"
+            android:orientation="horizontal">
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_middle"
+                android:layout_weight="1"
+                android:background="@drawable/green_submit_background"
+                android:text="重新审核"
+                android:textColor="@color/white" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_middle"
+                android:layout_weight="1"
+                android:background="@drawable/green_submit_background"
+                android:text="完成"
+                android:textColor="@color/white" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

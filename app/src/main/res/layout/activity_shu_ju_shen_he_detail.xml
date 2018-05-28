@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".mvp.view.activity.ShuJuShenHeDetailActivity">
+
+    <com.base.sdk.widget.TitleBar
+        android:id="@+id/title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_bar_size" />
+
+    <RelativeLayout
+        android:id="@+id/date_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/title_bar"
+        android:background="@color/margin_background"
+        android:padding="@dimen/padding_size_middle">
+
+        <TextView
+            style="@style/text_black"
+            android:text="检查日期" />
+
+        <TextView
+            style="@style/text_black"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="18dp"
+            android:text="2018-24-15" />
+
+        <ImageView
+            android:layout_width="14dp"
+            android:layout_height="14dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/arrow_down" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/bottom"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_middle"
+            android:layout_weight="1"
+            android:background="@drawable/green_submit_background"
+            android:text="审核不通过"
+            android:textColor="@color/white" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_middle"
+            android:layout_weight="1"
+            android:background="@drawable/green_submit_background"
+            android:text="审核通过"
+            android:textColor="@color/white" />
+    </LinearLayout>
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/date_container"
+        android:background="@android:color/white"
+        android:clipToPadding="false"
+        android:layout_above="@id/bottom"
+        android:overScrollMode="never"
+        tools:listitem="@layout/shuju_shenhe_item" />
+
+</RelativeLayout>

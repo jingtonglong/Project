@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
 import com.jtlrm.ckd.R;
@@ -24,7 +25,7 @@ public class HomeQueryHuanZheActivity extends BaseActivity implements View.OnCli
     @BindView(R.id.no_data)
     ImageView noData;
     @BindView(R.id.yes_data)
-    RelativeLayout yesData;
+    LinearLayout yesData;
     int type;
 
     public static void goSearch(Context context, int type){

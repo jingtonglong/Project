@@ -3,6 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="120dp"
     android:padding="@dimen/padding_size_middle"
+    android:id="@+id/huanzhe_jiandang"
     android:orientation="horizontal">
 
     <ImageView

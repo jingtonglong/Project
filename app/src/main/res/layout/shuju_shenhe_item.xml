@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:padding="@dimen/padding_size_middle">
+
+    <CheckBox
+        android:id="@+id/check"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:layout_marginRight="@dimen/margin_middle"
+        android:visibility="gone"
+        android:button="@drawable/checkbox_bg_selector" />
+
+    <ImageView
+        android:id="@+id/avatar"
+        android:layout_width="42dp"
+        android:layout_height="42dp"
+        android:src="@drawable/ease_default_avatar" />
+
+    <TextView
+        android:id="@+id/name"
+        style="@style/text_black"
+        android:layout_width="86dp"
+        android:gravity="center"
+        android:text="年四十多" />
+
+    <TextView
+        android:id="@+id/sex"
+        style="@style/text_grey"
+        android:layout_width="38dp"
+        android:gravity="center"
+        android:text="男" />
+
+    <TextView
+        android:id="@+id/age"
+        style="@style/text_grey"
+        android:layout_width="48dp"
+        android:gravity="center"
+        android:text="45岁" />
+
+    <TextView
+        android:id="@+id/date"
+        style="@style/text_grey"
+        android:layout_width="match_parent"
+        android:gravity="end"
+        android:text="20187.12.02" />
+
+</LinearLayout>
