@@ -9,15 +9,8 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/yinyang_top_bg">
+        android:background="@drawable/login_top_bg">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:text="CKD 营养管理"
-            android:textColor="@color/white"
-            android:textSize="28sp" />
     </RelativeLayout>
 
     <LinearLayout
@@ -51,7 +44,7 @@
 
             <ImageView
                 style="@style/login_input_icon"
-                android:src="@drawable/login_password_icon" />
+                android:src="@drawable/change_password" />
 
             <View style="@style/login_input_line" />
 

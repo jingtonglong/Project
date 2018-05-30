@@ -62,6 +62,7 @@
             android:id="@+id/register_password_check"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:background="@drawable/login_bg_selector"
             />
 
         <TextView
