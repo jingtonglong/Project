@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.EditText;
 import android.widget.RadioGroup;
 import android.widget.TextView;
@@ -17,7 +19,9 @@ import com.bigkoo.pickerview.listener.OnTimeSelectListener;
 import com.bigkoo.pickerview.view.TimePickerView;
 import com.jtlrm.ckd.R;
 import com.jtlrm.ckd.base.acitvity.TitleBarActivity;
+import com.jtlrm.ckd.entity.HospitalEntity;
 import com.jtlrm.ckd.mvp.model.HospitalModel;
+import com.jtlrm.ckd.mvp.view.adapter.AutoHospitalAdapter;
 
 import java.util.Date;
 import java.util.List;
@@ -40,7 +44,7 @@ public class CompleteInfoActivity extends TitleBarActivity {
     @BindView(R.id.birthday)
     TextView birthdatT;
     @BindView(R.id.hospital)
-    EditText hospitalE;
+    AutoCompleteTextView hospitalE;
     @BindView(R.id.work)
     RadioGroup workR;
     int sex = -1;
@@ -48,7 +52,7 @@ public class CompleteInfoActivity extends TitleBarActivity {
     Long birthday;
     TimePickerView birthDay;
     HospitalModel hospitalModel;
-
+    AutoHospitalAdapter adapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -74,6 +78,8 @@ public class CompleteInfoActivity extends TitleBarActivity {
             }
         }).build();
         hospitalModel = new HospitalModel();
+        adapter = new AutoHospitalAdapter(context,R.layout.auot_hospital_item);
+        hospitalE.setAdapter(adapter);
     }
 
     @Override
@@ -132,19 +138,19 @@ public class CompleteInfoActivity extends TitleBarActivity {
     public void searchContent() {
         String content = hospitalE.getText() + "";
         if (notEmpty(content)) {
-            hospitalModel.queryHospital(content, new CommonObserver<List<HospitalModel>>() {
+            hospitalModel.queryHospital(content, new CommonObserver<List<HospitalEntity>>() {
                 @Override
                 public void onError(int errType, String errMessage) {
 
                 }
 
                 @Override
-                public void onResult(List<HospitalModel> data) {
-
+                public void onResult(List<HospitalEntity> data) {
+                    adapter.addAll(data);
                 }
             }, lifecycleSubject);
         } else {
-
+            adapter.clear();
         }
     }
 

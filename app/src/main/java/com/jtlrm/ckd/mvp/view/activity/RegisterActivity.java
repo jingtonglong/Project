@@ -13,10 +13,14 @@ import com.base.sdk.util.ValidateUtils;
 import com.jtlrm.ckd.R;
 import com.jtlrm.ckd.base.acitvity.BaseActivity;
 import com.jtlrm.ckd.base.acitvity.TitleBarActivity;
+import com.jtlrm.ckd.entity.LoginResult;
 import com.jtlrm.ckd.entity.YanZhengMaEntity;
 import com.jtlrm.ckd.mvp.model.UserModel;
+import com.jtlrm.ckd.mvp.model.dao.UserHelper;
 
 import butterknife.BindView;
+import io.reactivex.Observer;
+import io.reactivex.disposables.Disposable;
 
 /**
  * 注册界面
@@ -72,28 +76,63 @@ public class RegisterActivity extends TitleBarActivity {
                 }
                 phone = phoneE.getText() + "";
                 if (ValidateUtils.Mobile(phone)) {
-                    showLoadingDialog("加载中");
-                    userModel.sendMessage(phone, new CommonObserver<YanZhengMaEntity>() {
-                        @Override
-                        public void onError(int errType, String errMessage) {
-                            dismissLoadingDialog();
-                            showToast(errMessage);
-                            canSend = true;
-                        }
+                    if (!notEmpty(UserHelper.getInstance(context).getToken())) {
+                        showLoadingDialog("加载中");
+                        updateToken();
+                    } else {
+                        sendMessage();
+                    }
 
-                        @Override
-                        public void onResult(YanZhengMaEntity data) {
-                            dismissLoadingDialog();
-                            yanZhengMa = data.getCode();
-                            countDownTimer.start();
-                            canSend = false;
-                        }
-                    }, lifecycleSubject);
                 } else {
                     showToast("请输入正确的手机号");
                 }
             }
         });
+    }
+
+    private void updateToken() {
+        userModel.getToken(new Observer<LoginResult>() {
+            @Override
+            public void onSubscribe(Disposable d) {
+
+            }
+
+            @Override
+            public void onNext(LoginResult loginResult) {
+                UserHelper.getInstance(context).setLogin(loginResult);
+                sendMessage();
+            }
+
+            @Override
+            public void onError(Throwable e) {
+                dismissLoadingDialog();
+                showToast("获取token失败");
+            }
+
+            @Override
+            public void onComplete() {
+
+            }
+        }, lifecycleSubject);
+    }
+
+    private void sendMessage() {
+        userModel.sendMessage(phone, new CommonObserver<YanZhengMaEntity>() {
+            @Override
+            public void onError(int errType, String errMessage) {
+                dismissLoadingDialog();
+                showToast(errMessage);
+                canSend = true;
+            }
+
+            @Override
+            public void onResult(YanZhengMaEntity data) {
+                dismissLoadingDialog();
+                yanZhengMa = data.getCode();
+                countDownTimer.start();
+                canSend = false;
+            }
+        }, lifecycleSubject);
     }
 
     CountDownTimer countDownTimer = new CountDownTimer(60 * 1000, 1000) {

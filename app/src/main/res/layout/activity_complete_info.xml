@@ -82,7 +82,7 @@
             style="@style/complete_info_label"
             android:text="所属医院" />
 
-        <EditText
+        <AutoCompleteTextView
             android:id="@+id/hospital"
             style="@style/complete_info_content"
             android:hint="输入所属医院" />

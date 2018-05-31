@@ -48,4 +48,12 @@ public class UserModel extends BaseModel {
         jsonObject.addProperty("mobile", phone);
         RetrofitUtil.composeToSubscribe(RetrofitUtil.getService().sendMessgae(jsonObject), observer, lifecycleSubject);
     }
+
+    public void getToken( Observer observer, PublishSubject<LifeCycleEvent> lifecycleSubject) {
+        JsonObject jsonObject = new JsonObject();
+        jsonObject.addProperty("grant_type", "client_credentials");
+        jsonObject.addProperty("client_id", "ios_123");
+        jsonObject.addProperty("client_secret", "123123");
+        RetrofitUtil.composeToSubscribe(RetrofitUtil.getService().login(jsonObject), observer, lifecycleSubject);
+    }
 }
