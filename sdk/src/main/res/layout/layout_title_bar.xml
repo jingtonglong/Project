@@ -41,7 +41,6 @@
         android:layout_centerVertical="true"
         android:layout_marginLeft="18dp"
         android:layout_toRightOf="@id/title_left_button"
-        android:background="@color/transparent"
         android:paddingTop="@dimen/title_padding"
         android:src="@drawable/title_back_bg"
         android:visibility="gone" />

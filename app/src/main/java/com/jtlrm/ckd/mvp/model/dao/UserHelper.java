@@ -5,6 +5,7 @@ import android.content.SharedPreferences;
 import android.text.TextUtils;
 
 import com.google.gson.Gson;
+import com.jtlrm.ckd.entity.LoginResult;
 import com.jtlrm.ckd.entity.UserEntity;
 
 /**
@@ -16,14 +17,14 @@ public class UserHelper {
     private SharedPreferences sharedPreferences;
     private static final String USER_INFO = "user_info";
     private static final String USER = "user";
-    private static final String TOKEN = "token";
+    private static final String LOGIN = "login"; // 包含token等值
     private String token;
 
     private UserHelper() {
     }
 
     private UserHelper(Context context) {
-        sharedPreferences = context.getSharedPreferences(USER_INFO, Context.MODE_PRIVATE);
+        sharedPreferences = context.getApplicationContext().getSharedPreferences(USER_INFO, Context.MODE_PRIVATE);
     }
 
     /**
@@ -41,15 +42,23 @@ public class UserHelper {
 
     public String getToken() {
         if (TextUtils.isEmpty(token)) {
-            token = sharedPreferences.getString(TOKEN, "");
+            String login = sharedPreferences.getString(LOGIN, "");
+            LoginResult result;
+            if (TextUtils.isEmpty(login)) {
+                token = "";
+            } else {
+                Gson gson = new Gson();
+                result = gson.fromJson(login, LoginResult.class);
+                token = result.getAccess_token();
+            }
         }
         return token;
     }
 
-    public void setToken(String token) {
-        this.token = token;
+    public void setLogin(LoginResult loginResult) {
+        this.token = loginResult.getAccess_token();
         if (!TextUtils.isEmpty(token)) {
-            sharedPreferences.edit().putString(TOKEN, token).commit();
+            sharedPreferences.edit().putString(LOGIN, new Gson().toJson(loginResult)).commit();
         } else {
             // 清除个人数据
             sharedPreferences.edit().clear().commit();

@@ -35,10 +35,10 @@ public abstract class CommonObserver<T> implements Observer<RequestResult<T>> {
             if (tRequestResult == null) {
                 onError(0, "返回数据为空");
             } else {
-                if (tRequestResult.getCode() == 200 && tRequestResult.getData() != null) {
-                    onResult(tRequestResult.getData());
+                if (tRequestResult.isSuccess() == true ) {
+                    onResult(tRequestResult.getResult());
                 } else {
-                    onError(tRequestResult.getCode(), tRequestResult.getMsg());
+                    onError(tRequestResult.getError().getCode(), tRequestResult.getError().getMessage());
                 }
             }
         }catch (Exception e) {

@@ -158,7 +158,7 @@ public class RetrofitUtil {
             public Response intercept(Chain chain) throws IOException {
                 Request originalRequest = chain.request();
                 Request.Builder builder = originalRequest.newBuilder();
-                builder.header("token", UserHelper.getInstance(mContext).getToken())
+                builder.header("Authorization", UserHelper.getInstance(mContext).getToken())
                         .addHeader("Content-Type", "application/json;charset=UTF-8");
                 Request.Builder requestBuilder = builder.method(originalRequest.method(), originalRequest.body());
                 Request request = requestBuilder.build();

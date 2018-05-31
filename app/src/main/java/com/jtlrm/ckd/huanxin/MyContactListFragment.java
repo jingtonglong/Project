@@ -77,7 +77,7 @@ public class MyContactListFragment extends BaseFragment {
         List<UserEntity> list = new ArrayList<>();
         for (String u : user) {
             UserEntity userEntity = new UserEntity();
-            userEntity.setUsername(u);
+            userEntity.setName(u);
             list.add(userEntity);
         }
         contactListView.init(list);

@@ -33,7 +33,7 @@ public class PicWorkerActivity extends BaseActivity{
         List<UserEntity> list = new ArrayList<>();
         for (String u : user) {
             UserEntity userEntity = new UserEntity();
-            userEntity.setUsername(u);
+            userEntity.setName(u);
             list.add(userEntity);
         }
         picContactsView.init(list);

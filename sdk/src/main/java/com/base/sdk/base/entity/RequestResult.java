@@ -6,40 +6,52 @@ package com.base.sdk.base.entity;
  */
 
 public class RequestResult<T> {
-    private int code;
-    private String msg;
-    private boolean isException;
-    private T data;
+    private Error error;
+    private boolean success;
+    private T result;
 
-    public int getCode() {
-        return code;
+    public Error getError() {
+        return error;
     }
 
-    public void setCode(int code) {
-        this.code = code;
+    public void setError(Error error) {
+        this.error = error;
     }
 
-    public String getMsg() {
-        return msg;
+    public boolean isSuccess() {
+        return success;
     }
 
-    public void setMsg(String msg) {
-        this.msg = msg;
+    public void setSuccess(boolean success) {
+        this.success = success;
     }
 
-    public boolean isException() {
-        return isException;
+    public T getResult() {
+        return result;
     }
 
-    public void setException(boolean exception) {
-        isException = exception;
+    public void setResult(T result) {
+        this.result = result;
     }
 
-    public T getData() {
-        return data;
-    }
+    public class Error{
+        int code;
+        String message;
 
-    public void setData(T data) {
-        this.data = data;
+        public int getCode() {
+            return code;
+        }
+
+        public void setCode(int code) {
+            this.code = code;
+        }
+
+        public String getMessage() {
+            return message;
+        }
+
+        public void setMessage(String message) {
+            this.message = message;
+        }
     }
 }

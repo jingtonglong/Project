@@ -70,7 +70,7 @@ public class ContactAdapter extends ArrayAdapter<UserEntity> implements SectionI
         UserEntity user = getItem(position);
         if (user == null)
             Log.d("ContactAdapter", position + "");
-        String username = user.getUsername();
+        String username = user.getName();
         String header = user.getInitialLetter();
 
         if (position == 0 || header != null && !header.equals(getItem(position - 1).getInitialLetter())) {
@@ -168,7 +168,7 @@ public class ContactAdapter extends ArrayAdapter<UserEntity> implements SectionI
                 final ArrayList<UserEntity> newValues = new ArrayList<>();
                 for (int i = 0; i < count; i++) {
                     final UserEntity user = mOriginalList.get(i);
-                    String username = user.getUsername();
+                    String username = user.getName();
 
                     if (username.startsWith(prefixString)) {
                         newValues.add(user);

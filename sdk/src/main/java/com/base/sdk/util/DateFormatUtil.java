@@ -28,7 +28,7 @@ public class DateFormatUtil {
      */
     public static String dateFormatAll(Long date) {
         if (date != null) {
-            return new SimpleDateFormat("yyyy年MM月dd日").format(new Date(date));
+            return new SimpleDateFormat("yyyy/MM/dd").format(new Date(date));
         } else {
             return "";
         }

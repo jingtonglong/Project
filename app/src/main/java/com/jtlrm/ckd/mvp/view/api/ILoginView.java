@@ -10,5 +10,4 @@ import com.jtlrm.ckd.entity.UserEntity;
 public interface ILoginView extends IBaseView {
     void loginSuccess();
     void loginFail(String msg);
-    void loadUserName(String username);
 }

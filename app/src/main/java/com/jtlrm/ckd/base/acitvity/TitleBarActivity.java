@@ -20,8 +20,8 @@ public abstract class TitleBarActivity extends BaseActivity{
     }
 
     protected void initTitleBar() {
-        titleBar.imgLeft.setVisibility(View.VISIBLE);
-        titleBar.imgLeft.setOnClickListener(new View.OnClickListener() {
+        titleBar.btLeft.setVisibility(View.VISIBLE);
+        titleBar.btLeft.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 finish();

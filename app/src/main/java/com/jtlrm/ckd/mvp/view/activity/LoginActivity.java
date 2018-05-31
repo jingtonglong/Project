@@ -60,11 +60,6 @@ public class LoginActivity extends BaseActivity implements ILoginView {
         showToast(msg);
     }
 
-    @Override
-    public void loadUserName(String username) {
-        usernameT.setText(username + "");
-    }
-
 
     public void register(View view) {
         startActivity(new Intent(context, RegisterActivity.class));

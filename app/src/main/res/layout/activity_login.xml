@@ -34,6 +34,8 @@
             <EditText
                 android:id="@+id/user_name"
                 style="@style/login_input_edit"
+                android:inputType="phone"
+                android:maxLength="11"
                 android:hint="请输入手机号" />
 
         </LinearLayout>

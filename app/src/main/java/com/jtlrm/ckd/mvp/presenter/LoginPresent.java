@@ -1,9 +1,7 @@
 package com.jtlrm.ckd.mvp.presenter;
 
-import android.content.Intent;
 import android.text.TextUtils;
 import android.util.Log;
-import android.widget.Toast;
 
 import com.base.sdk.base.net.CommonObserver;
 import com.base.sdk.base.present.BasePresenter;
@@ -12,14 +10,14 @@ import com.hyphenate.chat.EMClient;
 import com.hyphenate.chatuidemo.DemoHelper;
 import com.hyphenate.chatuidemo.HuanXinApplication;
 import com.hyphenate.chatuidemo.db.DemoDBManager;
-import com.hyphenate.chatuidemo.ui.LoginActivity;
-import com.hyphenate.chatuidemo.ui.MainActivity;
 import com.jtlrm.ckd.entity.LoginResult;
-import com.jtlrm.ckd.entity.ResultData;
 import com.jtlrm.ckd.entity.UserEntity;
 import com.jtlrm.ckd.mvp.model.UserModel;
 import com.jtlrm.ckd.mvp.model.dao.UserHelper;
 import com.jtlrm.ckd.mvp.view.api.ILoginView;
+
+import io.reactivex.Observer;
+import io.reactivex.disposables.Disposable;
 
 
 /**
@@ -35,9 +33,6 @@ public class LoginPresent extends BasePresenter<ILoginView> {
         super(iLoginView);
         this.userModel = new UserModel();
         userHelper = UserHelper.getInstance(iLoginView.getContext());
-        if (notEmpty(userHelper.getUserInfo().getUsername())) {
-            iLoginView.loadUserName(userHelper.getUserInfo().getUsername());
-        }
     }
 
     public void login(String username, String password) {
@@ -46,22 +41,48 @@ public class LoginPresent extends BasePresenter<ILoginView> {
             return;
         }
         mIView.showLoadingDialog("登陆中");
-//        userModel.login(username, password, new CommonObserver<LoginResult>() {
-//            @Override
-//            public void onError(int errType, String errMessage) {
-//                mIView.dismissLoadingDialog();
-//                mIView.loginFail(errMessage);
-//            }
-//
-//            @Override
-//            public void onResult(LoginResult data) {
-//                mIView.dismissLoadingDialog();
-//                userHelper.setToken(data.getData());
-//                userHelper.setUserInfo(data.getUserInfo());
-//                mIView.loginSuccess();
-//            }
-//        }, mIView.getLifeSubject());
-        loginHuanXin(username, password);
+        userModel.login(username, password, new Observer<LoginResult>() {
+            @Override
+            public void onSubscribe(Disposable d) {
+
+            }
+
+            @Override
+            public void onNext(LoginResult loginResult) {
+                userHelper.setLogin(loginResult);
+                updateInfo();
+            }
+
+            @Override
+            public void onError(Throwable e) {
+                mIView.dismissLoadingDialog();
+                mIView.loginFail("登录请求异常");
+            }
+
+            @Override
+            public void onComplete() {
+
+            }
+        }, mIView.getLifeSubject());
+        // loginHuanXin(username, password);
+    }
+
+    private void updateInfo() {
+        userModel.getUserInfo(new CommonObserver<UserEntity>() {
+            @Override
+            public void onError(int errType, String errMessage) {
+                mIView.showToast("个人信息获取失败，" + errMessage);
+                mIView.dismissLoadingDialog();
+                mIView.loginSuccess();
+            }
+
+            @Override
+            public void onResult(UserEntity data) {
+                userHelper.setUserInfo(data);
+                mIView.dismissLoadingDialog();
+                mIView.loginSuccess();
+            }
+        }, mIView.getLifeSubject());
     }
 
     public void loginHuanXin(String username, String password) {

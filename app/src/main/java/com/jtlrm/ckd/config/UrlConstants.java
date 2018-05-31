@@ -10,7 +10,7 @@ public interface UrlConstants {
    // String BASE_URL = "http://192.168.1.132:8080";
 //   String PROJECT_URL = BASE_URL + "/Rencai";
 
-    String BASE_URL = "http://192.168.1.74:8080";
+    String BASE_URL = "http://119.6.97.227:8077/";
 
     String PROJECT_URL = BASE_URL;
 
@@ -20,7 +20,7 @@ public interface UrlConstants {
     /**
      * 登录
      */
-    String LOGIN = "/user/app/login";
+    String LOGIN = "Token";
 
     /**
      * 注册
@@ -35,5 +35,15 @@ public interface UrlConstants {
     /**
      * 获取用户信息
      */
-    String GET_USER_INFO = "/user/app/user/getUserInfo";
+    String GET_USER_INFO = "api/services/ckd/user/QueryUserInfo";
+
+    /**
+     * 发送验证码
+     */
+    String SEND_MESSAGE = "api/services/app/user/CheckAndSendMobileCode";
+
+    /**
+     * 查找医院
+     */
+    String QUERY_HOSPITAL  = "api/services/ckd/user/QueryHospitals";
 }

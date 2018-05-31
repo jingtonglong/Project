@@ -1,14 +1,22 @@
 package com.jtlrm.ckd.mvp.view.activity;
 
-import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
 
 import com.jtlrm.ckd.R;
 import com.jtlrm.ckd.base.acitvity.TitleBarActivity;
 
+import butterknife.BindView;
+
 public class RebuilPasswordActivity extends TitleBarActivity {
+
+    @BindView(R.id.password)
+   public EditText password;
+    @BindView(R.id.re_password)
+    public EditText repassword;
+    public  String passwordStr;
+    public  String repasswordStr;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +48,30 @@ public class RebuilPasswordActivity extends TitleBarActivity {
 
     }
 
-    public void submit(View view){
+    public void submit(View view) {
 //        startActivity(new Intent(context, ));
+    }
+
+    public boolean passwordIsOk() {
+        if (inputEmpty(password)) {
+            showToast("请输入密码");
+            return false;
+        }
+        if (inputEmpty(repassword)) {
+            showToast("请确认密码");
+            return false;
+        }
+        passwordStr = password.getText() + "";
+        repasswordStr = repassword.getText() + "";
+        if (!passwordStr.equals(repasswordStr)) {
+            showToast("两次密码输入不一致");
+            return false;
+        }
+
+        if (passwordStr.length() <= 6) {
+            showToast("密码至少六位");
+            return false;
+        }
+        return true;
     }
 }

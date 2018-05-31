@@ -23,6 +23,7 @@
             android:text="姓名" />
 
         <EditText
+            android:id="@+id/name"
             style="@style/complete_info_content"
             android:hint="请输入姓名" />
     </RelativeLayout>
@@ -40,16 +41,19 @@
             android:text="性别" />
 
         <RadioGroup
+            android:id="@+id/sex"
             style="@style/complete_info_content"
             android:layout_width="wrap_content"
             android:orientation="horizontal">
 
             <RadioButton
+                android:id="@+id/man"
                 style="@style/complete_info_content_radio"
                 android:checked="true"
                 android:text="男" />
 
             <RadioButton
+                android:id="@+id/woman"
                 style="@style/complete_info_content_radio"
                 android:layout_marginLeft="46dp"
                 android:text="女" />
@@ -65,6 +69,7 @@
             android:text="出生日期" />
 
         <TextView
+            android:id="@+id/birthday"
             style="@style/complete_info_content"
             android:hint="年/月/日 >" />
     </RelativeLayout>
@@ -78,6 +83,7 @@
             android:text="所属医院" />
 
         <EditText
+            android:id="@+id/hospital"
             style="@style/complete_info_content"
             android:hint="输入所属医院" />
     </RelativeLayout>
@@ -91,20 +97,22 @@
             android:text="职务" />
 
         <RadioGroup
+            android:id="@+id/work"
             style="@style/complete_info_content"
             android:layout_width="wrap_content"
             android:layout_marginRight="10dp"
             android:orientation="horizontal">
 
             <RadioButton
+                android:id="@+id/doctor"
                 style="@style/complete_info_content_radio"
                 android:checked="true"
                 android:text="医生" />
 
             <RadioButton
+                android:id="@+id/nurse"
                 style="@style/complete_info_content_radio"
                 android:layout_marginLeft="30dp"
-
                 android:text="护士" />
         </RadioGroup>
     </RelativeLayout>

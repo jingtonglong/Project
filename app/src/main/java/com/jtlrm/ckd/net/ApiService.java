@@ -4,11 +4,13 @@ import com.base.sdk.base.entity.HttpResult;
 import com.base.sdk.base.entity.RequestResult;
 import com.google.gson.JsonObject;
 import com.jtlrm.ckd.config.UrlConstants;
+import com.jtlrm.ckd.entity.HospitalEntity;
 import com.jtlrm.ckd.entity.ListEntity;
 import com.jtlrm.ckd.entity.LoginResult;
 import com.jtlrm.ckd.entity.NewsEntity;
 import com.jtlrm.ckd.entity.ResultData;
 import com.jtlrm.ckd.entity.UserEntity;
+import com.jtlrm.ckd.entity.YanZhengMaEntity;
 
 import java.util.List;
 import java.util.Map;
@@ -41,14 +43,21 @@ public interface ApiService {
 
     //请求参数一次性传入（通过Map来存放参数名和参数值）
     @POST(UrlConstants.LOGIN)
-    Observable<RequestResult<LoginResult>> login(@Body JsonObject jsonObject);
+    Observable<LoginResult> login(@Body JsonObject jsonObject);
 
     //请求参数一次性传入（通过Map来存放参数名和参数值）
     @POST(UrlConstants.REGISTER)
     Observable<RequestResult> register(@Body JsonObject jsonObject);
 
-    @GET(UrlConstants.GET_USER_INFO)
-    Observable<RequestResult<ResultData<UserEntity>>> getUserInfo();
+    @POST(UrlConstants.GET_USER_INFO)
+    Observable<RequestResult<UserEntity>> getUserInfo();
+
+    @POST(UrlConstants.SEND_MESSAGE)
+    Observable<RequestResult<YanZhengMaEntity>> sendMessgae(@Body JsonObject jsonObject);
+
+    @POST(UrlConstants.QUERY_HOSPITAL)
+    Observable<RequestResult<List<HospitalEntity>>> queryHospital(@Body JsonObject jsonObject);
+
 
 
     @GET(UrlConstants.NEWS_LIST + "/{num}/{size}/{categoryId}")

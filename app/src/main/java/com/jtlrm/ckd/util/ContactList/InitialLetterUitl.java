@@ -44,13 +44,13 @@ public class InitialLetterUitl {
             }
         }
 
-        if (!TextUtils.isEmpty(user.getUsername())) {
-            letter = new GetInitialLetter().getLetter(user.getUsername());
+        if (!TextUtils.isEmpty(user.getName())) {
+            letter = new GetInitialLetter().getLetter(user.getName());
             user.setInitialLetter(letter);
             return;
         }
-        if (letter.equals(DefaultLetter) && !TextUtils.isEmpty(user.getUsername())) {
-            letter = new GetInitialLetter().getLetter(user.getUsername());
+        if (letter.equals(DefaultLetter) && !TextUtils.isEmpty(user.getName())) {
+            letter = new GetInitialLetter().getLetter(user.getName());
         }
         user.setInitialLetter(letter);
     }

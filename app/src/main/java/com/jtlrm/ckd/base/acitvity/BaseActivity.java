@@ -10,6 +10,7 @@ import android.support.annotation.DrawableRes;
 import android.support.annotation.StringRes;
 import android.support.v4.content.res.ResourcesCompat;
 import android.text.TextUtils;
+import android.widget.EditText;
 
 import com.base.sdk.base.api.PositiveOrCancelInterface;
 import com.base.sdk.base.net.LifeCycleEvent;
@@ -233,5 +234,15 @@ public abstract class BaseActivity extends AbstractActivity implements IBaseActi
             return true;
         }
     }
+
+    public boolean inputEmpty(EditText editText) {
+        String content = (editText.getText() + "").trim();
+        if (notEmpty(content)) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
 
 }

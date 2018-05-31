@@ -54,7 +54,7 @@ public class PicContactsAdapter extends ContactAdapter {
         final UserEntity user = getItem(position);
         if (user == null)
             Log.d("ContactAdapter", position + "");
-        final String username = user.getUsername();
+        final String username = user.getName();
         final String header = user.getInitialLetter();
 
         if (position == 0 || header != null && !header.equals(getItem(position - 1).getInitialLetter())) {
