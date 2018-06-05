@@ -1,6 +1,8 @@
 package com.base.sdk.base.model;
 
 
+import com.google.gson.Gson;
+
 import java.io.Serializable;
 
 import okhttp3.RequestBody;
@@ -11,7 +13,7 @@ import okhttp3.RequestBody;
 
 public class BaseModel implements Serializable {
 
-    public RequestBody createBody(String object) {
-       return RequestBody.create(okhttp3.MediaType.parse("application/json;charset=UTF-8"),object);
+    public RequestBody createBody(Object object) {
+       return RequestBody.create(okhttp3.MediaType.parse("application/json;charset=UTF-8"),new Gson().toJson(object));
     }
 }

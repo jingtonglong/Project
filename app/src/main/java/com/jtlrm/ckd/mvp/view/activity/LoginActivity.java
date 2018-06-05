@@ -62,6 +62,6 @@ public class LoginActivity extends BaseActivity implements ILoginView {
 
 
     public void register(View view) {
-        startActivity(new Intent(context, RegisterActivity.class));
+        startActivity(new Intent(context, CompleteInfoActivity.class));
     }
 }

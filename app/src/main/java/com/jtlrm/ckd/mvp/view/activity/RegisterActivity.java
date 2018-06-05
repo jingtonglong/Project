@@ -128,6 +128,7 @@ public class RegisterActivity extends TitleBarActivity {
             @Override
             public void onResult(YanZhengMaEntity data) {
                 dismissLoadingDialog();
+                showToast("已发送验证，注意查收");
                 yanZhengMa = data.getCode();
                 countDownTimer.start();
                 canSend = false;

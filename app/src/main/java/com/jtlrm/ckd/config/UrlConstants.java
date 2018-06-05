@@ -23,11 +23,6 @@ public interface UrlConstants {
     String LOGIN = "Token";
 
     /**
-     * 注册
-     */
-    String REGISTER = "/user/app/register";
-
-    /**
      * 热推新闻
      */
     String NEWS_LIST_SORT = "/news/app/getNewsListBySortKey";
@@ -43,7 +38,12 @@ public interface UrlConstants {
     String SEND_MESSAGE = "api/services/app/user/CheckAndSendMobileCode";
 
     /**
-     * 查找医院
+     *
      */
     String QUERY_HOSPITAL  = "api/services/ckd/user/QueryHospitals";
+
+    /**
+     * 注册
+     */
+    String REGISTER  = "api/services/ckd/user/Register";
 }

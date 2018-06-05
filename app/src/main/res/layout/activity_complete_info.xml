@@ -85,7 +85,8 @@
         <AutoCompleteTextView
             android:id="@+id/hospital"
             style="@style/complete_info_content"
-            android:hint="输入所属医院" />
+            android:completionThreshold="1"
+            android:hint="请输入医院" />
     </RelativeLayout>
 
     <View style="@style/line_horizontal" />

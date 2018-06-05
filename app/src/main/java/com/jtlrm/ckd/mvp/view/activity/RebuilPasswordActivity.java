@@ -68,7 +68,7 @@ public class RebuilPasswordActivity extends TitleBarActivity {
             return false;
         }
 
-        if (passwordStr.length() <= 6) {
+        if (passwordStr.length() < 6) {
             showToast("密码至少六位");
             return false;
         }

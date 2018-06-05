@@ -1,14 +1,9 @@
 package com.jtlrm.ckd.mvp.model;
 
-import com.base.sdk.base.entity.RequestResult;
 import com.base.sdk.base.model.BaseModel;
 import com.base.sdk.base.net.LifeCycleEvent;
-import com.jtlrm.ckd.entity.ListEntity;
-import com.jtlrm.ckd.entity.NewsEntity;
-import com.jtlrm.ckd.entity.ResultData;
 import com.jtlrm.ckd.net.RetrofitUtil;
 
-import io.reactivex.Observable;
 import io.reactivex.Observer;
 import io.reactivex.subjects.PublishSubject;
 
@@ -46,8 +41,7 @@ public class NewsModel extends BaseModel {
      * @param lifecycleSubject
      */
     public void getNewsListByCatogary(int num, int size, int categoryId, Observer observer, PublishSubject<LifeCycleEvent> lifecycleSubject) {
-        Observable<RequestResult<ResultData<ListEntity<NewsEntity>>>> observable = RetrofitUtil.getService().getNewsByCategory(num, size, categoryId);
-        RetrofitUtil.composeToSubscribe(observable, observer, lifecycleSubject);
+        RetrofitUtil.composeToSubscribe(RetrofitUtil.getService().getNewsByCategory(num, size, categoryId), observer, lifecycleSubject);
     }
 
     /**
@@ -61,7 +55,6 @@ public class NewsModel extends BaseModel {
      * @param lifecycleSubject
      */
     public void getNewsListBySort(int num, int size, String sortKey, int sortDirection, Observer observer, PublishSubject<LifeCycleEvent> lifecycleSubject) {
-        Observable<RequestResult<ResultData<ListEntity<NewsEntity>>>> observable = RetrofitUtil.getService().getNewsBySort(num, size, sortKey, sortDirection);
-        RetrofitUtil.composeToSubscribe(observable, observer, lifecycleSubject);
+        RetrofitUtil.composeToSubscribe(RetrofitUtil.getService().getNewsBySort(num, size, sortKey, sortDirection), observer, lifecycleSubject);
     }
 }

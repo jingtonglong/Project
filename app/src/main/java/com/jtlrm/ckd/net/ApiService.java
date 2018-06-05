@@ -45,9 +45,6 @@ public interface ApiService {
     @POST(UrlConstants.LOGIN)
     Observable<LoginResult> login(@Body JsonObject jsonObject);
 
-    //请求参数一次性传入（通过Map来存放参数名和参数值）
-    @POST(UrlConstants.REGISTER)
-    Observable<RequestResult> register(@Body JsonObject jsonObject);
 
     @POST(UrlConstants.GET_USER_INFO)
     Observable<RequestResult<UserEntity>> getUserInfo();
@@ -58,13 +55,15 @@ public interface ApiService {
     @POST(UrlConstants.QUERY_HOSPITAL)
     Observable<RequestResult<List<HospitalEntity>>> queryHospital(@Body JsonObject jsonObject);
 
+    @POST(UrlConstants.REGISTER)
+    Observable<RequestResult<List<HospitalEntity>>> register(@Body RequestBody jsonObject);
 
 
     @GET(UrlConstants.NEWS_LIST + "/{num}/{size}/{categoryId}")
     Observable<RequestResult<ResultData<ListEntity<NewsEntity>>>> getNewsByCategory(@Path("num") int num, @Path("size") int size, @Path("categoryId") int categoryId);
 
     @GET(UrlConstants.NEWS_LIST_SORT + "/{num}/{size}/{sortKey}/{sortDirection}")
-    Observable<RequestResult<ResultData<ListEntity<NewsEntity>>>> getNewsBySort(@Path("num") int num, @Path("size") int size, @Path("sortKey") String sortKey, @Path("sortDirection") int sortDirection);
+    Observable<RequestResult> getNewsBySort(@Path("num") int num, @Path("size") int size, @Path("sortKey") String sortKey, @Path("sortDirection") int sortDirection);
 
 
 

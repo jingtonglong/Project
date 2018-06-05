@@ -3,7 +3,9 @@ package com.jtlrm.ckd.mvp.model;
 import com.base.sdk.base.model.BaseModel;
 import com.base.sdk.base.net.CommonObserver;
 import com.base.sdk.base.net.LifeCycleEvent;
+import com.google.gson.Gson;
 import com.google.gson.JsonObject;
+import com.jtlrm.ckd.entity.submitEntity.RegisterData;
 import com.jtlrm.ckd.net.RetrofitUtil;
 
 import io.reactivex.Observer;
@@ -35,13 +37,6 @@ public class UserModel extends BaseModel {
         RetrofitUtil.composeToSubscribe(RetrofitUtil.getService().getUserInfo(), observer, lifecycleSubject);
     }
 
-    public void register(CommonObserver observer, PublishSubject<LifeCycleEvent> lifecycleSubject) {
-        JsonObject jsonObject = new JsonObject();
-        jsonObject.addProperty("phone", "11223344551");
-        jsonObject.addProperty("password", "123456");
-        jsonObject.addProperty("name", "1122");
-        RetrofitUtil.composeToSubscribe(RetrofitUtil.getService().register(jsonObject), observer, lifecycleSubject);
-    }
 
     public void sendMessage(String phone, Observer observer, PublishSubject<LifeCycleEvent> lifecycleSubject) {
         JsonObject jsonObject = new JsonObject();
@@ -56,4 +51,9 @@ public class UserModel extends BaseModel {
         jsonObject.addProperty("client_secret", "123123");
         RetrofitUtil.composeToSubscribe(RetrofitUtil.getService().login(jsonObject), observer, lifecycleSubject);
     }
+
+    public void register(RegisterData data, Observer observer, PublishSubject<LifeCycleEvent> lifecycleSubject) {
+        RetrofitUtil.composeToSubscribe(RetrofitUtil.getService().register(createBody(data)), observer, lifecycleSubject);
+    }
+
 }
