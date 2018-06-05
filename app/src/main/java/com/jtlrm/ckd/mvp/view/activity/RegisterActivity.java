@@ -164,6 +164,7 @@ public class RegisterActivity extends TitleBarActivity {
                 return;
             }
             SettingPasswordActivity.goSetting(context, phone);
+            finish();
         } else {
             showToast("请确认阅读服务条款");
         }

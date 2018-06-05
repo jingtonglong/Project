@@ -38,6 +38,11 @@ public interface UrlConstants {
     String SEND_MESSAGE = "api/services/app/user/CheckAndSendMobileCode";
 
     /**
+     * 发送验证码
+     */
+    String SEND_FORGET_MESSAGE = "api/services/app/user/UpdateAndSendMobileCode";
+
+    /**
      *
      */
     String QUERY_HOSPITAL  = "api/services/ckd/user/QueryHospitals";
@@ -46,4 +51,9 @@ public interface UrlConstants {
      * 注册
      */
     String REGISTER  = "api/services/ckd/user/Register";
+
+    /**
+     * 重置密码
+     */
+    String REBUILD_PASSWORD  = "api/services/ckd/user/UpdateUserPwd";
 }

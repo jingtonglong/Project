@@ -40,6 +40,6 @@ public class RegisterSuccessfulActivity extends TitleBarActivity {
     }
 
     public void goMain(View v) {
-        startActivity(new Intent(context, MainActivity.class));
+        finish();
     }
 }

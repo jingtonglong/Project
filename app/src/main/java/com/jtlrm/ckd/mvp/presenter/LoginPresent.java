@@ -71,9 +71,8 @@ public class LoginPresent extends BasePresenter<ILoginView> {
         userModel.getUserInfo(new CommonObserver<UserEntity>() {
             @Override
             public void onError(int errType, String errMessage) {
-                mIView.showToast("个人信息获取失败，" + errMessage);
                 mIView.dismissLoadingDialog();
-                mIView.loginSuccess();
+                mIView.loginFail(errMessage);
             }
 
             @Override

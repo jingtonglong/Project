@@ -44,6 +44,12 @@ public class UserModel extends BaseModel {
         RetrofitUtil.composeToSubscribe(RetrofitUtil.getService().sendMessgae(jsonObject), observer, lifecycleSubject);
     }
 
+    public void sendForgetMessage(String phone, Observer observer, PublishSubject<LifeCycleEvent> lifecycleSubject) {
+        JsonObject jsonObject = new JsonObject();
+        jsonObject.addProperty("mobile", phone);
+        RetrofitUtil.composeToSubscribe(RetrofitUtil.getService().sendForgetMessgae(jsonObject), observer, lifecycleSubject);
+    }
+
     public void getToken( Observer observer, PublishSubject<LifeCycleEvent> lifecycleSubject) {
         JsonObject jsonObject = new JsonObject();
         jsonObject.addProperty("grant_type", "client_credentials");
@@ -54,6 +60,14 @@ public class UserModel extends BaseModel {
 
     public void register(RegisterData data, Observer observer, PublishSubject<LifeCycleEvent> lifecycleSubject) {
         RetrofitUtil.composeToSubscribe(RetrofitUtil.getService().register(createBody(data)), observer, lifecycleSubject);
+    }
+
+    public void rebuildPassword(String phone, String password, Observer observer, PublishSubject<LifeCycleEvent> lifecycleSubject) {
+        JsonObject jsonObject = new JsonObject();
+        jsonObject.addProperty("loginPhone", phone);
+        jsonObject.addProperty("newPassword", password);
+        jsonObject.addProperty("newPassword2", password);
+        RetrofitUtil.composeToSubscribe(RetrofitUtil.getService().rebuildPassword(jsonObject), observer, lifecycleSubject);
     }
 
 }

@@ -52,6 +52,12 @@ public interface ApiService {
     @POST(UrlConstants.SEND_MESSAGE)
     Observable<RequestResult<YanZhengMaEntity>> sendMessgae(@Body JsonObject jsonObject);
 
+    @POST(UrlConstants.SEND_FORGET_MESSAGE)
+    Observable<RequestResult<YanZhengMaEntity>> sendForgetMessgae(@Body JsonObject jsonObject);
+
+    @POST(UrlConstants.REBUILD_PASSWORD)
+    Observable<RequestResult> rebuildPassword(@Body JsonObject jsonObject);
+
     @POST(UrlConstants.QUERY_HOSPITAL)
     Observable<RequestResult<List<HospitalEntity>>> queryHospital(@Body JsonObject jsonObject);
 

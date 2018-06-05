@@ -1,25 +1,37 @@
 package com.jtlrm.ckd.mvp.view.activity;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 
+import com.base.sdk.base.net.CommonObserver;
 import com.jtlrm.ckd.R;
 import com.jtlrm.ckd.base.acitvity.TitleBarActivity;
+import com.jtlrm.ckd.mvp.model.UserModel;
 
 import butterknife.BindView;
 
 public class RebuilPasswordActivity extends TitleBarActivity {
 
     @BindView(R.id.password)
-   public EditText password;
+    public EditText password;
     @BindView(R.id.re_password)
     public EditText repassword;
-    public  String passwordStr;
-    public  String repasswordStr;
+    public String passwordStr;
+    public String repasswordStr;
+    String phone;
+    UserModel userModel;
+    public static void goSetting(Context context, String phone) {
+        Intent intent = new Intent(context, RebuilPasswordActivity.class);
+        intent.putExtra("phone", phone);
+        context.startActivity(intent);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        phone = getIntent().getStringExtra("phone");
         super.onCreate(savedInstanceState);
     }
 
@@ -35,7 +47,7 @@ public class RebuilPasswordActivity extends TitleBarActivity {
 
     @Override
     protected void initView() {
-
+        userModel = new UserModel();
     }
 
     @Override
@@ -50,6 +62,20 @@ public class RebuilPasswordActivity extends TitleBarActivity {
 
     public void submit(View view) {
 //        startActivity(new Intent(context, ));
+        if (passwordIsOk()) {
+            userModel.rebuildPassword(phone, passwordStr, new CommonObserver<String>() {
+                @Override
+                public void onError(int errType, String errMessage) {
+                    showToast(errMessage);
+                }
+
+                @Override
+                public void onResult(String data) {
+                    showToast("重置成功");
+                    finish();
+                }
+            }, lifecycleSubject);
+        }
     }
 
     public boolean passwordIsOk() {

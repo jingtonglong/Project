@@ -30,6 +30,7 @@ public class SettingPasswordActivity extends RebuilPasswordActivity {
     public void submit(View view) {
         if (passwordIsOk()) {
             CompleteInfoActivity.goActivity(context, passwordStr, phone);
+            finish();
         }
     }
 }
