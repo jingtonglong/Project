@@ -41,6 +41,7 @@ public class LoginPresent extends BasePresenter<ILoginView> {
             return;
         }
         mIView.showLoadingDialog("登陆中");
+        userHelper.setLogin(null);
         userModel.login(username, password, new Observer<LoginResult>() {
             @Override
             public void onSubscribe(Disposable d) {
@@ -64,6 +65,7 @@ public class LoginPresent extends BasePresenter<ILoginView> {
 
             }
         }, mIView.getLifeSubject());
+
         // loginHuanXin(username, password);
     }
 

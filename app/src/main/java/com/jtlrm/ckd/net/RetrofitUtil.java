@@ -1,6 +1,7 @@
 package com.jtlrm.ckd.net;
 
 import android.content.Context;
+import android.text.TextUtils;
 import android.util.Log;
 
 import com.base.sdk.base.net.HttpFileObserver;
@@ -158,7 +159,7 @@ public class RetrofitUtil {
             public Response intercept(Chain chain) throws IOException {
                 Request originalRequest = chain.request();
                 Request.Builder builder = originalRequest.newBuilder();
-                builder.header("Authorization", UserHelper.getInstance(mContext).getToken())
+                builder.header("Authorization:bearer", UserHelper.getInstance(mContext).getToken())
                         .addHeader("Content-Type", "application/json;charset=UTF-8");
                 Request.Builder requestBuilder = builder.method(originalRequest.method(), originalRequest.body());
                 Request request = requestBuilder.build();

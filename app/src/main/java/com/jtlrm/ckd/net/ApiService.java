@@ -40,11 +40,16 @@ import retrofit2.http.Url;
 
 public interface ApiService {
 
-
     //请求参数一次性传入（通过Map来存放参数名和参数值）
+    @FormUrlEncoded
     @POST(UrlConstants.LOGIN)
-    Observable<LoginResult> login(@Body JsonObject jsonObject);
+    Observable<LoginResult> login(@Field("grant_type") String grant_type, @Field("client_id") String client_id
+            , @Field("scope") String scope,@Field("client_secret") String client_secret, @Field("username") String username
+            , @Field("password") String password);
 
+    @FormUrlEncoded
+    @POST(UrlConstants.LOGIN)
+    Observable<LoginResult> getToken(@Field("grant_type") String token, @Field("client_id") String id, @Field("client_secret") String client_secret);
 
     @POST(UrlConstants.GET_USER_INFO)
     Observable<RequestResult<UserEntity>> getUserInfo();

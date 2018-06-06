@@ -56,10 +56,11 @@ public class UserHelper {
     }
 
     public void setLogin(LoginResult loginResult) {
-        this.token = loginResult.getAccess_token();
-        if (!TextUtils.isEmpty(token)) {
+        if (loginResult != null && !TextUtils.isEmpty(loginResult.getAccess_token())) {
+            this.token = loginResult.getAccess_token();
             sharedPreferences.edit().putString(LOGIN, new Gson().toJson(loginResult)).commit();
         } else {
+            this.token = "";
             // 清除个人数据
             sharedPreferences.edit().clear().commit();
         }
@@ -89,4 +90,11 @@ public class UserHelper {
         }
     }
 
+    public boolean isLogin() {
+        if (!TextUtils.isEmpty(getToken()) && !TextUtils.isEmpty( getUserInfo().getName())) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }

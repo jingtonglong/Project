@@ -10,6 +10,7 @@ import android.support.annotation.DrawableRes;
 import android.support.annotation.StringRes;
 import android.support.v4.content.res.ResourcesCompat;
 import android.text.TextUtils;
+import android.view.WindowManager;
 import android.widget.EditText;
 
 import com.base.sdk.base.api.PositiveOrCancelInterface;
@@ -88,7 +89,12 @@ public abstract class BaseActivity extends AbstractActivity implements IBaseActi
 
     protected void initBarColor() {
         mImmersionBar = ImmersionBar.with(getActivity());
-        mImmersionBar.keyboardEnable(true).statusBarDarkFont(true, 0.2f).navigationBarWithKitkatEnable(false).init();
+        mImmersionBar
+                .keyboardEnable(true)
+                .keyboardMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN)
+                .statusBarDarkFont(true, 0.2f)
+                .navigationBarWithKitkatEnable(false)
+                .init();
     }
 
 
